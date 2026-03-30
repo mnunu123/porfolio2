@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>박세준 — Portfolio</title>
+  <meta name="description" content="하드웨어 · 소프트웨어 · AI 자동화 포트폴리오" />
+
+  <!-- Pretendard -->
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="./styles/reset.css" />
+  <link rel="stylesheet" href="./styles/main.css" />
+  <link rel="stylesheet" href="./styles/components.css" />
+  <link rel="stylesheet" href="./styles/responsive.css" />
+  <link rel="stylesheet" href="./styles/print.css" media="print" />
+
+  <style>
+  /* ── 디바이더 전체화면 오버라이드 ── */
+  .section-divider {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 0 var(--side-padding);
+  }
+  .divider-inner {
+    width: 100%;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    position: relative;
+    padding: 80px 0;
+  }
+
+  /* 경험 항목 리스트 */
+  .divider-list {
+    list-style: none;
+    margin-top: 36px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+  .divider-list li {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-size: clamp(1.1rem, 2.2vw, 1.5rem);
+    font-weight: 600;
+    color: rgba(255,255,255,0.88);
+    line-height: 1.5;
+  }
+  .divider-list li::before {
+    content: '';
+    display: block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.55);
+    flex-shrink: 0;
+  }
+
+  /* 습관 섹션 — 검정 */
+  .section-divider--black {
+    background: #0d0d0d;
+  }
+  </style>
+</head>
+<body>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+  01. COVER
+═══════════════════════════════════════════════════════════ -->
+<section class="section-cover" id="cover" aria-label="표지">
+  <div class="cover-inner">
+    <p class="cover-label">PORTFOLIO</p>
+    <p class="cover-tagline">
+      모르는 분야도 구조를 파악해<br><em>결과물로 끝내는</em> <em>박세준</em>입니다
+    </p>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+  02. INTRO / RESUME SUMMARY
+═══════════════════════════════════════════════════════════ -->
+<section class="section-intro" id="resume" aria-label="자기소개 및 이력">
+  <div class="container">
+    <div class="intro-grid">
+
+      <!-- Left: 이름 + 헤드라인 -->
+      <div class="intro-left">
+        <div class="intro-headline-wrap">
+          <h1 class="intro-headline">
+            모르는 분야도<br>구조를 파악해<br><em>결과물로</em> <em>끝냅니다</em>
+          </h1>
+          <p class="intro-sub">
+            전자공학·창업·AI 자동화를 거치며<br>
+            하드웨어 설계부터 서비스 운영까지 직접 해왔습니다.
+          </p>
+        </div>
+        <div class="intro-contact-row">
+          <a href="mailto:mnunu1234@naver.com" class="contact-chip">mnunu1234@naver.com</a>
+          <a href="https://github.com/mnunu123" class="contact-chip" target="_blank">GitHub</a>
+          <a href="https://blog-1vld.vercel.app" class="contact-chip" target="_blank">Blog</a>
+        </div>
+      </div>
+
+      <!-- Right: 이력 요약 -->
+      <div class="intro-right">
+
+        <!-- 기본 정보 -->
+        <div class="resume-block">
+          <h2 class="resume-block-title">BASIC INFO</h2>
+          <dl class="resume-list">
+            <dt>이름</dt><dd>박세준</dd>
+            <dt>생년월일</dt><dd>2002.01.15</dd>
+            <dt>연락처</dt><dd>010-4566-9665</dd>
+            <dt>이메일</dt><dd>mnunu1234@naver.com</dd>
+          </dl>
+        </div>
+
+        <div class="resume-divider"></div>
+
+        <!-- 경력 / 활동 -->
+        <div class="resume-block">
+          <h2 class="resume-block-title">EXPERIENCE</h2>
+          <dl class="resume-list resume-list--exp">
+            <div class="resume-exp-item">
+              <dt>2024 — 현재</dt>
+              <dd>
+                <strong>딥테크 예비창업패키지 선정</strong>
+                <span class="resume-role">기술개발 · 운영 · 회계 · IR 1인 전담</span>
+              </dd>
+            </div>
+            <div class="resume-exp-item">
+              <dt>2023 — 2024</dt>
+              <dd>
+                <strong>AI 자동화 파이프라인 개발</strong>
+                <span class="resume-role">멀티에이전트 · Claude API · Playwright</span>
+              </dd>
+            </div>
+            <div class="resume-exp-item">
+              <dt>2022 — 2023</dt>
+              <dd>
+                <strong>빗물받이 청소 로봇 · 웹 플랫폼</strong>
+                <span class="resume-role">임베디드 펌웨어 · FastAPI · 웹 대시보드</span>
+              </dd>
+            </div>
+          </dl>
+        </div>
+
+        <div class="resume-divider"></div>
+
+        <!-- 학력 -->
+        <div class="resume-block">
+          <h2 class="resume-block-title">EDUCATION</h2>
+          <dl class="resume-list resume-list--exp">
+            <div class="resume-exp-item">
+              <dt>2021.03 — 현재</dt>
+              <dd>
+                <strong>경북대학교</strong>
+                <span class="resume-role">전자공학부 (주전공) / 지식재산융합전공 (복수전공)</span>
+              </dd>
+            </div>
+          </dl>
+        </div>
+
+        <div class="resume-divider"></div>
+
+        <!-- 수상 -->
+        <div class="resume-block">
+          <h2 class="resume-block-title">AWARDS</h2>
+          <dl class="resume-list">
+            <dt>2025</dt><dd>한국도로공사 56주년 공모전 <strong>대상</strong></dd>
+            <dt>2024</dt><dd>기후테크 공모전 최우수상 — 빗물받이 쓰리봇</dd>
+            <dt>2024</dt><dd>예비창업패키지 선정 — 정부 사업화 검증 통과</dd>
+            <dt>2022–24</dt><dd>공모전·해커톤 9개 수상</dd>
+          </dl>
+        </div>
+
+        <div class="resume-divider"></div>
+
+        <!-- 스킬 -->
+        <div class="resume-block">
+          <h2 class="resume-block-title">SKILLS</h2>
+          <div class="skill-row">
+            <div class="skill-group">
+              <p class="skill-group-name">하드웨어</p>
+              <p class="skill-items">STM32 · ESP32 · 회로 설계 · FSM 펌웨어 · IoT 센서</p>
+            </div>
+            <div class="skill-group">
+              <p class="skill-group-name">소프트웨어</p>
+              <p class="skill-items">Python · FastAPI · React · Next.js · Flutter</p>
+            </div>
+            <div class="skill-group">
+              <p class="skill-group-name">AI · 자동화</p>
+              <p class="skill-items">YOLOv8 · Claude API · Gemini API · 멀티에이전트 · Playwright</p>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /intro-right -->
+    </div><!-- /intro-grid -->
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+  03. SECTION DIVIDER — 01 관심 (Red)
+═══════════════════════════════════════════════════════════ -->
+<section class="section-divider section-divider--red" id="divider-1">
+  <div class="divider-inner">
+    <p class="divider-hashtag">#관심</p>
+    <h2 class="divider-copy">꿈을 크게 가지자<br>그래야 깨져도 조각이 크니</h2>
+    <span class="divider-number" aria-hidden="true">01</span>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+  04. PROJECT 01 — 빗물받이 청소 로봇 + 웹 관제 플랫폼
+═══════════════════════════════════════════════════════════ -->
+<section class="section-project project-variant-a" id="project-1" data-accent="red" aria-label="프로젝트 1">
+  <div class="container">
+    <div class="project-grid">
+
+      <!-- Left: 설명 -->
+      <div class="project-left">
+        <h2 class="project-title">하드웨어 설계부터<br>웹 플랫폼까지<br>혼자 완성</h2>
+        <p class="project-meta">딥테크 예비창업패키지 <span class="meta-sep">·</span> 2022 — 2024</p>
+        <p class="project-meta project-role">임베디드 · 백엔드 · 프론트엔드</p>
+        <hr class="project-rule" />
+
+        <p class="keyword-label">Keyword</p>
+        <div class="keyword-badges">
+          <span class="badge">STM32 FSM</span>
+          <span class="badge">FastAPI</span>
+          <span class="badge">Naver Maps</span>
+          <span class="badge">Docker</span>
+        </div>
+
+        <p class="project-body">
+          도심 집중호우 시 빗물받이 막힘이 침수의 주요 원인이지만, 현행 방식은 수동 순찰·민원 접수로 사후 대응만 가능했습니다.
+          STM32 기반 FSM 펌웨어로 로봇을 제어하고, FastAPI + PostgreSQL + Docker 백엔드와 Naver Maps + GeoJSON 기반 웹 대시보드까지 전 구간을 1인 개발했습니다.
+        </p>
+
+        <blockquote class="project-thinking">
+          <p>"모르는 분야라도 구조를 이해하면 결국 만들 수 있다"는 걸 이 프로젝트로 배웠습니다.</p>
+        </blockquote>
+
+        <div class="contribution-list">
+          <div class="contrib-item">
+            <span class="contrib-label">펌웨어</span>
+            <div class="contrib-track"><div class="contrib-fill" style="--bar-width:95%"></div></div>
+          </div>
+          <div class="contrib-item">
+            <span class="contrib-label">백엔드</span>
+            <div class="contrib-track"><div class="contrib-fill" style="--bar-width:90%"></div></div>
+          </div>
+          <div class="contrib-item">
+            <span class="contrib-label">프론트</span>
+            <div class="contrib-track"><div class="contrib-fill" style="--bar-width:80%"></div></div>
+          </div>
+          <div class="contrib-item">
+            <span class="contrib-label">기획·IR</span>
+            <div class="contrib-track"><div class="contrib-fill" style="--bar-width:100%"></div></div>
+          </div>
+        </div>
+      </div><!-- /project-left -->
+
+      <!-- Right: 실적 카드 -->
+      <div class="project-right">
+        <div class="proof-cards">
+          <div class="proof-card">
+            <p class="proof-platform">예비창업패키지</p>
+            <p class="proof-text">딥테크 트랙 선정 — 정부 사업화 검증 통과</p>
+            <p class="proof-metric">기술개발·회계·발주·공문·IR 1인 전담</p>
+          </div>
+          <div class="proof-card">
+            <p class="proof-platform">공모전 수상</p>
+            <p class="proof-text">기후테크 공모전 최우수상 포함 9개 대회 수상</p>
+            <p class="proof-metric">2022 — 2024</p>
+          </div>
+          <div class="proof-card">
+            <p class="proof-platform">기술 스택</p>
+            <p class="proof-text">STM32 · C FSM · FastAPI · PostgreSQL · Next.js · Docker · Naver Maps API</p>
+            <p class="proof-metric">풀스택 1인 개발</p>
+          </div>
+        </div>
+      </div><!-- /project-right -->
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+  05. SECTION DIVIDER — 02 경험 (Dark)
+═══════════════════════════════════════════════════════════ -->
+<section class="section-divider section-divider--dark" id="divider-2">
+  <div class="divider-inner">
+    <p class="divider-hashtag">#경험</p>
+    <h2 class="divider-copy">직접 만들고<br>직접 부딪혔습니다</h2>
+    <ul class="divider-list">
+      <li>딥테크 예비창업패키지 선정</li>
+      <li>빗물받이 청소 로봇·웹 플랫폼 직접 개발</li>
+      <li>AI로 개발과 문서화 자동화 경험</li>
+    </ul>
+    <span class="divider-number" aria-hidden="true">02</span>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+  06. PROJECT 02 — AI 자동화 파이프라인
+═══════════════════════════════════════════════════════════ -->
+<section class="section-project project-variant-b" id="project-2" data-accent="red" aria-label="프로젝트 2">
+  <div class="container">
+    <div class="project-grid">
+
+      <!-- Left: 설명 -->
+      <div class="project-left">
+        <h2 class="project-title">AI 멀티에이전트로<br>개발·문서·영상<br>자동화</h2>
+        <p class="project-meta">개인 프로젝트 <span class="meta-sep">·</span> 2024 — 현재</p>
+        <p class="project-meta project-role">AI · 자동화 · 파이프라인 설계</p>
+        <hr class="project-rule" />
+
+        <p class="keyword-label">Keyword</p>
+        <div class="keyword-badges">
+          <span class="badge">Claude API</span>
+          <span class="badge">Gemini API</span>
+          <span class="badge">Playwright</span>
+          <span class="badge">멀티에이전트</span>
+        </div>
+
+        <p class="project-body">
+          Claude · Gemini · YOLOv8 등 다수의 AI 모델을 조합한 멀티에이전트 파이프라인을 구축해,
+          개발 초안 작성·코드 리뷰·문서화·영상 편집 전 과정을 자동화했습니다.
+          한국도로공사 공모전에서는 AI 도구 6개로 56초 영상을 제작해 대상을 수상했습니다.
+        </p>
+
+        <blockquote class="project-thinking">
+          <p>AI를 쓰는 게 아니라 AI를 설계하는 방식으로 접근했습니다. 그 차이가 결과를 만들었습니다.</p>
+        </blockquote>
+
+        <div class="contribution-list">
+          <div class="contrib-item">
+            <span class="contrib-label">파이프라인</span>
+            <div class="contrib-track"><div class="contrib-fill" style="--bar-width:95%"></div></div>
+          </div>
+          <div class="contrib-item">
+            <span class="contrib-label">자동화</span>
+            <div class="contrib-track"><div class="contrib-fill" style="--bar-width:90%"></div></div>
+          </div>
+          <div class="contrib-item">
+            <span class="contrib-label">영상 제작</span>
+            <div class="contrib-track"><div class="contrib-fill" style="--bar-width:80%"></div></div>
+          </div>
+        </div>
+      </div><!-- /project-left -->
+
+      <!-- Right: 실적 카드 -->
+      <div class="project-right">
+        <div class="proof-cards">
+          <div class="proof-card">
+            <p class="proof-platform">한국도로공사 공모전</p>
+            <p class="proof-text">AI 도구 6개로 56초 영상 제작 → 대상 수상</p>
+            <p class="proof-metric">2025</p>
+          </div>
+          <div class="proof-card">
+            <p class="proof-platform">AI 자동화 구축</p>
+            <p class="proof-text">개발·문서화·영상·마케팅 파이프라인 6개 운영 중</p>
+            <p class="proof-metric">Claude · Gemini · YOLOv8 · Playwright</p>
+          </div>
+          <div class="proof-card">
+            <p class="proof-platform">적용 분야</p>
+            <p class="proof-text">코드 초안 작성 → 자동 리뷰 → 문서화 → 영상 편집</p>
+            <p class="proof-metric">전 주기 자동화</p>
+          </div>
+        </div>
+      </div><!-- /project-right -->
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+  07. SECTION DIVIDER — 03 습관 (Black)
+═══════════════════════════════════════════════════════════ -->
+<section class="section-divider section-divider--black" id="divider-3">
+  <div class="divider-inner">
+    <p class="divider-hashtag">#습관</p>
+    <h2 class="divider-copy">구조로 이해하고<br>끝까지 만들어낸다</h2>
+    <span class="divider-number" aria-hidden="true">03</span>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+  08. PROJECT 03 — 스마트 무드등 IoT 시스템
+═══════════════════════════════════════════════════════════ -->
+<section class="section-project project-variant-c" id="project-3" data-accent="blue" aria-label="프로젝트 3">
+  <div class="container">
+    <div class="project-grid">
+
+      <!-- Left: 설명 -->
+      <div class="project-left">
+        <h2 class="project-title">센서 데이터로<br>환경을 읽는<br>스마트 조명 시스템</h2>
+        <p class="project-meta">개인 프로젝트 <span class="meta-sep">·</span> 2023</p>
+        <p class="project-meta project-role">임베디드 · 앱 개발 · IoT</p>
+        <hr class="project-rule" />
+
+        <p class="keyword-label">Keyword</p>
+        <div class="keyword-badges">
+          <span class="badge">ESP32</span>
+          <span class="badge">Flutter</span>
+          <span class="badge">BLE</span>
+          <span class="badge">센서 퓨전</span>
+        </div>
+
+        <p class="project-body">
+          온도·습도·조도·움직임 센서 데이터를 융합해 사용자의 활동 상태를 판별하고,
+          자동으로 최적 조명을 설정하는 IoT 시스템입니다.
+          ESP32 펌웨어와 Flutter 앱을 BLE로 연동해 실시간 제어를 구현했습니다.
+        </p>
+
+        <blockquote class="project-thinking">
+          <p>작은 센서 하나가 사람의 행동 패턴을 읽어낸다는 사실이, 임베디드의 매력을 다시 확인하게 해줬습니다.</p>
+        </blockquote>
+
+        <div class="contribution-list">
+          <div class="contrib-item">
+            <span class="contrib-label">펌웨어</span>
+            <div class="contrib-track"><div class="contrib-fill" style="--bar-width:95%"></div></div>
+          </div>
+          <div class="contrib-item">
+            <span class="contrib-label">앱 개발</span>
+            <div class="contrib-track"><div class="contrib-fill" style="--bar-width:85%"></div></div>
+          </div>
+          <div class="contrib-item">
+            <span class="contrib-label">회로 설계</span>
+            <div class="contrib-track"><div class="contrib-fill" style="--bar-width:90%"></div></div>
+          </div>
+        </div>
+      </div><!-- /project-left -->
+
+      <!-- Right: 실적 카드 -->
+      <div class="project-right">
+        <div class="proof-cards">
+          <div class="proof-card">
+            <p class="proof-platform">기술 스택</p>
+            <p class="proof-text">ESP32 · C++ · FreeRTOS · Flutter · BLE GATT · Firebase</p>
+            <p class="proof-metric">임베디드 + 앱 풀스택</p>
+          </div>
+          <div class="proof-card">
+            <p class="proof-platform">센서 퓨전</p>
+            <p class="proof-text">DHT22 · BH1750 · PIR · 가속도 센서 복합 처리</p>
+            <p class="proof-metric">4종 센서 실시간 융합</p>
+          </div>
+          <div class="proof-card">
+            <p class="proof-platform">결과</p>
+            <p class="proof-text">수면·집중·휴식 3가지 모드 자동 전환 구현</p>
+            <p class="proof-metric">응답 지연 &lt; 200ms</p>
+          </div>
+        </div>
+      </div><!-- /project-right -->
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+  09. ARCHIVE / OTHER WORKS
+═══════════════════════════════════════════════════════════ -->
+<section class="section-archive" id="archive" aria-label="기타 작업물">
+  <div class="container">
+    <div class="archive-header">
+      <h2 class="archive-title">Other Works</h2>
+      <p class="archive-subtitle">그 밖의 프로젝트들</p>
+    </div>
+    <div class="archive-table">
+      <div class="archive-row archive-row--head">
+        <span class="archive-col archive-col--num">#</span>
+        <span class="archive-col archive-col--title">제목</span>
+        <span class="archive-col archive-col--role">역할</span>
+        <span class="archive-col archive-col--period">기간</span>
+        <span class="archive-col archive-col--link">링크</span>
+      </div>
+      <a href="https://github.com/mnunu123" class="archive-row archive-row--item" target="_blank">
+        <span class="archive-col archive-col--num">01</span>
+        <span class="archive-col archive-col--title">면접훈련 로봇 — InMoov i2Head</span>
+        <span class="archive-col archive-col--role">임베디드 / AI</span>
+        <span class="archive-col archive-col--period">2024</span>
+        <span class="archive-col archive-col--link">→</span>
+      </a>
+      <a href="https://github.com/mnunu123" class="archive-row archive-row--item" target="_blank">
+        <span class="archive-col archive-col--num">02</span>
+        <span class="archive-col archive-col--title">AI 유튜브 자동 생성 파이프라인</span>
+        <span class="archive-col archive-col--role">AI · 자동화</span>
+        <span class="archive-col archive-col--period">2024</span>
+        <span class="archive-col archive-col--link">→</span>
+      </a>
+      <a href="https://github.com/mnunu123" class="archive-row archive-row--item" target="_blank">
+        <span class="archive-col archive-col--num">03</span>
+        <span class="archive-col archive-col--title">컴퓨터비전 YOLOv8 불꽃 감지 시스템</span>
+        <span class="archive-col archive-col--role">AI · 임베디드</span>
+        <span class="archive-col archive-col--period">2023</span>
+        <span class="archive-col archive-col--link">→</span>
+      </a>
+      <a href="https://github.com/mnunu123" class="archive-row archive-row--item" target="_blank">
+        <span class="archive-col archive-col--num">04</span>
+        <span class="archive-col archive-col--title">Next.js 포트폴리오 & 블로그 플랫폼</span>
+        <span class="archive-col archive-col--role">풀스택</span>
+        <span class="archive-col archive-col--period">2024</span>
+        <span class="archive-col archive-col--link">→</span>
+      </a>
+      <a href="https://github.com/mnunu123" class="archive-row archive-row--item" target="_blank">
+        <span class="archive-col archive-col--num">05</span>
+        <span class="archive-col archive-col--title">Flutter 앱 — 실시간 IoT 센서 대시보드</span>
+        <span class="archive-col archive-col--role">앱 · IoT</span>
+        <span class="archive-col archive-col--period">2023</span>
+        <span class="archive-col archive-col--link">→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+  10. CONTACT / CLOSING
+═══════════════════════════════════════════════════════════ -->
+<section class="section-closing" id="contact" aria-label="마무리 및 연락처">
+  <div class="container">
+    <div class="closing-inner">
+      <p class="closing-label">THANK YOU</p>
+      <p class="closing-tagline">
+        <em>관심</em>에서 시작해 <em>경험</em>으로 증명하고<br>
+        <em>습관</em>으로 만들어가겠습니다
+      </p>
+      <div class="closing-contacts">
+        <div class="closing-contact-item">
+          <span class="closing-contact-label">Email</span>
+          <a href="mailto:mnunu1234@naver.com" class="closing-contact-value">mnunu1234@naver.com</a>
+        </div>
+        <div class="closing-contact-item">
+          <span class="closing-contact-label">Phone</span>
+          <a href="tel:01045669665" class="closing-contact-value">010-4566-9665</a>
+        </div>
+        <div class="closing-contact-item">
+          <span class="closing-contact-label">GitHub</span>
+          <a href="https://github.com/mnunu123" class="closing-contact-value" target="_blank">github.com/mnunu123</a>
+        </div>
+        <div class="closing-contact-item">
+          <span class="closing-contact-label">Blog</span>
+          <a href="https://blog-1vld.vercel.app" class="closing-contact-value" target="_blank">mnunu.dev</a>
+        </div>
+      </div>
+      <p class="closing-copy">© 2026 박세준. All rights reserved.</p>
+    </div>
+  </div>
+</section>
+
+<script src="./data/profile.js"></script>
+<script src="./data/projects.js"></script>
+<script src="./scripts/main.js"></script>
+</body>
+</html>
