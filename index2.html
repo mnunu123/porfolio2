@@ -1,0 +1,1922 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>박세준 — 채용 포트폴리오 2026</title>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <link rel="stylesheet" href="./styles/reset.css" />
+  <style>
+/* ═══════════════════════════════════════
+   NAVY THEME — 디자인 시스템
+═══════════════════════════════════════ */
+:root {
+  --navy:        #1E3468;
+  --navy-dark:   #152550;
+  --navy-mid:    #2A4A8A;
+  --navy-light:  #EAF0FB;
+  --white:       #FFFFFF;
+  --gray-50:     #F5F6FA;
+  --gray-100:    #E8EAF0;
+  --gray-300:    #B0B8CC;
+  --gray-500:    #6B7690;
+  --gray-800:    #1A1F2E;
+  --accent-red:  #C41E3A;
+
+  --font: 'Pretendard', 'Noto Sans KR', sans-serif;
+  --max-w: 1160px;
+  --pad: clamp(24px, 5vw, 80px);
+
+  --t-hero:    clamp(2.6rem, 5vw, 4.4rem);
+  --t-section: clamp(1.8rem, 3vw, 3rem);
+  --t-project: clamp(1.4rem, 2.4vw, 2.2rem);
+  --t-body:    1rem;
+  --t-meta:    0.85rem;
+  --t-label:   0.72rem;
+  --t-caption: 0.67rem;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: var(--font); color: var(--gray-800); background: var(--white); font-size: var(--t-body); line-height: 1.7; }
+a { text-decoration: none; color: inherit; }
+em { font-style: normal; color: var(--navy-mid); }
+strong { font-weight: 700; }
+
+.wrap { max-width: var(--max-w); margin: 0 auto; padding: 0 var(--pad); }
+
+/* ─ 공통 label ─ */
+.eyebrow {
+  font-size: var(--t-label);
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--navy);
+  margin-bottom: 10px;
+  display: block;
+}
+.eyebrow--white { color: rgba(255,255,255,0.7); }
+
+/* ═══════════════════════════════════════
+   01. COVER — 좌텍스트 / 우이미지
+═══════════════════════════════════════ */
+.cover {
+  display: grid;
+  grid-template-columns: 46% 54%;
+  min-height: 100vh;
+}
+
+.cover-left {
+  background: var(--white);
+  padding: 80px var(--pad) 80px calc(var(--pad) + max(0px, (100vw - var(--max-w)) / 2));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.cover-co {
+  font-size: var(--t-label);
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  color: var(--navy);
+  text-transform: uppercase;
+  margin-bottom: 32px;
+}
+
+.cover-title {
+  font-size: var(--t-hero);
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--gray-800);
+  letter-spacing: -0.02em;
+  margin-bottom: 32px;
+}
+
+.cover-rule {
+  width: 48px;
+  height: 3px;
+  background: var(--navy);
+  margin-bottom: 28px;
+}
+
+.cover-desc {
+  font-size: var(--t-meta);
+  color: var(--gray-500);
+  line-height: 1.8;
+  margin-bottom: 40px;
+  max-width: 360px;
+}
+
+.cover-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.cover-tag {
+  font-size: var(--t-label);
+  font-weight: 600;
+  color: var(--navy);
+  border: 1.5px solid var(--navy);
+  border-radius: 2px;
+  padding: 5px 14px;
+  letter-spacing: 0.04em;
+}
+
+.cover-right {
+  position: relative;
+  background: var(--navy-dark);
+  overflow: hidden;
+}
+
+.cover-right-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.55;
+  display: block;
+}
+
+.cover-right-box {
+  position: absolute;
+  bottom: 48px;
+  right: 48px;
+  background: rgba(255,255,255,0.12);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255,255,255,0.25);
+  padding: 20px 26px;
+  color: var(--white);
+  max-width: 220px;
+}
+
+.cover-right-box strong {
+  display: block;
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+  opacity: 0.7;
+}
+
+.cover-right-box p {
+  font-size: var(--t-label);
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+/* cover image placeholder */
+.cover-right-placeholder {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy-mid) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cover-right-placeholder svg {
+  opacity: 0.15;
+  width: 120px;
+}
+
+/* ═══════════════════════════════════════
+   02. CONTENTS — 목차
+═══════════════════════════════════════ */
+.section-contents {
+  padding: 80px 0;
+  border-top: 3px solid var(--navy);
+  background: var(--white);
+}
+
+.contents-header {
+  margin-bottom: 48px;
+}
+
+.contents-title {
+  font-size: var(--t-section);
+  font-weight: 800;
+  color: var(--gray-800);
+  letter-spacing: -0.01em;
+}
+
+.contents-table { display: flex; flex-direction: column; gap: 0; }
+
+.contents-row {
+  display: grid;
+  grid-template-columns: 52px 1fr auto;
+  align-items: center;
+  gap: 24px;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--gray-100);
+  transition: background 0.15s;
+}
+
+.contents-row:hover { background: var(--gray-50); padding-left: 12px; padding-right: 12px; margin: 0 -12px; }
+
+.contents-num {
+  font-size: var(--t-label);
+  font-weight: 700;
+  color: var(--white);
+  background: var(--navy);
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 0.05em;
+}
+
+.contents-label {
+  font-size: var(--t-body);
+  font-weight: 600;
+  color: var(--gray-800);
+}
+
+.contents-sub {
+  display: block;
+  font-size: var(--t-caption);
+  color: var(--gray-500);
+  font-weight: 400;
+  margin-top: 2px;
+}
+
+.contents-tag {
+  font-size: var(--t-label);
+  color: var(--gray-300);
+  letter-spacing: 0.05em;
+}
+
+/* ═══════════════════════════════════════
+   03. CHAPTER — 섹션 인트로 (슬라이드 3번)
+═══════════════════════════════════════ */
+.chapter {
+  background: var(--navy);
+  padding: clamp(60px, 8vw, 100px) 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.chapter-inner {
+  display: grid;
+  grid-template-columns: 1fr 160px;
+  align-items: end;
+  gap: 32px;
+}
+
+.chapter-num {
+  font-size: clamp(6rem, 12vw, 11rem);
+  font-weight: 800;
+  color: rgba(255,255,255,0.08);
+  line-height: 1;
+  position: absolute;
+  right: var(--pad);
+  bottom: -10px;
+  letter-spacing: -0.04em;
+  pointer-events: none;
+}
+
+.chapter-tag {
+  font-size: var(--t-label);
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  color: rgba(255,255,255,0.55);
+  text-transform: uppercase;
+  margin-bottom: 14px;
+  display: block;
+}
+
+.chapter-title {
+  font-size: var(--t-section);
+  font-weight: 800;
+  color: var(--white);
+  line-height: 1.2;
+}
+
+.chapter-sub {
+  font-size: var(--t-meta);
+  color: rgba(255,255,255,0.55);
+  margin-top: 14px;
+  line-height: 1.7;
+}
+
+/* ═══════════════════════════════════════
+   04. RESUME
+═══════════════════════════════════════ */
+.section-resume {
+  padding: 80px 0;
+  border-top: 1px solid var(--gray-100);
+}
+
+.resume-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.resume-sticky {
+  position: sticky;
+  top: 60px;
+}
+
+.resume-name {
+  font-size: clamp(1.6rem, 2.6vw, 2.4rem);
+  font-weight: 800;
+  color: var(--gray-800);
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+.resume-tagline {
+  font-size: var(--t-meta);
+  color: var(--gray-500);
+  line-height: 1.8;
+  margin-bottom: 32px;
+}
+
+.contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: var(--t-meta);
+}
+
+.contact-key {
+  font-size: var(--t-label);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--navy);
+  min-width: 52px;
+}
+
+.contact-val { color: var(--gray-500); }
+
+.r-block { margin-bottom: 28px; }
+
+.r-title {
+  font-size: var(--t-label);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--navy);
+  border-left: 3px solid var(--navy);
+  padding-left: 10px;
+  margin-bottom: 16px;
+}
+
+.r-divider {
+  height: 1px;
+  background: var(--gray-100);
+  margin: 20px 0;
+}
+
+.r-list {
+  display: grid;
+  grid-template-columns: 76px 1fr;
+  gap: 8px 16px;
+}
+
+.r-list dt {
+  font-size: var(--t-label);
+  color: var(--gray-300);
+  letter-spacing: 0.05em;
+  padding-top: 2px;
+}
+
+.r-list dd {
+  font-size: var(--t-meta);
+  color: var(--gray-800);
+}
+
+.r-exp { display: flex; flex-direction: column; gap: 16px; }
+
+.r-exp-item {
+  display: grid;
+  grid-template-columns: 130px 1fr;
+  gap: 12px;
+  align-items: start;
+}
+
+.r-exp-dt {
+  font-size: var(--t-caption);
+  color: var(--gray-300);
+  padding-top: 3px;
+  line-height: 1.4;
+}
+
+.r-exp-dd-title {
+  font-size: var(--t-meta);
+  font-weight: 600;
+  color: var(--gray-800);
+  display: block;
+  margin-bottom: 2px;
+}
+
+.r-exp-dd-sub {
+  font-size: var(--t-caption);
+  color: var(--gray-500);
+  line-height: 1.5;
+}
+
+/* skill grid */
+.skill-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.skill-row {
+  display: grid;
+  grid-template-columns: 60px 1fr;
+  gap: 12px;
+  align-items: start;
+}
+
+.skill-cat {
+  font-size: var(--t-label);
+  font-weight: 600;
+  color: var(--navy);
+  letter-spacing: 0.04em;
+  padding-top: 2px;
+}
+
+.skill-tags {
+  font-size: var(--t-meta);
+  color: var(--gray-800);
+  line-height: 1.65;
+}
+
+/* role table */
+.role-table { display: flex; flex-direction: column; gap: 8px; }
+.role-row2 {
+  display: grid;
+  grid-template-columns: 68px 1fr;
+  gap: 12px;
+  align-items: start;
+  font-size: var(--t-meta);
+}
+.role-area2 {
+  font-size: var(--t-label);
+  font-weight: 600;
+  color: var(--navy);
+  padding-top: 2px;
+}
+.role-detail2 { color: var(--gray-800); }
+
+/* ═══════════════════════════════════════
+   05. PROJECT — 표준형
+═══════════════════════════════════════ */
+.section-project {
+  padding: 80px 0;
+  border-top: 1px solid var(--gray-100);
+}
+
+.proj-grid {
+  display: grid;
+  grid-template-columns: 44% 1fr;
+  gap: 56px;
+  align-items: start;
+}
+
+.proj-eyebrow { margin-bottom: 8px; }
+
+.proj-title {
+  font-size: var(--t-project);
+  font-weight: 800;
+  line-height: 1.2;
+  color: var(--gray-800);
+  margin-bottom: 10px;
+}
+
+.proj-meta {
+  font-size: var(--t-meta);
+  color: var(--gray-500);
+  margin-bottom: 4px;
+}
+
+.proj-rule {
+  border: none;
+  border-top: 1px solid var(--gray-100);
+  margin: 20px 0;
+}
+
+.kw-label {
+  font-size: var(--t-label);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gray-300);
+  margin-bottom: 10px;
+}
+
+.kw-badges { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+
+.badge2 {
+  border: 1.5px solid var(--navy);
+  border-radius: 2px;
+  padding: 4px 14px;
+  font-size: var(--t-label);
+  font-weight: 600;
+  color: var(--navy);
+  letter-spacing: 0.04em;
+}
+
+.proj-body {
+  font-size: var(--t-body);
+  color: var(--gray-800);
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.proj-quote {
+  border-left: 3px solid var(--navy);
+  padding-left: 16px;
+  margin-bottom: 24px;
+}
+
+.proj-quote p {
+  font-size: var(--t-meta);
+  color: var(--gray-500);
+  line-height: 1.8;
+  font-style: italic;
+}
+
+/* contrib bar */
+.contrib-list { display: flex; flex-direction: column; gap: 10px; margin-top: 20px; }
+.contrib-item2 { display: flex; align-items: center; gap: 14px; }
+.contrib-lbl {
+  font-size: var(--t-label);
+  font-weight: 600;
+  color: var(--gray-500);
+  min-width: 52px;
+}
+.contrib-track2 { flex: 1; height: 3px; background: var(--gray-100); border-radius: 2px; overflow: hidden; }
+.contrib-fill2 { height: 100%; background: var(--navy); border-radius: 2px; }
+
+/* proj right */
+.proj-right { display: flex; flex-direction: column; gap: 16px; }
+
+/* stack card */
+.stack-card2 {
+  background: var(--gray-50);
+  border: 1px solid var(--gray-100);
+  border-radius: 4px;
+  padding: 22px 26px;
+  margin-bottom: 4px;
+}
+
+.stack-card2-title {
+  font-size: var(--t-label);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--navy);
+  margin-bottom: 14px;
+}
+
+.stack-rows2 { display: flex; flex-direction: column; gap: 10px; }
+.stack-row2 {
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  gap: 12px;
+  align-items: start;
+  font-size: var(--t-meta);
+}
+.stack-layer2 {
+  font-size: var(--t-label);
+  font-weight: 600;
+  color: var(--navy);
+  letter-spacing: 0.03em;
+  padding-top: 2px;
+}
+
+/* result cards */
+.result-cards2 { display: flex; flex-direction: column; gap: 10px; }
+
+.result-card2 {
+  background: var(--white);
+  border: 1px solid var(--gray-100);
+  border-radius: 4px;
+  padding: 14px 18px;
+  box-shadow: 0 2px 8px rgba(30,52,104,0.06);
+}
+
+.result-card2--accent { border-left: 3px solid var(--navy); }
+
+.result-lbl {
+  font-size: var(--t-label);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--navy);
+  margin-bottom: 4px;
+}
+
+.result-txt { font-size: var(--t-meta); color: var(--gray-800); line-height: 1.6; }
+
+/* ═══════════════════════════════════════
+   06. BRAND MOTTO 스타일 — 이미지 그리드 (슬라이드 4)
+   → 핵심 역량 시각화에 활용
+═══════════════════════════════════════ */
+.section-motto {
+  padding: 80px 0;
+  background: var(--gray-50);
+  border-top: 1px solid var(--gray-100);
+}
+
+.motto-title {
+  font-size: var(--t-section);
+  font-weight: 800;
+  color: var(--gray-800);
+  margin-bottom: 8px;
+}
+
+.motto-sub {
+  font-size: var(--t-meta);
+  color: var(--gray-500);
+  margin-bottom: 40px;
+}
+
+.motto-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+}
+
+.motto-item {
+  position: relative;
+  aspect-ratio: 3/4;
+  overflow: hidden;
+  border-radius: 2px;
+  background: var(--navy-dark);
+}
+
+.motto-item-bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(160deg, var(--navy-mid) 0%, var(--navy-dark) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.2rem;
+  opacity: 0.6;
+}
+
+.motto-item-label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--navy);
+  color: var(--white);
+  text-align: center;
+  padding: 10px 8px;
+  font-size: var(--t-label);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+.motto-item-icon {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 40px;
+}
+
+.motto-item-icon svg {
+  width: 40px;
+  height: 40px;
+  opacity: 0.5;
+  color: var(--white);
+}
+
+/* ═══════════════════════════════════════
+   07. PERFORMANCE 스타일 — 수치/지표 (슬라이드 5)
+   → AI 프로젝트 결과 수치에 활용
+═══════════════════════════════════════ */
+.section-perf {
+  padding: 80px 0;
+  border-top: 1px solid var(--gray-100);
+}
+
+.perf-header {
+  margin-bottom: 48px;
+}
+
+.perf-title {
+  font-size: var(--t-section);
+  font-weight: 800;
+  color: var(--gray-800);
+  margin-bottom: 6px;
+}
+
+.perf-sub {
+  font-size: var(--t-meta);
+  color: var(--gray-500);
+}
+
+.perf-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+.perf-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.perf-metric {
+  text-align: center;
+  padding: 24px 12px;
+  background: var(--navy);
+  color: var(--white);
+  border-radius: 4px;
+}
+
+.perf-metric-num {
+  font-size: 2rem;
+  font-weight: 800;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.perf-metric-unit {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.perf-metric-label {
+  font-size: var(--t-caption);
+  opacity: 0.7;
+  line-height: 1.4;
+  margin-top: 4px;
+}
+
+.perf-bar-section { }
+
+.perf-bar-title {
+  font-size: var(--t-label);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--navy);
+  margin-bottom: 16px;
+  border-left: 3px solid var(--navy);
+  padding-left: 10px;
+}
+
+.perf-bars { display: flex; flex-direction: column; gap: 12px; }
+
+.perf-bar-row {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.perf-bar-info {
+  display: flex;
+  justify-content: space-between;
+  font-size: var(--t-label);
+  color: var(--gray-500);
+  font-weight: 600;
+}
+
+.perf-bar-track {
+  height: 6px;
+  background: var(--gray-100);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.perf-bar-fill {
+  height: 100%;
+  background: var(--navy);
+  border-radius: 3px;
+  width: var(--w, 70%);
+}
+
+.perf-desc {
+  background: var(--navy);
+  color: var(--white);
+  padding: 24px 28px;
+  border-radius: 4px;
+  font-size: var(--t-meta);
+  line-height: 1.8;
+}
+
+.perf-proof { display: flex; flex-direction: column; gap: 10px; }
+
+.perf-proof-item {
+  border: 1px solid var(--gray-100);
+  border-left: 3px solid var(--navy);
+  padding: 14px 16px;
+  background: var(--white);
+}
+
+.perf-proof-platform {
+  font-size: var(--t-label);
+  font-weight: 700;
+  color: var(--navy);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.perf-proof-text {
+  font-size: var(--t-meta);
+  color: var(--gray-800);
+  line-height: 1.6;
+}
+
+.perf-proof-metric {
+  font-size: var(--t-caption);
+  color: var(--gray-300);
+  margin-top: 3px;
+  font-weight: 600;
+}
+
+/* ═══════════════════════════════════════
+   08. VISION 스타일 — 파이프라인 (슬라이드 6)
+═══════════════════════════════════════ */
+.section-vision {
+  padding: 80px 0;
+  background: var(--navy);
+}
+
+.vision-title { font-size: var(--t-section); font-weight: 800; color: var(--white); margin-bottom: 8px; }
+.vision-sub { font-size: var(--t-meta); color: rgba(255,255,255,0.5); margin-bottom: 48px; }
+
+.pipeline2 {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0;
+  align-items: center;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 4px;
+  padding: 8px;
+  margin-bottom: 32px;
+}
+
+.pipe-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 16px 8px;
+  position: relative;
+}
+
+.pipe-step:not(:last-child)::after {
+  content: '→';
+  position: absolute;
+  right: -8px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgba(255,255,255,0.3);
+  font-size: 1.1rem;
+  z-index: 1;
+}
+
+.pipe-step-name {
+  font-size: var(--t-label);
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 4px;
+}
+
+.pipe-step-model {
+  font-size: 0.6rem;
+  color: rgba(255,255,255,0.45);
+  letter-spacing: 0.04em;
+}
+
+.vision-callouts {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.vision-callout {
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 4px;
+  padding: 20px 22px;
+  color: var(--white);
+}
+
+.vision-callout-tag {
+  font-size: var(--t-caption);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.45);
+  margin-bottom: 8px;
+  display: block;
+}
+
+.vision-callout-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.vision-callout-text {
+  font-size: var(--t-caption);
+  color: rgba(255,255,255,0.6);
+  line-height: 1.6;
+}
+
+/* ═══════════════════════════════════════
+   09. IMPROVEMENT 스타일 — 3컬럼 카드 (슬라이드 7)
+   → 핵심 강점
+═══════════════════════════════════════ */
+.section-strength {
+  padding: 80px 0;
+  border-top: 1px solid var(--gray-100);
+}
+
+.strength-header { margin-bottom: 48px; }
+.strength-title { font-size: var(--t-section); font-weight: 800; color: var(--gray-800); margin-bottom: 6px; }
+.strength-sub { font-size: var(--t-meta); color: var(--gray-500); }
+
+.strength-grid2 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.strength-card {
+  border: 1px solid var(--gray-100);
+  border-top: 3px solid var(--navy);
+  padding: 28px 22px;
+  background: var(--white);
+  transition: box-shadow 0.2s;
+}
+
+.strength-card:hover {
+  box-shadow: 0 8px 32px rgba(30,52,104,0.1);
+}
+
+.strength-card-num {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--navy);
+  opacity: 0.15;
+  line-height: 1;
+  margin-bottom: 12px;
+  letter-spacing: -0.02em;
+}
+
+.strength-card-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--gray-800);
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+
+.strength-card-desc {
+  font-size: var(--t-meta);
+  color: var(--gray-500);
+  line-height: 1.75;
+}
+
+.strength-card-ev {
+  display: block;
+  margin-top: 8px;
+  font-size: var(--t-caption);
+  color: var(--gray-300);
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+/* ═══════════════════════════════════════
+   10. ARCHIVE
+═══════════════════════════════════════ */
+.section-archive {
+  padding: 80px 0;
+  background: var(--gray-50);
+  border-top: 1px solid var(--gray-100);
+}
+
+.archive-title { font-size: var(--t-section); font-weight: 800; color: var(--gray-800); margin-bottom: 4px; }
+.archive-subtitle { font-size: var(--t-meta); color: var(--gray-500); margin-bottom: 40px; }
+
+.archive-group-label2 {
+  font-size: var(--t-label);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--navy);
+  border-left: 3px solid var(--navy);
+  padding-left: 10px;
+  margin-bottom: 8px;
+}
+
+.archive-table2 {
+  border-top: 2px solid var(--navy);
+  margin-bottom: 40px;
+}
+
+.archive-row2 {
+  display: grid;
+  grid-template-columns: 52px 1fr 140px 170px 32px;
+  gap: 16px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--gray-100);
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+  transition: background 0.12s;
+}
+
+.archive-row2:hover { background: var(--white); padding-left: 10px; padding-right: 10px; margin: 0 -10px; }
+
+.archive-head .archive-row2 {
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--navy);
+}
+
+.archive-head .archive-col2 {
+  font-size: var(--t-label);
+  font-weight: 700;
+  color: var(--gray-300);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.archive-col2--num {
+  font-size: var(--t-label);
+  font-weight: 700;
+  color: var(--navy);
+  letter-spacing: 0.05em;
+}
+
+.archive-col2--title { font-size: var(--t-body); font-weight: 600; color: var(--gray-800); }
+.archive-col2--role { font-size: var(--t-meta); color: var(--gray-500); }
+.archive-col2--period { font-size: var(--t-meta); color: var(--gray-500); }
+.archive-col2--link { font-size: 1rem; color: var(--gray-300); text-align: right; }
+
+/* ═══════════════════════════════════════
+   11. CLOSING — 풀블리드 이미지 (슬라이드 8)
+═══════════════════════════════════════ */
+.section-closing2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 50vh;
+  border-top: 3px solid var(--navy);
+}
+
+.closing-left {
+  background: var(--navy);
+  padding: 80px var(--pad);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.closing-eyebrow {
+  font-size: var(--t-label);
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.45);
+  margin-bottom: 20px;
+  display: block;
+}
+
+.closing-name {
+  font-size: var(--t-hero);
+  font-weight: 800;
+  color: var(--white);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: 12px;
+}
+
+.closing-thanks {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 40px;
+  line-height: 1.7;
+}
+
+.closing-contacts2 {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.closing-contact2 {
+  display: flex;
+  gap: 14px;
+  font-size: var(--t-meta);
+}
+
+.closing-contact2-key {
+  font-size: var(--t-label);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+  min-width: 52px;
+  padding-top: 2px;
+}
+
+.closing-contact2-val {
+  color: rgba(255,255,255,0.8);
+}
+
+.closing-right {
+  position: relative;
+  background: var(--navy-dark);
+  overflow: hidden;
+  min-height: 360px;
+}
+
+.closing-right-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.4;
+  display: block;
+}
+
+.closing-right-placeholder {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy-mid) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.closing-badge {
+  position: absolute;
+  top: 48px;
+  right: 48px;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+  padding: 16px 24px;
+  color: var(--white);
+  text-align: center;
+}
+
+.closing-badge strong {
+  display: block;
+  font-size: 1.2rem;
+  letter-spacing: 0.08em;
+  margin-bottom: 4px;
+}
+
+.closing-badge span {
+  font-size: var(--t-caption);
+  opacity: 0.6;
+  letter-spacing: 0.06em;
+}
+
+.closing-copy {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: var(--t-caption);
+  color: rgba(255,255,255,0.25);
+  white-space: nowrap;
+  letter-spacing: 0.06em;
+}
+
+/* ═══════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════ */
+@media (max-width: 1023px) {
+  .cover { grid-template-columns: 1fr 1fr; }
+  .resume-grid { grid-template-columns: 1fr; gap: 40px; }
+  .resume-sticky { position: static; }
+  .proj-grid { grid-template-columns: 1fr; gap: 32px; }
+  .motto-grid { grid-template-columns: repeat(3, 1fr); }
+  .strength-grid2 { grid-template-columns: repeat(2, 1fr); }
+  .pipeline2 { grid-template-columns: repeat(4, 1fr); }
+}
+
+@media (max-width: 767px) {
+  .cover { grid-template-columns: 1fr; }
+  .cover-right { display: none; }
+  .cover-left { padding: 60px 24px; }
+  .motto-grid { grid-template-columns: repeat(2, 1fr); }
+  .perf-layout { grid-template-columns: 1fr; }
+  .perf-metrics { grid-template-columns: repeat(3, 1fr); }
+  .strength-grid2 { grid-template-columns: 1fr 1fr; }
+  .pipeline2 { grid-template-columns: repeat(2, 1fr); }
+  .section-closing2 { grid-template-columns: 1fr; }
+  .closing-right { display: none; }
+  .archive-row2 { grid-template-columns: 44px 1fr 32px; }
+  .archive-col2--role, .archive-col2--period { display: none; }
+  .vision-callouts { grid-template-columns: 1fr; }
+}
+  </style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════
+  01. COVER
+══════════════════════════════════════════ -->
+<section class="cover" id="cover">
+  <div class="cover-left">
+    <span class="cover-co">채용 포트폴리오 · 2026</span>
+    <h1 class="cover-title">PARK<br>SEJUN</h1>
+    <div class="cover-rule"></div>
+    <p class="cover-desc">
+      전자공학·창업·AI 자동화를 거치며<br>
+      모르는 분야도 구조를 파악하여<br>
+      실제 결과물로 끝내왔습니다.
+    </p>
+    <div class="cover-tags">
+      <span class="cover-tag">하드웨어 설계</span>
+      <span class="cover-tag">소프트웨어 개발</span>
+      <span class="cover-tag">AI 자동화</span>
+      <span class="cover-tag">운영·행정</span>
+      <span class="cover-tag">회계·예산</span>
+      <span class="cover-tag">IR 피칭</span>
+    </div>
+  </div>
+  <div class="cover-right">
+    <div class="cover-right-placeholder">
+      <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="8" y="8" width="64" height="64" rx="4" stroke="white" stroke-width="2"/>
+        <circle cx="28" cy="28" r="8" stroke="white" stroke-width="2"/>
+        <path d="M8 52 L24 36 L38 50 L52 38 L72 58" stroke="white" stroke-width="2" fill="none"/>
+      </svg>
+    </div>
+    <div class="cover-right-box">
+      <strong>핵심 실적</strong>
+      <p>예비창업패키지 선정<br>9개 대회 수상<br>AI 자동화 6개 구축</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+  02. CONTENTS — 목차
+══════════════════════════════════════════ -->
+<section class="section-contents" id="contents">
+  <div class="wrap">
+    <div class="contents-header">
+      <span class="eyebrow">Index</span>
+      <h2 class="contents-title">CONTENTS</h2>
+    </div>
+    <div class="contents-table">
+      <div class="contents-row">
+        <span class="contents-num">01</span>
+        <span class="contents-label">자기소개 &amp; 이력
+          <span class="contents-sub">Profile · Experience · Skills · 총무 역할</span>
+        </span>
+        <span class="contents-tag">RESUME</span>
+      </div>
+      <div class="contents-row">
+        <span class="contents-num">02</span>
+        <span class="contents-label">빗물받이 쓰리봇 + 웹 관제 플랫폼
+          <span class="contents-sub">IoT 센서 로봇 · FastAPI · Naver Maps · 예비창업패키지 선정</span>
+        </span>
+        <span class="contents-tag">PROJECT 01</span>
+      </div>
+      <div class="contents-row">
+        <span class="contents-num">03</span>
+        <span class="contents-label">안전보호구 착용 감지 시스템
+          <span class="contents-sub">YOLOv8 · Raspberry Pi 엣지 · 자동 보고서</span>
+        </span>
+        <span class="contents-tag">PROJECT 02</span>
+      </div>
+      <div class="contents-row">
+        <span class="contents-num">04</span>
+        <span class="contents-label">스마트 무드등 — 환경 감응형 조명
+          <span class="contents-sub">ESP32 · FreeRTOS · Flutter 앱</span>
+        </span>
+        <span class="contents-tag">PROJECT 03</span>
+      </div>
+      <div class="contents-row">
+        <span class="contents-num">05</span>
+        <span class="contents-label">AI 자동화 6개 프로젝트
+          <span class="contents-sub">멀티에이전트 파이프라인 · 랜딩페이지 90% 단축</span>
+        </span>
+        <span class="contents-tag">AI</span>
+      </div>
+      <div class="contents-row">
+        <span class="contents-num">06</span>
+        <span class="contents-label">핵심 강점 &amp; 연락처
+          <span class="contents-sub">구조화 실행력 · 운영 통합 · 자동화 · 문서화</span>
+        </span>
+        <span class="contents-tag">CLOSING</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+  03. CHAPTER — 실전 프로젝트
+══════════════════════════════════════════ -->
+<section class="chapter" id="ch-project">
+  <div class="wrap">
+    <span class="chapter-tag">#실전_프로젝트</span>
+    <h2 class="chapter-title">전자공학 지식을<br>실제 현장 문제에<br>직접 적용했습니다</h2>
+    <p class="chapter-sub">하드웨어 설계 → 소프트웨어 구현 → 서비스 운영까지<br>실전 프로젝트 3개 · 9개 대회 수상 · 예비창업패키지 선정</p>
+    <span class="chapter-num">01</span>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+  04. RESUME
+══════════════════════════════════════════ -->
+<section class="section-resume" id="resume">
+  <div class="wrap">
+    <div class="resume-grid">
+
+      <div class="resume-sticky">
+        <span class="eyebrow">About</span>
+        <h2 class="resume-name">전자공학 전공 +<br>창업 현장 운영 +<br><em>AI 자동화</em>까지,<br>구조를 파악하고<br>해결하는 사람.</h2>
+        <p class="resume-tagline">
+          전자공학·창업·AI 자동화를 거치며<br>
+          그 실행 방식을 직접 증명해왔습니다.
+        </p>
+        <div class="contact-list">
+          <div class="contact-item">
+            <span class="contact-key">Email</span>
+            <a href="mailto:mnunu1234@naver.com" class="contact-val">mnunu1234@naver.com</a>
+          </div>
+          <div class="contact-item">
+            <span class="contact-key">Phone</span>
+            <span class="contact-val">010-4566-9665</span>
+          </div>
+          <div class="contact-item">
+            <span class="contact-key">GitHub</span>
+            <a href="https://github.com/mnunu123" class="contact-val" target="_blank">github.com/mnunu123</a>
+          </div>
+          <div class="contact-item">
+            <span class="contact-key">Blog</span>
+            <a href="https://blog-1vld.vercel.app" class="contact-val" target="_blank">mnunu.dev</a>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="r-block">
+          <p class="r-title">PROFILE</p>
+          <dl class="r-list">
+            <dt>이름</dt><dd>박세준 · 만 24세 (2002.01.15)</dd>
+            <dt>학교</dt><dd>경북대학교</dd>
+            <dt>전공</dt><dd>전자공학부 (주전공) / 지식재산융합전공 (복수전공)</dd>
+          </dl>
+        </div>
+        <div class="r-divider"></div>
+
+        <div class="r-block">
+          <p class="r-title">EXPERIENCE</p>
+          <div class="r-exp">
+            <div class="r-exp-item">
+              <span class="r-exp-dt">창업 활동</span>
+              <div>
+                <span class="r-exp-dd-title">예비창업패키지 선정 — 빗물받이 쓰리봇</span>
+                <span class="r-exp-dd-sub">기술개발 · 운영 · 회계 · IR 전담 (1인) · 9개 대회 수상</span>
+              </div>
+            </div>
+            <div class="r-exp-item">
+              <span class="r-exp-dt">2025 — 현재</span>
+              <div>
+                <span class="r-exp-dd-title">AI 자동화 프로젝트 6개</span>
+                <span class="r-exp-dd-sub">랜딩페이지 제작 시간 90% 단축 · Claude Code 기반 멀티에이전트 파이프라인</span>
+              </div>
+            </div>
+            <div class="r-exp-item">
+              <span class="r-exp-dt">2021 — 현재</span>
+              <div>
+                <span class="r-exp-dd-title">경북대학교 전자공학부 재학</span>
+                <span class="r-exp-dd-sub">회로·시스템·신호처리 기반 구조적 사고 훈련. 지식재산 복수전공.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="r-divider"></div>
+
+        <div class="r-block">
+          <p class="r-title">AWARDS</p>
+          <dl class="r-list">
+            <dt>2025</dt><dd>한국도로공사 56주년 공모전 <strong>대상</strong> — AI 도구 6개로 56초 영상 제작</dd>
+            <dt>2024</dt><dd>기후테크 공모전 최우수상 — 빗물받이 쓰리봇 (9개 대회 수상 중)</dd>
+            <dt>2024</dt><dd>예비창업패키지 선정 — 정부 사업화 검증 통과</dd>
+          </dl>
+        </div>
+        <div class="r-divider"></div>
+
+        <div class="r-block">
+          <p class="r-title">창업 중 수행한 총무 역할</p>
+          <div class="role-table">
+            <div class="role-row2"><span class="role-area2">행정·문서</span><span class="role-detail2">공공기관 제출 서류 작성, 사업계획서, 진행 보고서</span></div>
+            <div class="role-row2"><span class="role-area2">회계·예산</span><span class="role-detail2">지출 내역 정리, 예산안 작성, 정산 처리</span></div>
+            <div class="role-row2"><span class="role-area2">발주·조달</span><span class="role-detail2">부품·외주 발주, 견적 비교, 납기 관리</span></div>
+            <div class="role-row2"><span class="role-area2">일정·조율</span><span class="role-detail2">팀 일정 관리, 회의 준비, 대외 기관 연락</span></div>
+            <div class="role-row2"><span class="role-area2">IR·발표</span><span class="role-detail2">투자자 피칭 자료 제작, 발표 직접 수행</span></div>
+          </div>
+        </div>
+        <div class="r-divider"></div>
+
+        <div class="r-block">
+          <p class="r-title">SKILLS</p>
+          <div class="skill-grid">
+            <div class="skill-row"><span class="skill-cat">하드웨어</span><span class="skill-tags">STM32 · ESP32 · 회로 설계 · FSM 펌웨어 · IoT 센서</span></div>
+            <div class="skill-row"><span class="skill-cat">소프트웨어</span><span class="skill-tags">Python · FastAPI · React+TypeScript · Next.js · Flutter</span></div>
+            <div class="skill-row"><span class="skill-cat">AI·자동화</span><span class="skill-tags">YOLOv8 · Claude API · Gemini API · 멀티에이전트 파이프라인 · Playwright</span></div>
+            <div class="skill-row"><span class="skill-cat">인프라</span><span class="skill-tags">Docker Compose · PostgreSQL · 마이크로서비스 · MQTT · NCP</span></div>
+            <div class="skill-row"><span class="skill-cat">운영·문서</span><span class="skill-tags">사업계획서 · IR 피칭 · 공공기관 보고서 · 예산 정산</span></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+  05. PROJECT 01
+══════════════════════════════════════════ -->
+<section class="section-project" id="project-1">
+  <div class="wrap">
+    <div class="proj-grid">
+      <div>
+        <span class="eyebrow proj-eyebrow">실전 프로젝트 01 · 예비창업패키지 선정 · 9개 대회 수상</span>
+        <h2 class="proj-title">빗물받이 쓰리봇<br>+ 웹 관제 플랫폼</h2>
+        <p class="proj-meta">도심 집수 예방을 위한 IoT 센서 로봇 + 실시간 관제 대시보드</p>
+        <hr class="proj-rule" />
+        <p class="kw-label">Keyword</p>
+        <div class="kw-badges">
+          <span class="badge2">STM32 FSM</span>
+          <span class="badge2">FastAPI + PostgreSQL</span>
+          <span class="badge2">Naver Maps + GeoJSON</span>
+        </div>
+        <p class="proj-body">
+          도심 집중호우 시 빗물받이 막힘이 침수의 주요 원인이지만, 현행 방식은 수동 순찰 + 민원 접수로 사후 대응만 가능했습니다. STM32 기반 FSM 펌웨어로 로봇을 제어하고, FastAPI + PostgreSQL + Docker 백엔드와 Naver Maps + GeoJSON 기반 웹 대시보드까지 전 구간을 혼자 구현했습니다.
+        </p>
+        <blockquote class="proj-quote">
+          <p>코드를 작성하면서 동시에 "이 사업을 어떻게 운영할 것인가"를 고민하며 실행했고, 그 경험 모두를 총무 직무에서 활용하겠습니다.</p>
+        </blockquote>
+        <div class="contrib-list">
+          <div class="contrib-item2"><span class="contrib-lbl">하드웨어</span><div class="contrib-track2"><div class="contrib-fill2" style="width:100%"></div></div></div>
+          <div class="contrib-item2"><span class="contrib-lbl">백엔드</span><div class="contrib-track2"><div class="contrib-fill2" style="width:100%"></div></div></div>
+          <div class="contrib-item2"><span class="contrib-lbl">프론트엔드</span><div class="contrib-track2"><div class="contrib-fill2" style="width:100%"></div></div></div>
+          <div class="contrib-item2"><span class="contrib-lbl">사업 운영</span><div class="contrib-track2"><div class="contrib-fill2" style="width:100%"></div></div></div>
+        </div>
+      </div>
+
+      <div class="proj-right">
+        <div class="stack-card2">
+          <p class="stack-card2-title">기술 스택</p>
+          <div class="stack-rows2">
+            <div class="stack-row2"><span class="stack-layer2">펌웨어</span><span>STM32 · C · FSM(IDLE/HOME/MOVE/FAULT) · TIM3 PWM · UART 라인 버퍼링</span></div>
+            <div class="stack-row2"><span class="stack-layer2">백엔드</span><span>Python · FastAPI · PostgreSQL(Docker) · asyncpg · NCP · BBOX API</span></div>
+            <div class="stack-row2"><span class="stack-layer2">프론트</span><span>Next.js · TypeScript · Naver Maps API · GeoJSON · OverlayView</span></div>
+            <div class="stack-row2"><span class="stack-layer2">인프라</span><span>Docker Compose · 127.0.0.1 바인딩 · NCP 방화벽 · 마이크로서비스</span></div>
+          </div>
+        </div>
+        <div class="result-cards2">
+          <div class="result-card2 result-card2--accent">
+            <p class="result-lbl">수상 실적</p>
+            <p class="result-txt">기후테크 최우수상 포함 <strong>9개 대회 수상</strong><br>예비창업패키지 선정 — 정부 사업화 검증 통과</p>
+          </div>
+          <div class="result-card2">
+            <p class="result-lbl">기술 성과</p>
+            <p class="result-txt">현장 피드백 기반 기능 반복 개선<br>코드 200줄 이상 감소 (네이버 지도 전환 최적화)</p>
+          </div>
+          <div class="result-card2">
+            <p class="result-lbl">직무 연결</p>
+            <p class="result-txt">공공기관 서류·사업계획서·예산 집행·정산<br>전 과정 직접 수행 — 총무 직무 즉시 적용 가능</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+  06. PROJECT 02 — 성과 수치 강조형 (슬라이드 5 스타일)
+══════════════════════════════════════════ -->
+<section class="section-perf" id="project-2">
+  <div class="wrap">
+    <div class="perf-header">
+      <span class="eyebrow">실전 프로젝트 02 · 컴퓨터비전 + 임베디드</span>
+      <h2 class="perf-title">안전보호구<br>착용 감지 시스템</h2>
+      <p class="perf-sub">작업장 PPE 미착용을 카메라로 실시간 감지하고 알리는 시스템</p>
+    </div>
+
+    <div class="perf-layout">
+      <div>
+        <div class="perf-metrics">
+          <div class="perf-metric">
+            <p class="perf-metric-num">1<span class="perf-metric-unit">초</span></p>
+            <p class="perf-metric-label">카메라 입력→알림<br>처리 지연</p>
+          </div>
+          <div class="perf-metric">
+            <p class="perf-metric-num">100<span class="perf-metric-unit">%</span></p>
+            <p class="perf-metric-label">엣지 장치<br>직접 추론</p>
+          </div>
+          <div class="perf-metric">
+            <p class="perf-metric-num">자동</p>
+            <p class="perf-metric-label">주간 안전보고서<br>자동 생성</p>
+          </div>
+        </div>
+
+        <div class="perf-bar-section">
+          <p class="perf-bar-title">기여도</p>
+          <div class="perf-bars">
+            <div class="perf-bar-row">
+              <div class="perf-bar-info"><span>비전 AI</span><span>100%</span></div>
+              <div class="perf-bar-track"><div class="perf-bar-fill" style="--w:100%"></div></div>
+            </div>
+            <div class="perf-bar-row">
+              <div class="perf-bar-info"><span>하드웨어</span><span>100%</span></div>
+              <div class="perf-bar-track"><div class="perf-bar-fill" style="--w:100%"></div></div>
+            </div>
+            <div class="perf-bar-row">
+              <div class="perf-bar-info"><span>보고 자동화</span><span>100%</span></div>
+              <div class="perf-bar-track"><div class="perf-bar-fill" style="--w:100%"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="perf-desc" style="margin-top:20px;">
+          낯선 분야에서도 구조를 먼저 파악한 뒤 실행에 옮기는 방식을 이 프로젝트에서 다시 한번 적용했습니다. 이 방식이 총무 직무에서도 그대로 통할 것이라고 확신합니다.
+        </div>
+      </div>
+
+      <div class="perf-proof">
+        <div class="perf-proof-item">
+          <p class="perf-proof-platform">처리 속도</p>
+          <p class="perf-proof-text">카메라 입력에서 알림까지 <strong>1초 이내</strong> 실시간 처리</p>
+          <p class="perf-proof-metric">IP Camera → Raspberry Pi 엣지 추론 → 부저·모니터 알림</p>
+        </div>
+        <div class="perf-proof-item">
+          <p class="perf-proof-platform">현장 담당자 피드백</p>
+          <p class="perf-proof-text">"순회 없이 실시간으로 파악할 수 있다"</p>
+          <p class="perf-proof-metric">지자체 현장 담당자 인터뷰</p>
+        </div>
+        <div class="perf-proof-item">
+          <p class="perf-proof-platform">자동 보고서</p>
+          <p class="perf-proof-text">감지 이력 DB → 주간 안전 보고서 <strong>자동 생성</strong></p>
+          <p class="perf-proof-metric">총무 정례 보고 자동화에 동일 방식 적용 가능</p>
+        </div>
+        <div class="perf-proof-item">
+          <p class="perf-proof-platform">기술 스택</p>
+          <p class="perf-proof-text">YOLOv8 · Python · Raspberry Pi 4 · IP Camera · SQLite</p>
+          <p class="perf-proof-metric">엣지 추론 최적화 — 서버 없이 현장 단독 구동</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+  07. PROJECT 03 — 표준형
+══════════════════════════════════════════ -->
+<section class="section-project" id="project-3" style="background:var(--gray-50);">
+  <div class="wrap">
+    <div class="proj-grid">
+      <div>
+        <span class="eyebrow proj-eyebrow">실전 프로젝트 03 · IoT · 임베디드 + 앱 연동</span>
+        <h2 class="proj-title">스마트 무드등<br>— 환경 감응형<br>조명 시스템</h2>
+        <p class="proj-meta">센서 데이터와 사용자 상태를 기반으로 조명을 자동 조절하는 IoT 시스템</p>
+        <hr class="proj-rule" />
+        <p class="kw-label">Keyword</p>
+        <div class="kw-badges">
+          <span class="badge2">ESP32 · FreeRTOS</span>
+          <span class="badge2">BLE / Wi-Fi · MQTT</span>
+          <span class="badge2">Flutter 앱</span>
+        </div>
+        <p class="proj-body">
+          조도·온도·움직임 센서를 MCU에 연결해 환경 데이터를 수집하고, BLE/Wi-Fi로 스마트폰 앱과 연결하여 수동 제어 + 자동 모드 전환을 구현했습니다. 하드웨어·펌웨어·통신·앱 4개 레이어를 혼자 설계하고 통합했습니다.
+        </p>
+        <blockquote class="proj-quote">
+          <p>복잡한 시스템을 작은 단위로 나눠 각 영역을 조율하면서 완성까지 이끌어 낸 경험 — 이 구조가 총무 직무의 다중 업무 조율 방식과 동일합니다.</p>
+        </blockquote>
+        <div class="contrib-list">
+          <div class="contrib-item2"><span class="contrib-lbl">하드웨어</span><div class="contrib-track2"><div class="contrib-fill2" style="width:100%"></div></div></div>
+          <div class="contrib-item2"><span class="contrib-lbl">펌웨어</span><div class="contrib-track2"><div class="contrib-fill2" style="width:100%"></div></div></div>
+          <div class="contrib-item2"><span class="contrib-lbl">앱 개발</span><div class="contrib-track2"><div class="contrib-fill2" style="width:85%"></div></div></div>
+        </div>
+      </div>
+
+      <div class="proj-right">
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:16px;">
+          <div style="text-align:center;padding:24px 12px;background:var(--navy);color:var(--white);border-radius:4px;">
+            <p style="font-size:1.8rem;font-weight:800;line-height:1;">100<span style="font-size:1rem;">ms</span></p>
+            <p style="font-size:var(--t-caption);opacity:0.7;margin-top:4px;line-height:1.4;">센서→조명<br>변화 지연</p>
+          </div>
+          <div style="text-align:center;padding:24px 12px;background:var(--navy);color:var(--white);border-radius:4px;">
+            <p style="font-size:1.8rem;font-weight:800;line-height:1;">60<span style="font-size:1rem;">%↓</span></p>
+            <p style="font-size:var(--t-caption);opacity:0.7;margin-top:4px;line-height:1.4;">수동 개입<br>감소</p>
+          </div>
+          <div style="text-align:center;padding:24px 12px;background:var(--navy);color:var(--white);border-radius:4px;">
+            <p style="font-size:1.8rem;font-weight:800;line-height:1;">40<span style="font-size:1rem;">%↓</span></p>
+            <p style="font-size:var(--t-caption);opacity:0.7;margin-top:4px;line-height:1.4;">전력 절감</p>
+          </div>
+        </div>
+        <div class="result-cards2">
+          <div class="result-card2 result-card2--accent">
+            <p class="result-lbl">4-레이어 통합</p>
+            <p class="result-txt">하드웨어 · 펌웨어 · 통신 · 앱 전 구간 1인 설계 및 구현</p>
+          </div>
+          <div class="result-card2">
+            <p class="result-lbl">기술 스택</p>
+            <p class="result-txt">ESP32 · FreeRTOS · BLE/Wi-Fi · MQTT · Flutter · Dart</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+  08. CHAPTER — AI 자동화
+══════════════════════════════════════════ -->
+<section class="chapter" id="ch-ai">
+  <div class="wrap">
+    <span class="chapter-tag">#AI_자동화</span>
+    <h2 class="chapter-title">반복 업무를<br>구조화해 없애는<br>시스템을 만듭니다</h2>
+    <p class="chapter-sub">랜딩페이지 제작 시간 90% 단축 (2~3일 → 3~5분)<br>총무 업무의 반복 작업을 AI 파이프라인으로 대체할 수 있습니다</p>
+    <span class="chapter-num">02</span>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+  09. AI VISION — 파이프라인 (슬라이드 6 스타일)
+══════════════════════════════════════════ -->
+<section class="section-vision" id="project-ai">
+  <div class="wrap">
+    <span class="eyebrow eyebrow--white">AI 자동화 01 · 멀티에이전트 · Claude Haiku/Sonnet + Gemini API</span>
+    <h2 class="vision-title">5-에이전트 협업<br>상세페이지 자동 생성 시스템</h2>
+    <p class="vision-sub">제품 정보 입력만으로 13섹션 완성형 상세페이지 PNG/PDF 자동 출력 — 제작 시간 90% 단축</p>
+
+    <div class="pipeline2">
+      <div class="pipe-step">
+        <span class="pipe-step-name">제품 정보</span>
+        <span class="pipe-step-model">INPUT</span>
+      </div>
+      <div class="pipe-step">
+        <span class="pipe-step-name">01 intake</span>
+        <span class="pipe-step-model">Haiku</span>
+      </div>
+      <div class="pipe-step">
+        <span class="pipe-step-name">02 research</span>
+        <span class="pipe-step-model">Sonnet</span>
+      </div>
+      <div class="pipe-step">
+        <span class="pipe-step-name">03 copy</span>
+        <span class="pipe-step-model">Sonnet</span>
+      </div>
+      <div class="pipe-step">
+        <span class="pipe-step-name">04 design</span>
+        <span class="pipe-step-model">Haiku</span>
+      </div>
+      <div class="pipe-step">
+        <span class="pipe-step-name">05 prompt</span>
+        <span class="pipe-step-model">Sonnet</span>
+      </div>
+      <div class="pipe-step">
+        <span class="pipe-step-name">Gemini</span>
+        <span class="pipe-step-model">이미지 합성</span>
+      </div>
+    </div>
+
+    <div class="vision-callouts">
+      <div class="vision-callout">
+        <span class="vision-callout-tag">핵심 결과</span>
+        <p class="vision-callout-title">제작 시간 90% 단축</p>
+        <p class="vision-callout-text">2~3일 → 3~5분<br>openclaw 등 실제 상품 페이지 다수 생성 완료</p>
+      </div>
+      <div class="vision-callout">
+        <span class="vision-callout-tag">설계 원칙</span>
+        <p class="vision-callout-title">품질 기준 명문화</p>
+        <p class="vision-callout-text">분석·카피는 Sonnet (품질 우선)<br>정보 수집·디자인은 Haiku (비용 최적화)</p>
+      </div>
+      <div class="vision-callout">
+        <span class="vision-callout-tag">직무 연결</span>
+        <p class="vision-callout-title">반복 문서 자동화</p>
+        <p class="vision-callout-text">공문·보고서 양식을 동일 파이프라인으로<br>자동화 즉시 제안·실행 가능</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+  10. MOTTO GRID — 역량 시각화 (슬라이드 4 스타일)
+══════════════════════════════════════════ -->
+<section class="section-motto" id="skills">
+  <div class="wrap">
+    <span class="eyebrow">Skills &amp; Domain</span>
+    <h2 class="motto-title">다룰 수 있는 영역</h2>
+    <p class="motto-sub">하드웨어부터 AI 자동화까지 — 전 구간 직접 설계·구현 경험</p>
+    <div class="motto-grid">
+      <div class="motto-item">
+        <div class="motto-item-bg" style="background:linear-gradient(160deg,#1A2E52,#2A4A8A);"></div>
+        <div class="motto-item-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8m-4-4v4"/></svg>
+        </div>
+        <span class="motto-item-label">하드웨어</span>
+      </div>
+      <div class="motto-item">
+        <div class="motto-item-bg" style="background:linear-gradient(160deg,#152550,#1E3468);"></div>
+        <div class="motto-item-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 18l2-2-2-2M8 18l-2-2 2-2M12 8v8"/><rect x="3" y="3" width="18" height="18" rx="3"/></svg>
+        </div>
+        <span class="motto-item-label">소프트웨어</span>
+      </div>
+      <div class="motto-item">
+        <div class="motto-item-bg" style="background:linear-gradient(160deg,#1E3468,#3260A8);"></div>
+        <div class="motto-item-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M2 12h3M19 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12"/></svg>
+        </div>
+        <span class="motto-item-label">AI·자동화</span>
+      </div>
+      <div class="motto-item">
+        <div class="motto-item-bg" style="background:linear-gradient(160deg,#1A2E52,#1E3468);"></div>
+        <div class="motto-item-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
+        </div>
+        <span class="motto-item-label">인프라</span>
+      </div>
+      <div class="motto-item">
+        <div class="motto-item-bg" style="background:linear-gradient(160deg,#152550,#2A4A8A);"></div>
+        <div class="motto-item-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 0 0 1.946-.806 3.42 3.42 0 0 1 4.438 0 3.42 3.42 0 0 0 1.946.806 3.42 3.42 0 0 1 3.138 3.138 3.42 3.42 0 0 0 .806 1.946 3.42 3.42 0 0 1 0 4.438 3.42 3.42 0 0 0-.806 1.946 3.42 3.42 0 0 1-3.138 3.138 3.42 3.42 0 0 0-1.946.806 3.42 3.42 0 0 1-4.438 0 3.42 3.42 0 0 0-1.946-.806 3.42 3.42 0 0 1-3.138-3.138 3.42 3.42 0 0 0-.806-1.946 3.42 3.42 0 0 1 0-4.438 3.42 3.42 0 0 0 .806-1.946 3.42 3.42 0 0 1 3.138-3.138z"/></svg>
+        </div>
+        <span class="motto-item-label">운영·문서</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+  11. ARCHIVE
+══════════════════════════════════════════ -->
+<section class="section-archive" id="archive">
+  <div class="wrap">
+    <h2 class="archive-title">All Projects</h2>
+    <p class="archive-subtitle">실전 프로젝트 3개 · AI 자동화 6개 · 기타 프로젝트 — 총 12개</p>
+
+    <p class="archive-group-label2">AI 자동화 프로젝트</p>
+    <div class="archive-table2">
+      <div class="archive-head">
+        <div class="archive-row2">
+          <span class="archive-col2">#</span>
+          <span class="archive-col2">프로젝트</span>
+          <span class="archive-col2">핵심 문제</span>
+          <span class="archive-col2">결과</span>
+          <span class="archive-col2"></span>
+        </div>
+      </div>
+      <div class="archive-row2"><span class="archive-col2--num">AI-01</span><span class="archive-col2--title">5-에이전트 상세페이지 자동 생성기</span><span class="archive-col2--role">제작 반나절 소요</span><span class="archive-col2--period">제작 시간 90% 단축 (3~5분)</span><span class="archive-col2--link">↑</span></div>
+      <div class="archive-row2"><span class="archive-col2--num">AI-02</span><span class="archive-col2--title">상세페이지 A/B 테스트 자동화</span><span class="archive-col2--role">수동 A/B 운영 비효율</span><span class="archive-col2--period">5-에이전트 · GA4 분석 완전 자동화</span><span class="archive-col2--link"></span></div>
+      <div class="archive-row2"><span class="archive-col2--num">AI-03</span><span class="archive-col2--title">PPT 자동 생성 에이전트</span><span class="archive-col2--role">발표자료 품질 편차</span><span class="archive-col2--period">설득 규칙 명문화 · 자동 검수</span><span class="archive-col2--link"></span></div>
+      <div class="archive-row2"><span class="archive-col2--num">AI-04</span><span class="archive-col2--title">산불 CCTV 협력 감지 시스템</span><span class="archive-col2--role">단일 CCTV 발화 특정 불가</span><span class="archive-col2--period">5-MSA · 삼각측량 · Docker 1명령 구동</span><span class="archive-col2--link"></span></div>
+      <div class="archive-row2"><span class="archive-col2--num">AI-05</span><span class="archive-col2--title">Douyin 영상 자동 수집기</span><span class="archive-col2--role">수동 수집 30분~1시간/회</span><span class="archive-col2--period">Playwright 기반 완전 자동화</span><span class="archive-col2--link"></span></div>
+      <div class="archive-row2"><span class="archive-col2--num">AI-06</span><span class="archive-col2--title">DP로봇 랜딩페이지 + Remotion 영상</span><span class="archive-col2--role">영상+웹 복합 제작</span><span class="archive-col2--period">Remotion + Next.js 통합</span><span class="archive-col2--link"></span></div>
+    </div>
+
+    <p class="archive-group-label2">기타 프로젝트</p>
+    <div class="archive-table2">
+      <div class="archive-head">
+        <div class="archive-row2">
+          <span class="archive-col2">#</span>
+          <span class="archive-col2">프로젝트</span>
+          <span class="archive-col2">핵심 내용</span>
+          <span class="archive-col2">태그</span>
+          <span class="archive-col2"></span>
+        </div>
+      </div>
+      <a href="https://blog-1vld.vercel.app/posts/interview-robot/inmoov-architecture-overview" class="archive-row2" target="_blank">
+        <span class="archive-col2--num">EX-01</span>
+        <span class="archive-col2--title">면접훈련 로봇 — InMoov i2Head</span>
+        <span class="archive-col2--role">서보 17개 · FastAPI Bridge · AI 인터페이스</span>
+        <span class="archive-col2--period">Python · Arduino · Robotics</span>
+        <span class="archive-col2--link">→</span>
+      </a>
+      <a href="https://blog-1vld.vercel.app/posts/ai-video/korean-road-56th-anniversary" class="archive-row2" target="_blank">
+        <span class="archive-col2--num">EX-02</span>
+        <span class="archive-col2--title">한국도로공사 56주년 공모전 대상</span>
+        <span class="archive-col2--role">AI 도구 6개 조합 · 56초 영상 · 대상 수상</span>
+        <span class="archive-col2--period">Kling AI · Veo3 · 미드저니</span>
+        <span class="archive-col2--link">→</span>
+      </a>
+      <a href="https://blog-1vld.vercel.app/posts/shorts-pipeline/auto-rank-douyin-collection" class="archive-row2" target="_blank">
+        <span class="archive-col2--num">EX-03</span>
+        <span class="archive-col2--title">쇼츠 자동화 파이프라인 1단계</span>
+        <span class="archive-col2--role">한국어 키워드 → 도우인 인기 영상 자동 수집</span>
+        <span class="archive-col2--period">Python · Playwright · yt-dlp</span>
+        <span class="archive-col2--link">→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+  12. STRENGTH — 3컬럼 카드 (슬라이드 7 스타일)
+══════════════════════════════════════════ -->
+<section class="section-strength" id="strength">
+  <div class="wrap">
+    <div class="strength-header">
+      <span class="eyebrow">Core Strengths</span>
+      <h2 class="strength-title">핵심 강점</h2>
+      <p class="strength-sub">단순히 할 줄 아는 것이 아니라, 현장에서 증명한 역량</p>
+    </div>
+    <div class="strength-grid2">
+      <div class="strength-card">
+        <p class="strength-card-num">01</p>
+        <h3 class="strength-card-title">구조화 실행력</h3>
+        <p class="strength-card-desc">모르는 분야도 단계로 쪼개 끝낸다<span class="strength-card-ev">전자공학 → IoT → 컴퓨터비전 → AI 자동화, 비전문 영역 9개 이상 프로젝트 완료</span></p>
+      </div>
+      <div class="strength-card">
+        <p class="strength-card-num">02</p>
+        <h3 class="strength-card-title">운영 통합 역량</h3>
+        <p class="strength-card-desc">기술과 운영을 동시에 다룬다<span class="strength-card-ev">예비창업패키지 — 기술개발·회계·발주·공문·IR을 1인 전담 수행</span></p>
+      </div>
+      <div class="strength-card">
+        <p class="strength-card-num">03</p>
+        <h3 class="strength-card-title">반복 제거 자동화</h3>
+        <p class="strength-card-desc">사람이 할 일을 가려낸다<span class="strength-card-ev">AI 자동화 6개 — 랜딩페이지 90% 단축 · 데이터 수집·PPT·보고서 자동화</span></p>
+      </div>
+      <div class="strength-card">
+        <p class="strength-card-num">04</p>
+        <h3 class="strength-card-title">문서화·커뮤니케이션</h3>
+        <p class="strength-card-desc">기술을 언어로 번역한다<span class="strength-card-ev">IR 피칭 직접 제작·발표 · 공공기관 보고서 · 블로그 12개 포스트 직접 운영</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+  13. CLOSING — 풀블리드 (슬라이드 8 스타일)
+══════════════════════════════════════════ -->
+<section class="section-closing2" id="contact">
+  <div class="closing-left">
+    <span class="closing-eyebrow">채용 포트폴리오 · 2026</span>
+    <h2 class="closing-name">PARK<br>SEJUN</h2>
+    <p class="closing-thanks">
+      전자공학·창업·AI 자동화의 경험과 실행력을<br>
+      귀사에서 풀어내겠습니다.
+    </p>
+    <div class="closing-contacts2">
+      <div class="closing-contact2">
+        <span class="closing-contact2-key">Email</span>
+        <a href="mailto:mnunu1234@naver.com" class="closing-contact2-val">mnunu1234@naver.com</a>
+      </div>
+      <div class="closing-contact2">
+        <span class="closing-contact2-key">Phone</span>
+        <span class="closing-contact2-val">010-4566-9665</span>
+      </div>
+      <div class="closing-contact2">
+        <span class="closing-contact2-key">GitHub</span>
+        <a href="https://github.com/mnunu123" class="closing-contact2-val" target="_blank">github.com/mnunu123</a>
+      </div>
+      <div class="closing-contact2">
+        <span class="closing-contact2-key">Blog</span>
+        <a href="https://blog-1vld.vercel.app" class="closing-contact2-val" target="_blank">mnunu.dev</a>
+      </div>
+    </div>
+  </div>
+  <div class="closing-right">
+    <div class="closing-right-placeholder"></div>
+    <div class="closing-badge">
+      <strong>Thank You</strong>
+      <span>박세준 포트폴리오 2026</span>
+    </div>
+    <p class="closing-copy">박세준 — 채용 포트폴리오 2026</p>
+  </div>
+</section>
+
+<script src="./data/profile.js"></script>
+<script src="./data/projects.js"></script>
+</body>
+</html>
