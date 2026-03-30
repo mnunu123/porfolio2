@@ -1,0 +1,170 @@
+/* print.css — A4 PDF / 인쇄 최적화 */
+
+@media print {
+  /* ── 기본 리셋 ── */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
+  }
+
+  :root {
+    --side-padding: 14mm;
+    --space-section: 14mm;
+    --space-grid: 8mm;
+    --type-body: 9pt;
+    --type-meta: 8pt;
+    --type-label: 7pt;
+    --type-caption: 6.5pt;
+  }
+
+  body {
+    font-size: 9pt;
+    color: #111;
+    background: #fff;
+  }
+
+  /* ── 페이지 설정 ── */
+  @page {
+    size: A4 portrait;
+    margin: 15mm 14mm 12mm 14mm;
+  }
+
+  /* ── 숨길 요소 ── */
+  .section-divider .divider-number,
+  .mockup-phone:hover,
+  .badge:hover {
+    transform: none !important;
+    box-shadow: none !important;
+  }
+
+  /* ── 링크 URL 출력 ── */
+  a[href]::after {
+    content: " (" attr(href) ")";
+    font-size: 7pt;
+    color: #888;
+    word-break: break-all;
+  }
+
+  /* 내부 링크, 연락처 chip은 URL 제외 */
+  a[href^="#"]::after,
+  .contact-chip::after,
+  .archive-col--link::after {
+    content: none;
+  }
+
+  /* ── 그림자 완화 ── */
+  .visual-card,
+  .proof-card,
+  .mockup-phone,
+  .article-card,
+  .thumb-item {
+    box-shadow: 0 1px 4px rgba(0,0,0,0.10) !important;
+  }
+
+  /* ── 표지 ── */
+  .section-cover {
+    min-height: auto;
+    padding: 30mm 14mm 20mm;
+    page-break-after: always;
+  }
+
+  /* ── Intro / Resume ── */
+  .section-intro {
+    padding: 10mm 0;
+  }
+
+  .intro-left {
+    position: static;
+  }
+
+  .intro-grid {
+    grid-template-columns: 1fr 1.4fr;
+    gap: 10mm;
+  }
+
+  .intro-headline {
+    font-size: 16pt;
+  }
+
+  /* ── Section Divider ── */
+  .section-divider {
+    padding: 8mm 14mm;
+    page-break-before: always;
+    page-break-after: avoid;
+  }
+
+  .section-divider--red {
+    background: #D12F2F !important;
+  }
+
+  .section-divider--dark {
+    background: #111111 !important;
+  }
+
+  .divider-copy {
+    font-size: 18pt;
+  }
+
+  /* ── Project Sections ── */
+  .section-project {
+    padding: 10mm 0;
+    page-break-before: always;
+    page-break-inside: avoid;
+  }
+
+  .project-grid {
+    grid-template-columns: 44% 1fr;
+    gap: 8mm;
+  }
+
+  .project-title {
+    font-size: 15pt;
+  }
+
+  /* 목업 크기 축소 */
+  .mockup-phone {
+    width: 22% !important;
+  }
+
+  .mockup-phone.tilt-left,
+  .mockup-phone.tilt-right {
+    transform: rotate(-4deg) translateY(6px) !important;
+  }
+
+  /* ── Archive ── */
+  .section-archive {
+    padding: 8mm 0;
+    page-break-before: always;
+  }
+
+  .archive-row--item:hover {
+    background: none;
+  }
+
+  /* ── Closing ── */
+  .section-closing {
+    padding: 10mm 0;
+    page-break-before: always;
+  }
+
+  .closing-label {
+    font-size: 24pt;
+  }
+
+  /* ── Contribution bar 색 유지 ── */
+  .contrib-fill {
+    background: var(--accent) !important;
+  }
+
+  /* ── Badge 색 유지 ── */
+  .badge {
+    border-color: var(--accent) !important;
+    color: var(--accent) !important;
+  }
+
+  /* ── 불필요 hover 제거 ── */
+  .archive-row--item {
+    padding: 4mm 0;
+  }
+}

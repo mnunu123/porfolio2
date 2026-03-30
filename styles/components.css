@@ -1,0 +1,524 @@
+/* components.css — 재사용 컴포넌트 스타일 */
+
+/* ──────────────────────────────────────
+   Keyword Badge
+────────────────────────────────────── */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid var(--accent);
+  border-radius: 999px;
+  padding: 5px 16px;
+  font-size: var(--type-label);
+  font-weight: var(--weight-medium);
+  color: var(--accent);
+  background: transparent;
+  letter-spacing: 0.04em;
+  line-height: 1.4;
+  white-space: nowrap;
+  transition: background 0.18s, color 0.18s;
+}
+
+.badge:hover {
+  background: var(--accent);
+  color: #fff;
+}
+
+/* ──────────────────────────────────────
+   Contribution Bar
+────────────────────────────────────── */
+.contribution-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: var(--space-md);
+}
+
+.contrib-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.contrib-label {
+  font-size: var(--type-label);
+  font-weight: var(--weight-medium);
+  color: var(--color-muted);
+  letter-spacing: 0.03em;
+  min-width: 44px;
+}
+
+.contrib-track {
+  flex: 1;
+  height: 3px;
+  background: var(--color-line);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.contrib-fill {
+  height: 100%;
+  width: var(--bar-width, 70%);
+  background: var(--accent);
+  border-radius: 2px;
+}
+
+/* ──────────────────────────────────────
+   Visual Card (이미지 래퍼)
+────────────────────────────────────── */
+.visual-card {
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
+}
+
+.visual-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ──────────────────────────────────────
+   Thumbnail Grid (Variant B)
+────────────────────────────────────── */
+.thumb-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: var(--space-md);
+}
+
+.thumb-item {
+  aspect-ratio: 16/9;
+  overflow: hidden;
+  border-radius: var(--radius-sm);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  background: var(--color-bg-soft);
+}
+
+.thumb-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ──────────────────────────────────────
+   Social Proof Cards (Variant B)
+────────────────────────────────────── */
+.proof-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.proof-card {
+  background: #FFFFFF;
+  border-radius: var(--radius-md);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.09);
+  padding: 14px 18px;
+  border: 1px solid var(--color-line);
+}
+
+.proof-platform {
+  font-size: var(--type-label);
+  font-weight: var(--weight-medium);
+  color: var(--accent);
+  letter-spacing: var(--ls-label);
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+
+.proof-text {
+  font-size: var(--type-meta);
+  color: var(--color-text);
+  line-height: var(--lh-meta);
+  margin-bottom: 5px;
+}
+
+.proof-metric {
+  font-size: var(--type-caption);
+  font-weight: var(--weight-medium);
+  color: var(--color-muted);
+}
+
+/* ──────────────────────────────────────
+   Phone Mockup Stack (Variant A/C)
+────────────────────────────────────── */
+.mockup-stack {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: -16px;
+  padding: var(--space-md) 0;
+}
+
+.mockup-stack--duo {
+  gap: var(--space-sm);
+}
+
+.mockup-phone {
+  width: clamp(140px, 24%, 200px);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.14);
+  background: var(--color-bg-soft);
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.mockup-phone img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.mockup-phone.tilt-left  { transform: rotate(-7deg) translateY(16px); }
+.mockup-phone.center     { transform: rotate(0deg) translateY(0); z-index: 1; }
+.mockup-phone.tilt-right { transform: rotate(7deg) translateY(16px); }
+
+.mockup-phone:hover {
+  transform: translateY(-4px) scale(1.02);
+  z-index: 2;
+}
+
+/* Placeholder box for mockup when no image provided */
+.mockup-phone:not(:has(img[src])),
+.mockup-phone img[src="./assets/placeholders/phone-mockup-1.png"],
+.mockup-phone img[src="./assets/placeholders/phone-mockup-2.png"],
+.mockup-phone img[src="./assets/placeholders/phone-mockup-3.png"],
+.mockup-phone img[src="./assets/placeholders/phone-mockup-4.png"],
+.mockup-phone img[src="./assets/placeholders/phone-mockup-5.png"] {
+  /* placeholder 이미지 없을 때 대체 표시는 JS에서 처리 */
+}
+
+/* ──────────────────────────────────────
+   Article Card (Variant C)
+────────────────────────────────────── */
+.article-card {
+  margin-top: var(--space-md);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+  background: var(--color-bg-soft);
+}
+
+.article-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.article-caption {
+  font-size: var(--type-caption);
+  color: var(--color-muted);
+  padding: 10px 14px;
+  border-top: 1px solid var(--color-line);
+  background: #fff;
+}
+
+/* ──────────────────────────────────────
+   Project Right — mockup variant
+────────────────────────────────────── */
+.project-right {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  padding-top: 8px;
+}
+
+.project-right--mockup {
+  align-items: center;
+}
+
+/* ──────────────────────────────────────
+   Tech Stack Card (Project 01)
+────────────────────────────────────── */
+.stack-card {
+  background: var(--color-bg-soft);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-md);
+  padding: 24px 28px;
+  margin-bottom: var(--space-md);
+}
+
+.stack-card-title {
+  font-size: var(--type-label);
+  font-weight: var(--weight-medium);
+  color: var(--color-muted);
+  letter-spacing: var(--ls-label);
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.stack-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.stack-row {
+  display: grid;
+  grid-template-columns: 72px 1fr;
+  gap: 12px;
+  align-items: start;
+}
+
+.stack-layer {
+  font-size: var(--type-label);
+  font-weight: var(--weight-medium);
+  color: var(--accent);
+  letter-spacing: 0.03em;
+  padding-top: 2px;
+}
+
+.stack-items {
+  font-size: var(--type-meta);
+  color: var(--color-text);
+  line-height: var(--lh-meta);
+}
+
+/* ──────────────────────────────────────
+   Result Cards (Project 01)
+────────────────────────────────────── */
+.result-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.result-card {
+  background: #fff;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-md);
+  padding: 16px 20px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+}
+
+.result-card--accent {
+  border-color: var(--accent);
+  border-left-width: 3px;
+}
+
+.result-card-label {
+  font-size: var(--type-label);
+  font-weight: var(--weight-medium);
+  color: var(--accent);
+  letter-spacing: var(--ls-label);
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+
+.result-card-text {
+  font-size: var(--type-meta);
+  color: var(--color-text);
+  line-height: var(--lh-meta);
+}
+
+/* ──────────────────────────────────────
+   System Diagram visual
+────────────────────────────────────── */
+.system-diagram {
+  margin-bottom: var(--space-md);
+  background: var(--color-bg-soft);
+}
+
+.system-diagram img {
+  width: 100%;
+}
+
+/* ──────────────────────────────────────
+   Proof card highlight variant
+────────────────────────────────────── */
+.proof-card--highlight {
+  border-color: var(--accent);
+  border-left: 3px solid var(--accent);
+}
+
+/* ──────────────────────────────────────
+   AI Result Card
+────────────────────────────────────── */
+.ai-result-card {
+  margin-bottom: var(--space-md);
+}
+
+/* ──────────────────────────────────────
+   Metric Row (Project 03)
+────────────────────────────────────── */
+.metric-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: var(--space-md);
+}
+
+.metric-item {
+  text-align: center;
+  padding: 18px 12px;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-md);
+  background: var(--color-bg-soft);
+}
+
+.metric-num {
+  font-size: 1.6rem;
+  font-weight: var(--weight-heavy);
+  color: var(--accent);
+  line-height: 1.1;
+  margin-bottom: 4px;
+}
+
+.metric-unit {
+  font-size: 0.9rem;
+  font-weight: var(--weight-medium);
+}
+
+.metric-label {
+  font-size: var(--type-caption);
+  color: var(--color-muted);
+  line-height: 1.4;
+}
+
+/* ──────────────────────────────────────
+   Strength Grid (Archive 하단)
+────────────────────────────────────── */
+.strength-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-top: 56px;
+  padding-top: 40px;
+  border-top: 1px solid var(--color-line);
+}
+
+.strength-item {
+  padding-top: 4px;
+}
+
+.strength-num {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--accent);
+  opacity: 0.18;
+  line-height: 1;
+  margin-bottom: 8px;
+  letter-spacing: -0.02em;
+}
+
+.strength-title {
+  font-size: 0.95rem;
+  font-weight: var(--weight-heavy);
+  color: var(--color-text);
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+
+.strength-desc {
+  font-size: var(--type-meta);
+  color: var(--color-text);
+  line-height: var(--lh-body);
+}
+
+.strength-ev {
+  display: block;
+  margin-top: 4px;
+  font-size: var(--type-caption);
+  color: var(--color-muted);
+}
+
+/* ──────────────────────────────────────
+   Pipeline Flow (AI 프로젝트)
+────────────────────────────────────── */
+.pipeline-flow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  margin: var(--space-md) 0;
+  padding: 16px 20px;
+  background: var(--color-bg-soft);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-md);
+}
+
+.pipeline-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: var(--type-caption);
+  font-weight: var(--weight-medium);
+  color: var(--color-text);
+  line-height: 1.4;
+  text-align: center;
+  padding: 6px 10px;
+  background: #fff;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-sm);
+  white-space: nowrap;
+}
+
+.pipeline-arrow {
+  font-size: var(--type-meta);
+  color: var(--accent);
+  font-weight: var(--weight-medium);
+  flex-shrink: 0;
+}
+
+.pipeline-model {
+  font-size: 0.6rem;
+  font-style: normal;
+  font-weight: var(--weight-regular);
+  color: var(--accent);
+  letter-spacing: 0.03em;
+  margin-top: 2px;
+}
+
+/* ──────────────────────────────────────
+   Archive Group Label
+────────────────────────────────────── */
+.archive-group-label {
+  font-size: var(--type-label);
+  font-weight: var(--weight-medium);
+  color: var(--color-muted);
+  letter-spacing: var(--ls-label);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+/* ──────────────────────────────────────
+   Placeholder Boxes (이미지 없을 때)
+────────────────────────────────────── */
+.placeholder-box {
+  width: 100%;
+  aspect-ratio: 16/9;
+  background: var(--color-bg-soft);
+  border: 1px dashed var(--color-line);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.placeholder-box span {
+  font-size: var(--type-label);
+  color: var(--color-subtle);
+  letter-spacing: var(--ls-label);
+}
+
+.placeholder-phone {
+  width: 100%;
+  aspect-ratio: 9/19.5;
+  background: var(--color-bg-soft);
+  border: 1px dashed var(--color-line);
+  border-radius: var(--radius-xl);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.placeholder-phone span {
+  font-size: var(--type-caption);
+  color: var(--color-subtle);
+  writing-mode: vertical-rl;
+  letter-spacing: 0.1em;
+}

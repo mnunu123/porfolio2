@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="360" viewBox="0 0 600 360">
+  <!-- 다크 배경 랜딩페이지 미리보기 -->
+  <rect width="600" height="360" fill="#0A0A14"/>
+  <!-- Header bar -->
+  <rect x="0" y="0" width="600" height="44" fill="#111120"/>
+  <rect x="24" y="14" width="80" height="16" rx="3" fill="#1E3A8A"/>
+  <text x="64" y="26" font-family="monospace" font-size="11" fill="#60A5FA" text-anchor="middle" font-weight="700">OpenClaw</text>
+  <rect x="440" y="12" width="140" height="20" rx="10" fill="#D12F2F"/>
+  <text x="510" y="26" font-family="sans-serif" font-size="10" fill="#fff" text-anchor="middle" font-weight="600">사전예약 진행 중</text>
+  <!-- Hero section -->
+  <rect x="24" y="64" width="260" height="14" rx="3" fill="#1E3A8A" opacity="0.5"/>
+  <rect x="24" y="86" width="340" height="22" rx="3" fill="#fff" opacity="0.9"/>
+  <rect x="24" y="116" width="300" height="22" rx="3" fill="#fff" opacity="0.9"/>
+  <rect x="24" y="143" width="200" height="22" rx="3" fill="#60A5FA" opacity="0.8"/>
+  <text x="124" y="158" font-family="sans-serif" font-size="11" fill="#fff" text-anchor="middle">퀀트 금융 데이터 API</text>
+  <rect x="24" y="176" width="340" height="12" rx="3" fill="#333" opacity="0.8"/>
+  <rect x="24" y="196" width="280" height="12" rx="3" fill="#333" opacity="0.8"/>
+  <!-- CTA Button -->
+  <rect x="24" y="224" width="160" height="36" rx="18" fill="#D12F2F"/>
+  <text x="104" y="247" font-family="sans-serif" font-size="12" fill="#fff" text-anchor="middle" font-weight="700">API 연동 시작</text>
+  <rect x="196" y="224" width="140" height="36" rx="18" fill="none" stroke="#444" stroke-width="1.5"/>
+  <text x="266" y="247" font-family="sans-serif" font-size="11" fill="#888" text-anchor="middle">문서 보기</text>
+  <!-- Right side: feature cards -->
+  <rect x="390" y="64" width="186" height="80" rx="8" fill="#111828"/>
+  <rect x="402" y="76" width="20" height="20" rx="4" fill="#D12F2F" opacity="0.8"/>
+  <rect x="430" y="78" width="120" height="10" rx="3" fill="#333"/>
+  <rect x="430" y="94" width="90" height="8" rx="3" fill="#222"/>
+  <rect x="430" y="108" width="110" height="8" rx="3" fill="#222"/>
+  <rect x="390" y="156" width="186" height="80" rx="8" fill="#111828"/>
+  <rect x="402" y="168" width="20" height="20" rx="4" fill="#1E4FD8" opacity="0.8"/>
+  <rect x="430" y="170" width="100" height="10" rx="3" fill="#333"/>
+  <rect x="430" y="186" width="120" height="8" rx="3" fill="#222"/>
+  <rect x="430" y="200" width="80" height="8" rx="3" fill="#222"/>
+  <!-- Metric bar -->
+  <rect x="0" y="280" width="600" height="80" fill="#0D1117"/>
+  <text x="120" y="312" font-family="sans-serif" font-size="11" fill="#888" text-anchor="middle">제작 전</text>
+  <text x="120" y="332" font-family="sans-serif" font-size="18" fill="#fff" text-anchor="middle" font-weight="700">2~3일</text>
+  <text x="300" y="312" font-family="sans-serif" font-size="11" fill="#D12F2F" text-anchor="middle">→ AI 자동화 →</text>
+  <text x="460" y="312" font-family="sans-serif" font-size="11" fill="#888" text-anchor="middle">제작 후</text>
+  <text x="460" y="332" font-family="sans-serif" font-size="18" fill="#D12F2F" text-anchor="middle" font-weight="700">20~30분</text>
+  <text x="300" y="352" font-family="sans-serif" font-size="10" fill="#555" text-anchor="middle">AI 생성 랜딩페이지 결과물 (openclaw v3)</text>
+</svg>

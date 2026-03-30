@@ -1,0 +1,223 @@
+/* responsive.css — 반응형 레이아웃 */
+
+/* ──────────────────────────────────────
+   Tablet (≤ 1023px)
+────────────────────────────────────── */
+@media (max-width: 1023px) {
+  :root {
+    --space-section: var(--space-section-md);
+    --side-padding: 40px;
+    --space-grid: 32px;
+  }
+
+  .intro-grid {
+    grid-template-columns: 1fr 1.2fr;
+    gap: 32px;
+  }
+
+  .intro-left {
+    position: static;
+  }
+
+  .project-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+
+  .mockup-phone {
+    width: clamp(110px, 22%, 160px);
+  }
+
+  .archive-row {
+    grid-template-columns: 36px 1fr 120px 130px 36px;
+    gap: 12px;
+  }
+
+  /* Strength grid → 2열 (태블릿) */
+  .strength-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+/* ──────────────────────────────────────
+   Mobile (≤ 767px)
+────────────────────────────────────── */
+@media (max-width: 767px) {
+  :root {
+    --space-section: var(--space-section-sm);
+    --side-padding: 20px;
+    --space-grid: 28px;
+  }
+
+  /* Cover */
+  .section-cover {
+    min-height: 80vh;
+    padding: 40px 20px;
+  }
+
+  .cover-label {
+    font-size: clamp(2rem, 10vw, 3rem);
+    letter-spacing: 0.12em;
+  }
+
+  .cover-tagline {
+    font-size: 0.95rem;
+  }
+
+  /* Intro grid → 1열 */
+  .intro-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .intro-headline {
+    font-size: clamp(1.5rem, 6vw, 2rem);
+  }
+
+  .resume-list {
+    grid-template-columns: 70px 1fr;
+  }
+
+  .resume-exp-item {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+
+  .resume-exp-item dt {
+    font-size: var(--type-caption);
+  }
+
+  .skill-group {
+    grid-template-columns: 50px 1fr;
+  }
+
+  /* Divider */
+  .section-divider {
+    padding: 50px 20px;
+  }
+
+  .divider-copy {
+    font-size: clamp(1.5rem, 6vw, 2.2rem);
+  }
+
+  .divider-number {
+    font-size: clamp(4rem, 18vw, 7rem);
+    bottom: -6px;
+  }
+
+  /* Project grid → 1열 */
+  .project-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .project-title {
+    font-size: clamp(1.4rem, 6vw, 1.9rem);
+  }
+
+  .mockup-stack {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+    padding: 0;
+  }
+
+  .mockup-phone {
+    width: clamp(100px, 40%, 160px);
+  }
+
+  .mockup-phone.tilt-left,
+  .mockup-phone.tilt-right,
+  .mockup-phone.center {
+    transform: none;
+  }
+
+  .thumb-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* Archive */
+  .archive-row {
+    grid-template-columns: 28px 1fr 36px;
+    gap: 8px;
+  }
+
+  .archive-col--role,
+  .archive-col--period,
+  .archive-row--head .archive-col--role,
+  .archive-row--head .archive-col--period {
+    display: none;
+  }
+
+  /* Closing */
+  .closing-label {
+    font-size: clamp(2rem, 10vw, 3rem);
+    letter-spacing: 0.12em;
+  }
+
+  .closing-tagline {
+    font-size: 0.95rem;
+  }
+
+  .closing-contacts {
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-sm);
+  }
+
+  /* Strength grid → 1열 */
+  .strength-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  /* Metric row → 1열 */
+  .metric-row {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  /* Role table */
+  .role-row {
+    grid-template-columns: 60px 1fr;
+    gap: 8px;
+  }
+
+  /* Stack card */
+  .stack-row {
+    grid-template-columns: 1fr;
+    gap: 3px;
+  }
+
+  .stack-layer {
+    font-size: var(--type-caption);
+  }
+
+  /* Cover tags */
+  .cover-tags {
+    gap: 6px;
+  }
+}
+
+/* ──────────────────────────────────────
+   Very small (≤ 400px)
+────────────────────────────────────── */
+@media (max-width: 400px) {
+  :root {
+    --side-padding: 16px;
+  }
+
+  .badge {
+    padding: 4px 12px;
+    font-size: 0.65rem;
+  }
+
+  .thumb-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .strength-grid {
+    grid-template-columns: 1fr;
+  }
+}

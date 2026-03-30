@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="300" viewBox="0 0 600 300">
+  <rect width="600" height="300" fill="#F7F7F5"/>
+
+  <!-- IP Camera -->
+  <rect x="30" y="110" width="100" height="70" rx="6" fill="#E5E5E3" stroke="#D0D0CE" stroke-width="1"/>
+  <text x="80" y="140" font-family="sans-serif" font-size="11" fill="#666" text-anchor="middle" font-weight="600">IP Camera</text>
+  <text x="80" y="158" font-family="sans-serif" font-size="9" fill="#999" text-anchor="middle">작업장 촬영</text>
+
+  <!-- Arrow 1 -->
+  <line x1="130" y1="145" x2="170" y2="145" stroke="#CCCCCA" stroke-width="1.5"/>
+  <polygon points="170,140 180,145 170,150" fill="#CCCCCA"/>
+
+  <!-- Raspberry Pi -->
+  <rect x="180" y="100" width="110" height="90" rx="6" fill="#E5E5E3" stroke="#D0D0CE" stroke-width="1"/>
+  <text x="235" y="130" font-family="sans-serif" font-size="11" fill="#666" text-anchor="middle" font-weight="600">Raspberry Pi</text>
+  <text x="235" y="148" font-family="sans-serif" font-size="9" fill="#D12F2F" text-anchor="middle">YOLOv8 추론</text>
+  <text x="235" y="163" font-family="sans-serif" font-size="9" fill="#999" text-anchor="middle">엣지 처리</text>
+  <text x="235" y="178" font-family="sans-serif" font-size="8" fill="#999" text-anchor="middle">OpenCV · Python</text>
+
+  <!-- Arrow 2 -->
+  <line x1="290" y1="145" x2="330" y2="145" stroke="#CCCCCA" stroke-width="1.5"/>
+  <polygon points="330,140 340,145 330,150" fill="#CCCCCA"/>
+
+  <!-- Alert System -->
+  <rect x="340" y="80" width="100" height="55" rx="6" fill="#FDEAEA" stroke="#D12F2F" stroke-width="1"/>
+  <text x="390" y="103" font-family="sans-serif" font-size="11" fill="#D12F2F" text-anchor="middle" font-weight="600">미착용 감지</text>
+  <text x="390" y="120" font-family="sans-serif" font-size="9" fill="#D12F2F" text-anchor="middle">부저 · 모니터 알림</text>
+
+  <!-- DB -->
+  <rect x="340" y="160" width="100" height="55" rx="6" fill="#E5E5E3" stroke="#D0D0CE" stroke-width="1"/>
+  <text x="390" y="183" font-family="sans-serif" font-size="11" fill="#666" text-anchor="middle" font-weight="600">이력 DB</text>
+  <text x="390" y="200" font-family="sans-serif" font-size="9" fill="#999" text-anchor="middle">자동 보고서 생성</text>
+
+  <!-- Arrow to alert -->
+  <line x1="340" y1="125" x2="340" y2="108" stroke="#D12F2F" stroke-width="1.2" stroke-dasharray="4,2"/>
+
+  <!-- Result badge -->
+  <rect x="460" y="110" width="120" height="70" rx="6" fill="#111" />
+  <text x="520" y="138" font-family="sans-serif" font-size="10" fill="#fff" text-anchor="middle" font-weight="600">1초 이내</text>
+  <text x="520" y="155" font-family="sans-serif" font-size="9" fill="#D12F2F" text-anchor="middle">카메라 → 알림</text>
+  <text x="520" y="170" font-family="sans-serif" font-size="8" fill="#888" text-anchor="middle">실시간 처리</text>
+
+  <!-- Title -->
+  <text x="300" y="28" font-family="sans-serif" font-size="13" fill="#333" text-anchor="middle" font-weight="700">안전보호구 착용 감지 시스템 — 처리 흐름</text>
+  <text x="300" y="46" font-family="sans-serif" font-size="10" fill="#999" text-anchor="middle">IP Camera → 엣지 추론 → 실시간 알림 · 이력 기록</text>
+</svg>
