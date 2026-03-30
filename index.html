@@ -3,99 +3,381 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>홍길동 — Portfolio</title>
-  <meta name="description" content="콘텐츠 기획 · 마케팅 포트폴리오" />
-
-  <!-- Pretendard -->
+  <title>박세준 — Portfolio 2026</title>
+  <meta name="description" content="하드웨어 · 소프트웨어 · AI 자동화 포트폴리오" />
   <link rel="preconnect" href="https://cdn.jsdelivr.net" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
-
-  <!-- Styles -->
   <link rel="stylesheet" href="./styles/reset.css" />
   <link rel="stylesheet" href="./styles/main.css" />
   <link rel="stylesheet" href="./styles/components.css" />
   <link rel="stylesheet" href="./styles/responsive.css" />
   <link rel="stylesheet" href="./styles/print.css" media="print" />
+
+  <style>
+  /* ── 디바이더 전체화면 ── */
+  .section-divider {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 0 var(--side-padding);
+  }
+  .divider-inner {
+    width: 100%;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    position: relative;
+    padding: 80px 0;
+  }
+
+  /* 경험 불릿 리스트 */
+  .divider-list {
+    list-style: none;
+    margin-top: 36px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .divider-list li {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-size: clamp(1.1rem, 2.2vw, 1.5rem);
+    font-weight: 600;
+    color: rgba(255,255,255,0.88);
+    line-height: 1.5;
+  }
+  .divider-list li::before {
+    content: '';
+    display: block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.55);
+    flex-shrink: 0;
+  }
+
+  /* 03 습관 — 검정 */
+  .section-divider--black { background: #0d0d0d; }
+
+  /* ── 프로필 사진 (커버 내) ── */
+  .cover-profile-img {
+    position: absolute;
+    bottom: 48px;
+    right: 48px;
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid rgba(255,255,255,0.3);
+    display: block;
+  }
+
+  /* ── 프로젝트 사진 쇼케이스 ── */
+  .project-photos { display: flex; flex-direction: column; gap: 14px; }
+
+  .project-photo-hero {
+    width: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+    aspect-ratio: 4 / 3;
+    display: block;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+  }
+
+  .project-photo-secondary {
+    width: 100%;
+    border-radius: 8px;
+    object-fit: cover;
+    aspect-ratio: 16 / 9;
+    display: block;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+  }
+
+  .project-photo-gif {
+    width: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+    display: block;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+  }
+
+  /* ── 스탯 바 ── */
+  .stat-strip {
+    display: flex;
+    gap: 0;
+    border: 1px solid var(--rule-color);
+    border-radius: 4px;
+    overflow: hidden;
+    margin: 28px 0 0;
+  }
+  .stat-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 16px 8px;
+    border-right: 1px solid var(--rule-color);
+    text-align: center;
+  }
+  .stat-item:last-child { border-right: none; }
+  .stat-num {
+    font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+    font-weight: 800;
+    color: var(--divider-red);
+    line-height: 1;
+    letter-spacing: -0.02em;
+    margin-bottom: 5px;
+  }
+  .stat-label {
+    font-size: 0.72rem;
+    color: var(--color-muted);
+    line-height: 1.4;
+    font-weight: 500;
+  }
+
+  /* ── 로컬 영상 embed ── */
+  .video-embed {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+    margin-bottom: 14px;
+  }
+  .video-embed video {
+    width: 100%;
+    height: auto;
+    display: block;
+    border: none;
+  }
+
+  /* ── 기술 태그 그리드 ── */
+  .tech-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin-top: 12px;
+  }
+  .tech-tag {
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--color-muted);
+    background: var(--color-bg-soft);
+    border: 1px solid var(--color-line);
+    border-radius: 3px;
+    padding: 4px 10px;
+    letter-spacing: 0.03em;
+  }
+
+  /* ── 수상 테이블 ── */
+  .award-list { display: flex; flex-direction: column; gap: 10px; margin-top: 20px; }
+  .award-item {
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    gap: 12px;
+    align-items: baseline;
+    font-size: var(--type-meta);
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--color-line);
+  }
+  .award-item:last-child { border-bottom: none; }
+  .award-year {
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--divider-red);
+    letter-spacing: 0.04em;
+  }
+  .award-text { color: var(--color-body); line-height: 1.55; }
+
+  /* ── 가지치기 서브 수상 ── */
+  .award-sub-list {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border-left: 2px solid var(--color-line);
+    margin-left: 4px;
+    padding-left: 0;
+  }
+  .award-sub-item {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0;
+    align-items: stretch;
+    position: relative;
+  }
+  .award-sub-item::before {
+    content: '';
+    display: block;
+    width: 14px;
+    height: 1px;
+    background: var(--color-line);
+    margin-top: 14px;
+    flex-shrink: 0;
+  }
+  .award-sub-body {
+    padding: 6px 0 6px 8px;
+    border-bottom: 1px solid var(--color-line);
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    flex-wrap: wrap;
+  }
+  .award-sub-item:last-child .award-sub-body { border-bottom: none; }
+  .award-sub-name {
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: var(--color-body);
+    flex: 1;
+    min-width: 120px;
+  }
+  .award-sub-grade {
+    font-size: 0.65rem;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 2px;
+    flex-shrink: 0;
+  }
+  .award-sub-grade--gold { background: #fef3c7; color: #92400e; }
+  .award-sub-grade--silver { background: #e0f2fe; color: #0369a1; }
+  .award-sub-grade--bronze { background: #f0fdf4; color: #166534; }
+  .award-sub-grade--gray { background: var(--color-bg-soft); color: var(--color-muted); }
+  .award-sub-org {
+    font-size: 0.7rem;
+    color: var(--color-muted);
+    flex-shrink: 0;
+  }
+  .award-badge {
+    display: inline-block;
+    font-size: 0.65rem;
+    font-weight: 700;
+    color: #fff;
+    background: var(--divider-red);
+    padding: 2px 7px;
+    border-radius: 2px;
+    margin-right: 6px;
+    vertical-align: middle;
+  }
+
+  /* ── 닫는 섹션 ── */
+  .closing-quote {
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    font-weight: 800;
+    color: var(--color-heading);
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+    margin-bottom: 36px;
+  }
+
+  @media (max-width: 767px) {
+    .cover-profile-img { display: none; }
+    .stat-strip { flex-wrap: wrap; }
+    .stat-item { flex: 1 1 45%; border-bottom: 1px solid var(--rule-color); }
+    .stat-item:nth-child(odd) { border-right: 1px solid var(--rule-color); }
+    .stat-item:nth-child(even) { border-right: none; }
+  }
+  </style>
 </head>
 <body>
+
 
 <!-- ═══════════════════════════════════════════════════════════
   01. COVER
 ═══════════════════════════════════════════════════════════ -->
 <section class="section-cover" id="cover" aria-label="표지">
   <div class="cover-inner">
-    <p class="cover-label">PORTFOLIO</p>
+    <p class="cover-label">PORTFOLIO · 2026</p>
     <p class="cover-tagline">
-      더 크고 <em>넓게</em> 세상을 보고 싶은 <em>홍길동</em>입니다
+      모르는 분야도 구조를 파악해<br><em>결과물로 끝내는</em> <em>엔지니어</em>입니다
     </p>
   </div>
+  <img
+    src="./assets/profile.jpg"
+    alt="박세준 프로필 사진"
+    class="cover-profile-img"
+  />
 </section>
 
 
 <!-- ═══════════════════════════════════════════════════════════
-  02. INTRO / RESUME SUMMARY
+  02. INTRO / RESUME
 ═══════════════════════════════════════════════════════════ -->
 <section class="section-intro" id="resume" aria-label="자기소개 및 이력">
   <div class="container">
     <div class="intro-grid">
 
-      <!-- Left: 이름 + 헤드라인 -->
       <div class="intro-left">
         <div class="intro-headline-wrap">
           <h1 class="intro-headline">
-            더 크고 <em>넓게</em><br>세상을 보고 싶은<br><em>홍길동</em>입니다
+            모르는 분야도<br>구조를 파악해<br><em>결과물로</em> <em>끝냅니다</em>
           </h1>
           <p class="intro-sub">
-            콘텐츠 기획과 마케팅을 중심으로 다양한 프로젝트를 경험해왔습니다.<br>
-            정보를 정리하고 생각을 표현하는 일에 강점이 있습니다.
+            전자공학·창업·AI 자동화를 거치며<br>
+            하드웨어 설계부터 서비스 운영까지 직접 해왔습니다.
           </p>
         </div>
-        <div class="intro-contact-row">
-          <a href="mailto:hello@example.com" class="contact-chip">hello@example.com</a>
-          <a href="https://github.com/username" class="contact-chip" target="_blank">GitHub</a>
-          <a href="https://blog.example.com" class="contact-chip" target="_blank">Blog</a>
+
+        <!-- 성과 수치 -->
+        <div class="stat-strip">
+          <div class="stat-item">
+            <span class="stat-num">9</span>
+            <span class="stat-label">공모전 수상</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-num">대상</span>
+            <span class="stat-label">한국도로공사<br>공모전</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-num">6+</span>
+            <span class="stat-label">AI 자동화<br>파이프라인</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-num">딥테크</span>
+            <span class="stat-label">예비창업패키지<br>선정</span>
+          </div>
+        </div>
+
+        <div class="intro-contact-row" style="margin-top: 24px;">
+          <a href="mailto:mnunu1234@naver.com" class="contact-chip">mnunu1234@naver.com</a>
+          <a href="https://github.com/mnunu123" class="contact-chip" target="_blank">GitHub</a>
+          <a href="https://blog-1vld.vercel.app" class="contact-chip" target="_blank">Blog</a>
         </div>
       </div>
 
-      <!-- Right: 이력 요약 -->
       <div class="intro-right">
 
-        <!-- 기본 정보 -->
         <div class="resume-block">
           <h2 class="resume-block-title">BASIC INFO</h2>
           <dl class="resume-list">
-            <dt>이름</dt><dd>홍길동</dd>
-            <dt>생년월일</dt><dd>1998.00.00</dd>
-            <dt>연락처</dt><dd>hello@example.com</dd>
-            <dt>인스타그램</dt><dd>@username</dd>
+            <dt>이름</dt><dd>박세준</dd>
+            <dt>생년월일</dt><dd>2002.01.15</dd>
+            <dt>연락처</dt><dd>010-4566-9665</dd>
+            <dt>이메일</dt><dd>mnunu1234@naver.com</dd>
           </dl>
         </div>
 
         <div class="resume-divider"></div>
 
-        <!-- 경력 / 활동 -->
         <div class="resume-block">
-          <h2 class="resume-block-title">WORK EXPERIENCE</h2>
+          <h2 class="resume-block-title">EXPERIENCE</h2>
           <dl class="resume-list resume-list--exp">
             <div class="resume-exp-item">
-              <dt>2022.07 — 2022.12</dt>
+              <dt>2025.09 — 2026.02</dt>
               <dd>
-                <strong>○○기업 콘텐츠팀</strong>
-                <span class="resume-role">콘텐츠 기획 인턴</span>
+                <strong>딥테크 예비창업패키지</strong>
+                <span class="resume-role">기술개발 · 운영 · 회계 · IR 1인 전담 · 우수기업 선정</span>
               </dd>
             </div>
             <div class="resume-exp-item">
-              <dt>2021.03 — 2021.12</dt>
+              <dt>2024 — 현재</dt>
               <dd>
-                <strong>○○스타트업</strong>
-                <span class="resume-role">마케팅 기획 파트타임</span>
+                <strong>AI 자동화 파이프라인 구축</strong>
+                <span class="resume-role">멀티에이전트 · Claude API · Playwright · Remotion</span>
               </dd>
             </div>
             <div class="resume-exp-item">
-              <dt>2020.03 — 2021.02</dt>
+              <dt>2022 — 2024</dt>
               <dd>
-                <strong>대학 창업동아리</strong>
-                <span class="resume-role">기획팀장</span>
+                <strong>쓰리봇 — 빗물받이 청소 로봇·웹 플랫폼</strong>
+                <span class="resume-role">임베디드 펌웨어 · FastAPI · Naver Maps 대시보드</span>
               </dd>
             </div>
           </dl>
@@ -103,15 +385,14 @@
 
         <div class="resume-divider"></div>
 
-        <!-- 학력 -->
         <div class="resume-block">
           <h2 class="resume-block-title">EDUCATION</h2>
           <dl class="resume-list resume-list--exp">
             <div class="resume-exp-item">
-              <dt>2017.03 — 2023.02</dt>
+              <dt>2021.03 — 현재</dt>
               <dd>
-                <strong>○○대학교</strong>
-                <span class="resume-role">경영학과 / 미디어커뮤니케이션학과 복수전공</span>
+                <strong>경북대학교</strong>
+                <span class="resume-role">전자공학부 (주전공) / 지식재산융합전공 (복수전공)</span>
               </dd>
             </div>
           </dl>
@@ -119,51 +400,125 @@
 
         <div class="resume-divider"></div>
 
-        <!-- 수상 -->
         <div class="resume-block">
           <h2 class="resume-block-title">AWARDS</h2>
-          <dl class="resume-list">
-            <dt>2022</dt><dd>○○ 공모전 최우수상 — ○○기관</dd>
-            <dt>2021</dt><dd>○○ 마케팅 경진대회 우수상 — ○○대학교</dd>
-            <dt>2020</dt><dd>○○ 해커톤 장려상 — ○○기관</dd>
-          </dl>
-        </div>
-
-        <div class="resume-divider"></div>
-
-        <!-- 자격증 + 스킬 -->
-        <div class="resume-block">
-          <h2 class="resume-block-title">SKILLS &amp; CERT.</h2>
-          <div class="skill-row">
-            <div class="skill-group">
-              <p class="skill-group-name">기획</p>
-              <p class="skill-items">콘텐츠 기획 · 서비스 기획 · UX 리서치</p>
+          <div class="award-list">
+            <div class="award-item">
+              <span class="award-year">2025</span>
+              <span class="award-text"><span class="award-badge">대상</span>한국도로공사 56주년 영화공모전<br><small style="color:var(--color-muted)">AI 도구 6개로 56초 영상 제작</small></span>
             </div>
-            <div class="skill-group">
-              <p class="skill-group-name">마케팅</p>
-              <p class="skill-items">SNS 운영 · 퍼포먼스 마케팅 · 데이터 분석</p>
+            <div class="award-item">
+              <span class="award-year">2025</span>
+              <span class="award-text"><span class="award-badge">최우수</span>기후테크 공모전<br><small style="color:var(--color-muted)">빗물받이 쓰리봇</small></span>
             </div>
-            <div class="skill-group">
-              <p class="skill-group-name">툴</p>
-              <p class="skill-items">Figma · Notion · Google Analytics · Photoshop</p>
+            <div class="award-item">
+              <span class="award-year">2025–26</span>
+              <span class="award-text">딥테크 예비창업패키지 선정<br><small style="color:var(--color-muted)">우수기업 선정 · 2025.09 — 2026.02</small></span>
             </div>
-            <div class="skill-group">
-              <p class="skill-group-name">자격증</p>
-              <p class="skill-items">구글 애널리틱스 GAIQ · 컴퓨터활용능력 1급 · TOEIC 875</p>
+            <div class="award-item" style="align-items:flex-start;">
+              <span class="award-year" style="padding-top:2px;">2025</span>
+              <div>
+                <span class="award-text">공모전·해커톤 <strong>9개</strong> 수상</span>
+                <div class="award-sub-list">
+                  <div class="award-sub-item">
+                    <div class="award-sub-body">
+                      <span class="award-sub-grade award-sub-grade--gold">최우수</span>
+                      <span class="award-sub-name">기후테크 아이디어 경진대회</span>
+                      <span class="award-sub-org">지식재산전문인력양성사업단 · 2025.11</span>
+                    </div>
+                  </div>
+                  <div class="award-sub-item">
+                    <div class="award-sub-body">
+                      <span class="award-sub-grade award-sub-grade--gold">최우수</span>
+                      <span class="award-sub-name">KNU-UP 학생창업 시제품 경진대회</span>
+                      <span class="award-sub-org">지산학연협력기술연구소 · 2025.12</span>
+                    </div>
+                  </div>
+                  <div class="award-sub-item">
+                    <div class="award-sub-body">
+                      <span class="award-sub-grade award-sub-grade--gold">최우수</span>
+                      <span class="award-sub-name">KNU-E 창업역량 강화캠프</span>
+                      <span class="award-sub-org">경북대학교 산학협력단 · 2025.09</span>
+                    </div>
+                  </div>
+                  <div class="award-sub-item">
+                    <div class="award-sub-body">
+                      <span class="award-sub-grade award-sub-grade--silver">은상</span>
+                      <span class="award-sub-name">제5회 SDGs 소셜벤처 챔피언십</span>
+                      <span class="award-sub-org">한국지속가능소셜벤처협회 · 2025.11</span>
+                    </div>
+                  </div>
+                  <div class="award-sub-item">
+                    <div class="award-sub-body">
+                      <span class="award-sub-grade award-sub-grade--silver">우수</span>
+                      <span class="award-sub-name">2025 창업 경진대회</span>
+                      <span class="award-sub-org">안동형일자리사업단 · 2025.11</span>
+                    </div>
+                  </div>
+                  <div class="award-sub-item">
+                    <div class="award-sub-body">
+                      <span class="award-sub-grade award-sub-grade--silver">우수</span>
+                      <span class="award-sub-name">미래한국 아이디어 공모전</span>
+                      <span class="award-sub-org">기획재정부 · 2025.11</span>
+                    </div>
+                  </div>
+                  <div class="award-sub-item">
+                    <div class="award-sub-body">
+                      <span class="award-sub-grade award-sub-grade--silver">우수</span>
+                      <span class="award-sub-name">ICT 지식재산 아이디어 경진대회</span>
+                      <span class="award-sub-org">한국정보시스템학회 · 2025.10</span>
+                    </div>
+                  </div>
+                  <div class="award-sub-item">
+                    <div class="award-sub-body">
+                      <span class="award-sub-grade award-sub-grade--bronze">장려</span>
+                      <span class="award-sub-name">CBC KOREA 창업경진대회</span>
+                      <span class="award-sub-org">CBC KOREA · 2025.11</span>
+                    </div>
+                  </div>
+                  <div class="award-sub-item">
+                    <div class="award-sub-body">
+                      <span class="award-sub-grade award-sub-grade--bronze">장려</span>
+                      <span class="award-sub-name">캡스톤디자인 온라인 경진대회</span>
+                      <span class="award-sub-org">한국환경기술학회 · 2025.11</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
-      </div><!-- /intro-right -->
-    </div><!-- /intro-grid -->
+        <div class="resume-divider"></div>
+
+        <div class="resume-block">
+          <h2 class="resume-block-title">SKILLS</h2>
+          <div class="skill-row">
+            <div class="skill-group">
+              <p class="skill-group-name">하드웨어</p>
+              <p class="skill-items">STM32 · ESP32 · 회로 설계 · FSM 펌웨어 · IoT 센서</p>
+            </div>
+            <div class="skill-group">
+              <p class="skill-group-name">소프트웨어</p>
+              <p class="skill-items">Python · FastAPI · React · Next.js · Flutter</p>
+            </div>
+            <div class="skill-group">
+              <p class="skill-group-name">AI · 자동화</p>
+              <p class="skill-items">YOLOv8 · Claude API · Gemini API · 멀티에이전트 · Playwright</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
   </div>
 </section>
 
 
 <!-- ═══════════════════════════════════════════════════════════
-  03. SECTION DIVIDER — Red
+  03. DIVIDER — 01 관심 (Red / Full)
 ═══════════════════════════════════════════════════════════ -->
-<section class="section-divider section-divider--red" id="divider-1" aria-hidden="true">
+<section class="section-divider section-divider--red" id="divider-1">
   <div class="divider-inner">
     <p class="divider-hashtag">#관심</p>
     <h2 class="divider-copy">꿈을 크게 가지자<br>그래야 깨져도 조각이 크니</h2>
@@ -173,153 +528,86 @@
 
 
 <!-- ═══════════════════════════════════════════════════════════
-  04. PROJECT — Variant A (기본 좌설명 우결과물)
+  04. PROJECT 01 — 쓰리봇 · 빗물받이 청소 로봇 + 웹 관제 플랫폼
 ═══════════════════════════════════════════════════════════ -->
 <section class="section-project project-variant-a" id="project-1" data-accent="red" aria-label="프로젝트 1">
   <div class="container">
     <div class="project-grid">
 
-      <!-- Left: 설명 -->
       <div class="project-left">
-        <h2 class="project-title">상품 기획부터<br>콘텐츠 제작까지</h2>
-        <p class="project-meta">한화 Dreamplus Travel Creator <span class="meta-sep">·</span> 2019.07 — 2019.08</p>
-        <p class="project-meta project-role">기획 · 콘텐츠 제작</p>
+        <h2 class="project-title">하드웨어 설계부터<br>웹 플랫폼까지<br>혼자 완성한 시스템</h2>
+        <p class="project-meta">딥테크 예비창업패키지 우수기업 선정 <span class="meta-sep">·</span> 2022 — 2025</p>
+        <p class="project-meta project-role">임베디드 펌웨어 · 백엔드 · 프론트엔드 · 기획 1인</p>
         <hr class="project-rule" />
 
         <p class="keyword-label">Keyword</p>
         <div class="keyword-badges">
-          <span class="badge">데이터 분석</span>
-          <span class="badge">탑</span>
-          <span class="badge">기획</span>
+          <span class="badge">STM32 FSM</span>
+          <span class="badge">FastAPI</span>
+          <span class="badge">Naver Maps</span>
+          <span class="badge">Docker</span>
+          <span class="badge">PostgreSQL</span>
         </div>
 
         <p class="project-body">
-          여행 플랫폼의 콘텐츠 크리에이터로서 상품 기획부터 최종 콘텐츠 발행까지 전 과정을 직접 수행했습니다. 기존 콘텐츠 유형에 없던 여행 카테고리를 새롭게 제안하고 4개 여행지의 콘텐츠를 기획·제작했습니다.
+          도심 집중호우 시 빗물받이 막힘이 침수의 주요 원인. 기존 방식은 수동 순찰·민원 접수로
+          사후 대응만 가능했습니다. <strong>STM32 기반 FSM 펌웨어</strong>로 청소 로봇을 제어하고,
+          FastAPI + PostgreSQL + Docker 백엔드와 Naver Maps + GeoJSON 기반
+          웹 대시보드까지 전 구간을 1인 개발했습니다.
         </p>
 
         <blockquote class="project-thinking">
-          <p>두 달간 기획한 콘텐츠를 대표할 한 줄의 카피를 찾는 과정에서, 결국 가장 솔직한 사실에서 최선의 문장이 나온다는 것을 배웠습니다.</p>
+          <p>"모르는 분야라도 구조를 이해하면 결국 만들 수 있다"는 걸 이 프로젝트로 확인했습니다.</p>
         </blockquote>
 
         <div class="contribution-list">
           <div class="contrib-item">
-            <span class="contrib-label">기획</span>
-            <div class="contrib-track"><div class="contrib-fill" style="--bar-width:90%"></div></div>
-          </div>
-          <div class="contrib-item">
-            <span class="contrib-label">글쓰기</span>
-            <div class="contrib-track"><div class="contrib-fill" style="--bar-width:75%"></div></div>
-          </div>
-          <div class="contrib-item">
-            <span class="contrib-label">디자인</span>
-            <div class="contrib-track"><div class="contrib-fill" style="--bar-width:60%"></div></div>
-          </div>
-          <div class="contrib-item">
-            <span class="contrib-label">영상</span>
-            <div class="contrib-track"><div class="contrib-fill" style="--bar-width:50%"></div></div>
-          </div>
-        </div>
-      </div><!-- /project-left -->
-
-      <!-- Right: 비주얼 -->
-      <div class="project-right">
-        <div class="mockup-stack">
-          <div class="mockup-phone tilt-left">
-            <img src="./assets/placeholders/phone-mockup-1.svg" alt="앱 화면 1" />
-          </div>
-          <div class="mockup-phone center">
-            <img src="./assets/placeholders/phone-mockup-2.svg" alt="앱 화면 2" />
-          </div>
-          <div class="mockup-phone tilt-right">
-            <img src="./assets/placeholders/phone-mockup-3.svg" alt="앱 화면 3" />
-          </div>
-        </div>
-      </div><!-- /project-right -->
-
-    </div>
-  </div>
-</section>
-
-
-<!-- ═══════════════════════════════════════════════════════════
-  05. PROJECT — Variant B (소셜 증거 강조형)
-═══════════════════════════════════════════════════════════ -->
-<section class="section-project project-variant-b" id="project-2" data-accent="red" aria-label="프로젝트 2">
-  <div class="container">
-    <div class="project-grid">
-
-      <!-- Left: 설명 -->
-      <div class="project-left">
-        <h2 class="project-title">조회수 10배 달성에 이은<br>대학교 합격 인증 댓글</h2>
-        <p class="project-meta">개인 프로젝트 <span class="meta-sep">·</span> 2018.03 — 2019.02</p>
-        <p class="project-meta project-role">기획 · 운영 · 글쓰기</p>
-        <hr class="project-rule" />
-
-        <p class="keyword-label">Keyword</p>
-        <div class="keyword-badges">
-          <span class="badge">학교</span>
-          <span class="badge">과외</span>
-          <span class="badge">PR</span>
-        </div>
-
-        <p class="project-body">
-          대학교 입시 정보를 다루는 블로그를 운영하며 6개월 만에 월 조회수를 10배 성장시켰습니다. 독자들이 실제로 합격 후 댓글로 감사 인사를 남기는 콘텐츠를 지속적으로 제작했습니다.
-        </p>
-
-        <blockquote class="project-thinking">
-          <p>단순히 정보를 전달하는 것이 아니라, 독자가 '내가 직접 쓴 것 같은' 느낌이 드는 글을 목표로 했습니다.</p>
-        </blockquote>
-
-        <div class="contribution-list">
-          <div class="contrib-item">
-            <span class="contrib-label">기획</span>
-            <div class="contrib-track"><div class="contrib-fill" style="--bar-width:85%"></div></div>
-          </div>
-          <div class="contrib-item">
-            <span class="contrib-label">글쓰기</span>
+            <span class="contrib-label">펌웨어</span>
             <div class="contrib-track"><div class="contrib-fill" style="--bar-width:95%"></div></div>
           </div>
           <div class="contrib-item">
-            <span class="contrib-label">디자인</span>
-            <div class="contrib-track"><div class="contrib-fill" style="--bar-width:40%"></div></div>
+            <span class="contrib-label">백엔드</span>
+            <div class="contrib-track"><div class="contrib-fill" style="--bar-width:90%"></div></div>
+          </div>
+          <div class="contrib-item">
+            <span class="contrib-label">프론트</span>
+            <div class="contrib-track"><div class="contrib-fill" style="--bar-width:80%"></div></div>
+          </div>
+          <div class="contrib-item">
+            <span class="contrib-label">기획·IR</span>
+            <div class="contrib-track"><div class="contrib-fill" style="--bar-width:100%"></div></div>
           </div>
         </div>
-      </div><!-- /project-left -->
 
-      <!-- Right: 소셜 증거 비주얼 -->
+        <div class="tech-grid">
+          <span class="tech-tag">STM32 · C · FSM</span>
+          <span class="tech-tag">UART 라인버퍼링</span>
+          <span class="tech-tag">TIM3 PWM 스텝제어</span>
+          <span class="tech-tag">Python · FastAPI</span>
+          <span class="tech-tag">PostgreSQL · asyncpg</span>
+          <span class="tech-tag">Next.js · TypeScript</span>
+          <span class="tech-tag">Naver Maps API</span>
+          <span class="tech-tag">GeoJSON</span>
+          <span class="tech-tag">Docker Compose</span>
+        </div>
+      </div>
+
       <div class="project-right">
-        <!-- 썸네일 그리드 -->
-        <div class="thumb-grid">
-          <div class="thumb-item visual-card">
-            <img src="./assets/placeholders/thumb-1.svg" alt="콘텐츠 썸네일 1" />
-          </div>
-          <div class="thumb-item visual-card">
-            <img src="./assets/placeholders/thumb-2.svg" alt="콘텐츠 썸네일 2" />
-          </div>
-          <div class="thumb-item visual-card">
-            <img src="./assets/placeholders/thumb-3.svg" alt="콘텐츠 썸네일 3" />
-          </div>
+        <div class="project-photos">
+          <!-- 로봇 3D 렌더 -->
+          <img
+            src="./assets/threebot-robot.png"
+            alt="쓰리봇 — 빗물받이 청소 로봇 3D 렌더"
+            class="project-photo-hero"
+          />
+          <!-- 웹 대시보드 -->
+          <img
+            src="./assets/threebot-ui.png"
+            alt="쓰리봇 웹 관제 대시보드 — Naver Maps"
+            class="project-photo-secondary"
+          />
         </div>
-
-        <!-- SNS 플로팅 카드들 -->
-        <div class="proof-cards">
-          <div class="proof-card">
-            <p class="proof-platform">네이버 블로그</p>
-            <p class="proof-text">"덕분에 합격했어요! 정말 도움 됐습니다 ㅜㅜ"</p>
-            <p class="proof-metric">댓글 847개</p>
-          </div>
-          <div class="proof-card">
-            <p class="proof-platform">페이스북</p>
-            <p class="proof-text">"이 글 읽고 바로 원서 썼는데 합격했어요"</p>
-            <p class="proof-metric">공유 312회</p>
-          </div>
-          <div class="proof-card">
-            <p class="proof-platform">인스타그램</p>
-            <p class="proof-text">"저장해두고 계속 읽었어요"</p>
-            <p class="proof-metric">저장 1.2K</p>
-          </div>
-        </div>
-      </div><!-- /project-right -->
+      </div>
 
     </div>
   </div>
@@ -327,77 +615,100 @@
 
 
 <!-- ═══════════════════════════════════════════════════════════
-  06. SECTION DIVIDER — Dark
+  05. DIVIDER — 02 경험 (Dark / Full)
 ═══════════════════════════════════════════════════════════ -->
-<section class="section-divider section-divider--dark" id="divider-2" aria-hidden="true">
+<section class="section-divider section-divider--dark" id="divider-2">
   <div class="divider-inner">
-    <p class="divider-hashtag">#습관</p>
-    <h2 class="divider-copy">정보는 정리하고<br>생각은 표현하고</h2>
+    <p class="divider-hashtag">#경험</p>
+    <h2 class="divider-copy">직접 만들고<br>직접 부딪혔습니다</h2>
+    <ul class="divider-list">
+      <li>딥테크 예비창업패키지 선정</li>
+      <li>빗물받이 청소 로봇·웹 플랫폼 직접 개발</li>
+      <li>AI로 개발과 문서화 자동화 경험</li>
+    </ul>
     <span class="divider-number" aria-hidden="true">02</span>
   </div>
 </section>
 
 
 <!-- ═══════════════════════════════════════════════════════════
-  07. PROJECT — Variant C (목업 강조형)
+  06. PROJECT 02 — AI 멀티에이전트 자동화 + 한국도로공사 공모전 대상
 ═══════════════════════════════════════════════════════════ -->
-<section class="section-project project-variant-c" id="project-3" data-accent="blue" aria-label="프로젝트 3">
+<section class="section-project project-variant-b" id="project-2" data-accent="red" aria-label="프로젝트 2">
   <div class="container">
     <div class="project-grid">
 
-      <!-- Left: 설명 -->
       <div class="project-left">
-        <h2 class="project-title">낯선 정보를<br>쉽게 전달하기</h2>
-        <p class="project-meta">서울○○공사 PR 인턴 <span class="meta-sep">·</span> 2020.03 — 2020.06</p>
-        <p class="project-meta project-role">기획 · 글쓰기 · SNS 운영</p>
+        <h2 class="project-title">AI 도구 6개로<br>56초 영상 제작<br>— 대상 수상</h2>
+        <p class="project-meta">한국도로공사 56주년 영화공모전 <span class="meta-sep">·</span> 2025.10</p>
+        <p class="project-meta project-role">AI 영상 제작 · 멀티에이전트 파이프라인 설계</p>
         <hr class="project-rule" />
 
         <p class="keyword-label">Keyword</p>
         <div class="keyword-badges">
-          <span class="badge">신문 광고</span>
-          <span class="badge">에너지 사업</span>
-          <span class="badge">SNS 콘텐츠</span>
+          <span class="badge">Kling AI</span>
+          <span class="badge">Veo3</span>
+          <span class="badge">Midjourney</span>
+          <span class="badge">Claude API</span>
+          <span class="badge">DaVinci Resolve</span>
         </div>
 
         <p class="project-body">
-          기존의 딱딱한 공공기관 광고 콘텐츠를 일반 시민에게 친숙한 언어로 재구성했습니다. SNS 홍보물 기획부터 실제 게재까지 직접 수행하며 광고 게재 후 2배 이상의 참여율 향상을 달성했습니다.
+          고속도로와 휴게소를 배경으로 한 56초 공모전.
+          스토리보드 → 미드저니 이미지 → Kling/Veo3 동영상 → GPT-4 내레이션 → 다빈치 편집까지
+          <strong>AI 도구 6개를 파이프라인으로 연결</strong>해 대상을 수상했습니다.
+          개미가 길을 만드는 것처럼, AI 도구들을 이어 붙여 작품을 완성하는 과정이었습니다.
         </p>
 
         <blockquote class="project-thinking">
-          <p>공공기관 정보를 '쉽게' 전달하는 것과 '정확하게' 전달하는 것 사이의 균형이 이 프로젝트의 핵심 과제였습니다.</p>
+          <p>"AI를 쓰는 게 아니라 AI를 설계하는 방식으로 접근했습니다. 그 차이가 결과를 만들었습니다."</p>
         </blockquote>
 
         <div class="contribution-list">
           <div class="contrib-item">
-            <span class="contrib-label">기획</span>
-            <div class="contrib-track"><div class="contrib-fill" style="--bar-width:80%"></div></div>
+            <span class="contrib-label">파이프라인</span>
+            <div class="contrib-track"><div class="contrib-fill" style="--bar-width:100%"></div></div>
           </div>
           <div class="contrib-item">
-            <span class="contrib-label">글쓰기</span>
-            <div class="contrib-track"><div class="contrib-fill" style="--bar-width:88%"></div></div>
+            <span class="contrib-label">영상 편집</span>
+            <div class="contrib-track"><div class="contrib-fill" style="--bar-width:85%"></div></div>
           </div>
           <div class="contrib-item">
-            <span class="contrib-label">디자인</span>
-            <div class="contrib-track"><div class="contrib-fill" style="--bar-width:55%"></div></div>
+            <span class="contrib-label">기획·스크립트</span>
+            <div class="contrib-track"><div class="contrib-fill" style="--bar-width:90%"></div></div>
           </div>
         </div>
-      </div><!-- /project-left -->
 
-      <!-- Right: 목업 + 아티클 카드 -->
-      <div class="project-right project-right--mockup">
-        <div class="mockup-stack mockup-stack--duo">
-          <div class="mockup-phone tilt-left">
-            <img src="./assets/placeholders/phone-mockup-4.svg" alt="모바일 앱 화면 1" />
-          </div>
-          <div class="mockup-phone tilt-right">
-            <img src="./assets/placeholders/phone-mockup-5.svg" alt="모바일 앱 화면 2" />
-          </div>
+        <div class="tech-grid">
+          <span class="tech-tag">Kling AI</span>
+          <span class="tech-tag">Google Veo3</span>
+          <span class="tech-tag">Midjourney</span>
+          <span class="tech-tag">GPT-4</span>
+          <span class="tech-tag">ElevenLabs</span>
+          <span class="tech-tag">DaVinci Resolve</span>
+          <span class="tech-tag">Remotion</span>
         </div>
-        <div class="article-card visual-card">
-          <img src="./assets/placeholders/article-1.svg" alt="신문 광고 이미지" />
-          <p class="article-caption">서울○○공사 태양광 모집 광고</p>
+      </div>
+
+      <div class="project-right">
+        <div class="project-photos">
+          <!-- 로컬 영상 -->
+          <div class="video-embed">
+            <video
+              src="./모여서만든길.MP4"
+              controls
+              preload="metadata"
+              title="한국도로공사 56주년 공모전 대상 영상"
+            ></video>
+          </div>
+          <!-- AI 영상 프레임 샷 -->
+          <img
+            src="./assets/ai-video-frame.jpg"
+            alt="AI 영상 제작 — 개미 행진 씬"
+            class="project-photo-secondary"
+          />
         </div>
-      </div><!-- /project-right -->
+      </div>
 
     </div>
   </div>
@@ -405,13 +716,102 @@
 
 
 <!-- ═══════════════════════════════════════════════════════════
-  08. ARCHIVE / OTHER WORKS
+  07. DIVIDER — 03 습관 (Black / Full)
+═══════════════════════════════════════════════════════════ -->
+<section class="section-divider section-divider--black" id="divider-3">
+  <div class="divider-inner">
+    <p class="divider-hashtag">#습관</p>
+    <h2 class="divider-copy">구조로 이해하고<br>끝까지 만들어낸다</h2>
+    <span class="divider-number" aria-hidden="true">03</span>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+  08. PROJECT 03 — 면접훈련 로봇 InMoov i2Head
+═══════════════════════════════════════════════════════════ -->
+<section class="section-project project-variant-c" id="project-3" data-accent="blue" aria-label="프로젝트 3">
+  <div class="container">
+    <div class="project-grid">
+
+      <div class="project-left">
+        <h2 class="project-title">서보 17개로<br>AI 면접관<br>얼굴을 만들다</h2>
+        <p class="project-meta">개인 프로젝트 (진행 중) <span class="meta-sep">·</span> 2026</p>
+        <p class="project-meta project-role">임베디드 · AI 연동 · 로보틱스</p>
+        <hr class="project-rule" />
+
+        <p class="keyword-label">Keyword</p>
+        <div class="keyword-badges">
+          <span class="badge">InMoov i2Head</span>
+          <span class="badge">Arduino</span>
+          <span class="badge">FastAPI</span>
+          <span class="badge">Claude API</span>
+        </div>
+
+        <p class="project-body">
+          InMoov 오픈소스 휴머노이드의 머리 부분(i2Head)만을 활용해
+          <strong>AI 면접관 인터페이스</strong>를 구현하는 프로젝트.
+          서보 17개로 눈동자·눈썹·입술을 제어해 감정 표현을 구현하고,
+          FastAPI 브릿지를 통해 Claude API로 면접 질문을 생성·응답합니다.
+        </p>
+
+        <blockquote class="project-thinking">
+          <p>"'로봇 구현'이 목표가 아니라 '면접관처럼 느껴지는 인터페이스' 구현이 목표입니다."</p>
+        </blockquote>
+
+        <div class="contribution-list">
+          <div class="contrib-item">
+            <span class="contrib-label">서보 제어</span>
+            <div class="contrib-track"><div class="contrib-fill" style="--bar-width:90%"></div></div>
+          </div>
+          <div class="contrib-item">
+            <span class="contrib-label">AI 연동</span>
+            <div class="contrib-track"><div class="contrib-fill" style="--bar-width:85%"></div></div>
+          </div>
+          <div class="contrib-item">
+            <span class="contrib-label">아키텍처</span>
+            <div class="contrib-track"><div class="contrib-fill" style="--bar-width:95%"></div></div>
+          </div>
+        </div>
+
+        <div class="tech-grid">
+          <span class="tech-tag">InMoov i2Head</span>
+          <span class="tech-tag">Arduino · 서보 17개</span>
+          <span class="tech-tag">MyRobotLab</span>
+          <span class="tech-tag">Python · FastAPI</span>
+          <span class="tech-tag">Claude API</span>
+          <span class="tech-tag">멀티모달</span>
+        </div>
+      </div>
+
+      <div class="project-right">
+        <div class="project-photos">
+          <img
+            src="./assets/i2head-robot.png"
+            alt="면접훈련 로봇 InMoov i2Head"
+            class="project-photo-hero"
+          />
+          <img
+            src="./assets/i2head-anim.gif"
+            alt="i2Head 표정 애니메이션"
+            class="project-photo-gif"
+          />
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+  09. ARCHIVE
 ═══════════════════════════════════════════════════════════ -->
 <section class="section-archive" id="archive" aria-label="기타 작업물">
   <div class="container">
     <div class="archive-header">
       <h2 class="archive-title">Other Works</h2>
-      <p class="archive-subtitle">그 밖의 작업들</p>
+      <p class="archive-subtitle">그 밖의 프로젝트 목록</p>
     </div>
     <div class="archive-table">
       <div class="archive-row archive-row--head">
@@ -421,39 +821,39 @@
         <span class="archive-col archive-col--period">기간</span>
         <span class="archive-col archive-col--link">링크</span>
       </div>
-      <a href="#" class="archive-row archive-row--item" target="_blank">
+      <a href="https://github.com/mnunu123" class="archive-row archive-row--item" target="_blank">
         <span class="archive-col archive-col--num">01</span>
-        <span class="archive-col archive-col--title">○○ 브랜드 SNS 캠페인 기획</span>
-        <span class="archive-col archive-col--role">기획 / 글쓰기</span>
-        <span class="archive-col archive-col--period">2021.09</span>
+        <span class="archive-col archive-col--title">산불 CCTV 협력 감지 시스템</span>
+        <span class="archive-col archive-col--role">AI · 컴퓨터비전</span>
+        <span class="archive-col archive-col--period">2024</span>
         <span class="archive-col archive-col--link">→</span>
       </a>
-      <a href="#" class="archive-row archive-row--item" target="_blank">
+      <a href="https://github.com/mnunu123" class="archive-row archive-row--item" target="_blank">
         <span class="archive-col archive-col--num">02</span>
-        <span class="archive-col archive-col--title">대학 창업동아리 피칭 자료</span>
-        <span class="archive-col archive-col--role">기획 / 디자인</span>
-        <span class="archive-col archive-col--period">2020.11</span>
+        <span class="archive-col archive-col--title">쇼츠 자동화 파이프라인 — 도우인 수집·편집·업로드</span>
+        <span class="archive-col archive-col--role">자동화 · Playwright</span>
+        <span class="archive-col archive-col--period">2024</span>
         <span class="archive-col archive-col--link">→</span>
       </a>
-      <a href="#" class="archive-row archive-row--item" target="_blank">
+      <a href="https://github.com/mnunu123" class="archive-row archive-row--item" target="_blank">
         <span class="archive-col archive-col--num">03</span>
-        <span class="archive-col archive-col--title">경제신문 읽기 뉴스레터 운영</span>
-        <span class="archive-col archive-col--role">기획 / 글쓰기</span>
-        <span class="archive-col archive-col--period">2020.03 — 2021.02</span>
+        <span class="archive-col archive-col--title">AI 에이전트 랜딩페이지 자동 생성기</span>
+        <span class="archive-col archive-col--role">Claude API · 멀티에이전트</span>
+        <span class="archive-col archive-col--period">2025</span>
         <span class="archive-col archive-col--link">→</span>
       </a>
-      <a href="#" class="archive-row archive-row--item" target="_blank">
+      <a href="https://github.com/mnunu123" class="archive-row archive-row--item" target="_blank">
         <span class="archive-col archive-col--num">04</span>
-        <span class="archive-col archive-col--title">제주 여행 앱 UX 리서치 보고서</span>
-        <span class="archive-col archive-col--role">기획 / UX</span>
-        <span class="archive-col archive-col--period">2019.12</span>
+        <span class="archive-col archive-col--title">YOLOv8 불꽃·연기 감지 임베디드 시스템</span>
+        <span class="archive-col archive-col--role">YOLOv8 · 임베디드</span>
+        <span class="archive-col archive-col--period">2023</span>
         <span class="archive-col archive-col--link">→</span>
       </a>
-      <a href="#" class="archive-row archive-row--item" target="_blank">
+      <a href="https://github.com/mnunu123" class="archive-row archive-row--item" target="_blank">
         <span class="archive-col archive-col--num">05</span>
-        <span class="archive-col archive-col--title">○○ 온라인 브랜딩 전략 제안서</span>
-        <span class="archive-col archive-col--role">기획 / 리서치</span>
-        <span class="archive-col archive-col--period">2022.04</span>
+        <span class="archive-col archive-col--title">Remotion 코드 기반 영상 자동화</span>
+        <span class="archive-col archive-col--role">TypeScript · Remotion</span>
+        <span class="archive-col archive-col--period">2025</span>
         <span class="archive-col archive-col--link">→</span>
       </a>
     </div>
@@ -462,35 +862,35 @@
 
 
 <!-- ═══════════════════════════════════════════════════════════
-  09. CONTACT / CLOSING
+  10. CLOSING
 ═══════════════════════════════════════════════════════════ -->
 <section class="section-closing" id="contact" aria-label="마무리 및 연락처">
   <div class="container">
     <div class="closing-inner">
       <p class="closing-label">THANK YOU</p>
-      <p class="closing-tagline">
-        콘텐츠 기획의 <em>관심</em>, <em>경험</em>, <em>습관</em>을<br>
-        귀사에서 풀어내겠습니다
+      <p class="closing-quote">
+        <em>관심</em>에서 시작해 <em>경험</em>으로 증명하고<br>
+        <em>습관</em>으로 만들어가겠습니다
       </p>
       <div class="closing-contacts">
         <div class="closing-contact-item">
           <span class="closing-contact-label">Email</span>
-          <a href="mailto:hello@example.com" class="closing-contact-value">hello@example.com</a>
+          <a href="mailto:mnunu1234@naver.com" class="closing-contact-value">mnunu1234@naver.com</a>
+        </div>
+        <div class="closing-contact-item">
+          <span class="closing-contact-label">Phone</span>
+          <a href="tel:01045669665" class="closing-contact-value">010-4566-9665</a>
         </div>
         <div class="closing-contact-item">
           <span class="closing-contact-label">GitHub</span>
-          <a href="https://github.com/username" class="closing-contact-value" target="_blank">github.com/username</a>
+          <a href="https://github.com/mnunu123" class="closing-contact-value" target="_blank">github.com/mnunu123</a>
         </div>
         <div class="closing-contact-item">
           <span class="closing-contact-label">Blog</span>
-          <a href="https://blog.example.com" class="closing-contact-value" target="_blank">blog.example.com</a>
-        </div>
-        <div class="closing-contact-item">
-          <span class="closing-contact-label">Instagram</span>
-          <a href="https://instagram.com/username" class="closing-contact-value" target="_blank">@username</a>
+          <a href="https://blog-1vld.vercel.app" class="closing-contact-value" target="_blank">mnunu.dev</a>
         </div>
       </div>
-      <p class="closing-copy">© 2024 홍길동. All rights reserved.</p>
+      <p class="closing-copy">© 2026 박세준. All rights reserved.</p>
     </div>
   </div>
 </section>

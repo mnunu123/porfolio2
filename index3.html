@@ -3,14 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>박세준 — Portfolio</title>
+  <title>박세준 — Portfolio 2026</title>
   <meta name="description" content="하드웨어 · 소프트웨어 · AI 자동화 포트폴리오" />
-
-  <!-- Pretendard -->
   <link rel="preconnect" href="https://cdn.jsdelivr.net" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
-
-  <!-- Styles -->
   <link rel="stylesheet" href="./styles/reset.css" />
   <link rel="stylesheet" href="./styles/main.css" />
   <link rel="stylesheet" href="./styles/components.css" />
@@ -18,7 +14,7 @@
   <link rel="stylesheet" href="./styles/print.css" media="print" />
 
   <style>
-  /* ── 디바이더 전체화면 오버라이드 ── */
+  /* ── 디바이더 전체화면 ── */
   .section-divider {
     min-height: 100vh;
     display: flex;
@@ -33,13 +29,13 @@
     padding: 80px 0;
   }
 
-  /* 경험 항목 리스트 */
+  /* 경험 불릿 리스트 */
   .divider-list {
     list-style: none;
     margin-top: 36px;
     display: flex;
     flex-direction: column;
-    gap: 18px;
+    gap: 20px;
   }
   .divider-list li {
     display: flex;
@@ -60,9 +56,223 @@
     flex-shrink: 0;
   }
 
-  /* 습관 섹션 — 검정 */
-  .section-divider--black {
-    background: #0d0d0d;
+  /* 03 습관 — 검정 */
+  .section-divider--black { background: #0d0d0d; }
+
+  /* ── 프로필 사진 (커버 내) ── */
+  .cover-profile-img {
+    position: absolute;
+    bottom: 48px;
+    right: 48px;
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid rgba(255,255,255,0.3);
+    display: block;
+  }
+
+  /* ── 프로젝트 사진 쇼케이스 ── */
+  .project-photos { display: flex; flex-direction: column; gap: 14px; }
+
+  .project-photo-hero {
+    width: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+    aspect-ratio: 4 / 3;
+    display: block;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+  }
+
+  .project-photo-secondary {
+    width: 100%;
+    border-radius: 8px;
+    object-fit: cover;
+    aspect-ratio: 16 / 9;
+    display: block;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+  }
+
+  .project-photo-gif {
+    width: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+    display: block;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+  }
+
+  /* ── 스탯 바 ── */
+  .stat-strip {
+    display: flex;
+    gap: 0;
+    border: 1px solid var(--rule-color);
+    border-radius: 4px;
+    overflow: hidden;
+    margin: 28px 0 0;
+  }
+  .stat-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 16px 8px;
+    border-right: 1px solid var(--rule-color);
+    text-align: center;
+  }
+  .stat-item:last-child { border-right: none; }
+  .stat-num {
+    font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+    font-weight: 800;
+    color: var(--divider-red);
+    line-height: 1;
+    letter-spacing: -0.02em;
+    margin-bottom: 5px;
+  }
+  .stat-label {
+    font-size: 0.72rem;
+    color: var(--color-muted);
+    line-height: 1.4;
+    font-weight: 500;
+  }
+
+  /* ── 로컬 영상 embed ── */
+  .video-embed {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+    margin-bottom: 14px;
+  }
+  .video-embed video {
+    width: 100%;
+    height: auto;
+    display: block;
+    border: none;
+  }
+
+  /* ── 기술 태그 그리드 ── */
+  .tech-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin-top: 12px;
+  }
+  .tech-tag {
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--color-muted);
+    background: var(--color-bg-soft);
+    border: 1px solid var(--color-line);
+    border-radius: 3px;
+    padding: 4px 10px;
+    letter-spacing: 0.03em;
+  }
+
+  /* ── 수상 테이블 ── */
+  .award-list { display: flex; flex-direction: column; gap: 10px; margin-top: 20px; }
+  .award-item {
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    gap: 12px;
+    align-items: baseline;
+    font-size: var(--type-meta);
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--color-line);
+  }
+  .award-item:last-child { border-bottom: none; }
+  .award-year {
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--divider-red);
+    letter-spacing: 0.04em;
+  }
+  .award-text { color: var(--color-body); line-height: 1.55; }
+
+  /* ── 가지치기 서브 수상 ── */
+  .award-sub-list {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border-left: 2px solid var(--color-line);
+    margin-left: 4px;
+    padding-left: 0;
+  }
+  .award-sub-item {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0;
+    align-items: stretch;
+    position: relative;
+  }
+  .award-sub-item::before {
+    content: '';
+    display: block;
+    width: 14px;
+    height: 1px;
+    background: var(--color-line);
+    margin-top: 14px;
+    flex-shrink: 0;
+  }
+  .award-sub-body {
+    padding: 6px 0 6px 8px;
+    border-bottom: 1px solid var(--color-line);
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    flex-wrap: wrap;
+  }
+  .award-sub-item:last-child .award-sub-body { border-bottom: none; }
+  .award-sub-name {
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: var(--color-body);
+    flex: 1;
+    min-width: 120px;
+  }
+  .award-sub-grade {
+    font-size: 0.65rem;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 2px;
+    flex-shrink: 0;
+  }
+  .award-sub-grade--gold { background: #fef3c7; color: #92400e; }
+  .award-sub-grade--silver { background: #e0f2fe; color: #0369a1; }
+  .award-sub-grade--bronze { background: #f0fdf4; color: #166534; }
+  .award-sub-grade--gray { background: var(--color-bg-soft); color: var(--color-muted); }
+  .award-sub-org {
+    font-size: 0.7rem;
+    color: var(--color-muted);
+    flex-shrink: 0;
+  }
+  .award-badge {
+    display: inline-block;
+    font-size: 0.65rem;
+    font-weight: 700;
+    color: #fff;
+    background: var(--divider-red);
+    padding: 2px 7px;
+    border-radius: 2px;
+    margin-right: 6px;
+    vertical-align: middle;
+  }
+
+  /* ── 닫는 섹션 ── */
+  .closing-quote {
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    font-weight: 800;
+    color: var(--color-heading);
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+    margin-bottom: 36px;
+  }
+
+  @media (max-width: 767px) {
+    .cover-profile-img { display: none; }
+    .stat-strip { flex-wrap: wrap; }
+    .stat-item { flex: 1 1 45%; border-bottom: 1px solid var(--rule-color); }
+    .stat-item:nth-child(odd) { border-right: 1px solid var(--rule-color); }
+    .stat-item:nth-child(even) { border-right: none; }
   }
   </style>
 </head>
@@ -74,22 +284,26 @@
 ═══════════════════════════════════════════════════════════ -->
 <section class="section-cover" id="cover" aria-label="표지">
   <div class="cover-inner">
-    <p class="cover-label">PORTFOLIO</p>
+    <p class="cover-label">PORTFOLIO · 2026</p>
     <p class="cover-tagline">
-      모르는 분야도 구조를 파악해<br><em>결과물로 끝내는</em> <em>박세준</em>입니다
+      모르는 분야도 구조를 파악해<br><em>결과물로 끝내는</em> <em>엔지니어</em>입니다
     </p>
   </div>
+  <img
+    src="./assets/profile.jpg"
+    alt="박세준 프로필 사진"
+    class="cover-profile-img"
+  />
 </section>
 
 
 <!-- ═══════════════════════════════════════════════════════════
-  02. INTRO / RESUME SUMMARY
+  02. INTRO / RESUME
 ═══════════════════════════════════════════════════════════ -->
 <section class="section-intro" id="resume" aria-label="자기소개 및 이력">
   <div class="container">
     <div class="intro-grid">
 
-      <!-- Left: 이름 + 헤드라인 -->
       <div class="intro-left">
         <div class="intro-headline-wrap">
           <h1 class="intro-headline">
@@ -100,17 +314,36 @@
             하드웨어 설계부터 서비스 운영까지 직접 해왔습니다.
           </p>
         </div>
-        <div class="intro-contact-row">
+
+        <!-- 성과 수치 -->
+        <div class="stat-strip">
+          <div class="stat-item">
+            <span class="stat-num">9</span>
+            <span class="stat-label">공모전 수상</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-num">대상</span>
+            <span class="stat-label">한국도로공사<br>공모전</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-num">6+</span>
+            <span class="stat-label">AI 자동화<br>파이프라인</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-num">딥테크</span>
+            <span class="stat-label">예비창업패키지<br>선정</span>
+          </div>
+        </div>
+
+        <div class="intro-contact-row" style="margin-top: 24px;">
           <a href="mailto:mnunu1234@naver.com" class="contact-chip">mnunu1234@naver.com</a>
           <a href="https://github.com/mnunu123" class="contact-chip" target="_blank">GitHub</a>
           <a href="https://blog-1vld.vercel.app" class="contact-chip" target="_blank">Blog</a>
         </div>
       </div>
 
-      <!-- Right: 이력 요약 -->
       <div class="intro-right">
 
-        <!-- 기본 정보 -->
         <div class="resume-block">
           <h2 class="resume-block-title">BASIC INFO</h2>
           <dl class="resume-list">
@@ -123,29 +356,28 @@
 
         <div class="resume-divider"></div>
 
-        <!-- 경력 / 활동 -->
         <div class="resume-block">
           <h2 class="resume-block-title">EXPERIENCE</h2>
           <dl class="resume-list resume-list--exp">
             <div class="resume-exp-item">
+              <dt>2025.09 — 2026.02</dt>
+              <dd>
+                <strong>딥테크 예비창업패키지</strong>
+                <span class="resume-role">기술개발 · 운영 · 회계 · IR 1인 전담 · 우수기업 선정</span>
+              </dd>
+            </div>
+            <div class="resume-exp-item">
               <dt>2024 — 현재</dt>
               <dd>
-                <strong>딥테크 예비창업패키지 선정</strong>
-                <span class="resume-role">기술개발 · 운영 · 회계 · IR 1인 전담</span>
+                <strong>AI 자동화 파이프라인 구축</strong>
+                <span class="resume-role">멀티에이전트 · Claude API · Playwright · Remotion</span>
               </dd>
             </div>
             <div class="resume-exp-item">
-              <dt>2023 — 2024</dt>
+              <dt>2022 — 2024</dt>
               <dd>
-                <strong>AI 자동화 파이프라인 개발</strong>
-                <span class="resume-role">멀티에이전트 · Claude API · Playwright</span>
-              </dd>
-            </div>
-            <div class="resume-exp-item">
-              <dt>2022 — 2023</dt>
-              <dd>
-                <strong>빗물받이 청소 로봇 · 웹 플랫폼</strong>
-                <span class="resume-role">임베디드 펌웨어 · FastAPI · 웹 대시보드</span>
+                <strong>쓰리봇 — 빗물받이 청소 로봇·웹 플랫폼</strong>
+                <span class="resume-role">임베디드 펌웨어 · FastAPI · Naver Maps 대시보드</span>
               </dd>
             </div>
           </dl>
@@ -153,7 +385,6 @@
 
         <div class="resume-divider"></div>
 
-        <!-- 학력 -->
         <div class="resume-block">
           <h2 class="resume-block-title">EDUCATION</h2>
           <dl class="resume-list resume-list--exp">
@@ -169,20 +400,97 @@
 
         <div class="resume-divider"></div>
 
-        <!-- 수상 -->
         <div class="resume-block">
           <h2 class="resume-block-title">AWARDS</h2>
-          <dl class="resume-list">
-            <dt>2025</dt><dd>한국도로공사 56주년 공모전 <strong>대상</strong></dd>
-            <dt>2024</dt><dd>기후테크 공모전 최우수상 — 빗물받이 쓰리봇</dd>
-            <dt>2024</dt><dd>예비창업패키지 선정 — 정부 사업화 검증 통과</dd>
-            <dt>2022–24</dt><dd>공모전·해커톤 9개 수상</dd>
-          </dl>
+          <div class="award-list">
+            <div class="award-item">
+              <span class="award-year">2025</span>
+              <span class="award-text"><span class="award-badge">대상</span>한국도로공사 56주년 영화공모전<br><small style="color:var(--color-muted)">AI 도구 6개로 56초 영상 제작</small></span>
+            </div>
+            <div class="award-item">
+              <span class="award-year">2025</span>
+              <span class="award-text"><span class="award-badge">최우수</span>기후테크 공모전<br><small style="color:var(--color-muted)">빗물받이 쓰리봇</small></span>
+            </div>
+            <div class="award-item">
+              <span class="award-year">2025–26</span>
+              <span class="award-text">딥테크 예비창업패키지 선정<br><small style="color:var(--color-muted)">우수기업 선정 · 2025.09 — 2026.02</small></span>
+            </div>
+            <div class="award-item" style="align-items:flex-start;">
+              <span class="award-year" style="padding-top:2px;">2025</span>
+              <div>
+                <span class="award-text">공모전·해커톤 <strong>9개</strong> 수상</span>
+                <div class="award-sub-list">
+                  <div class="award-sub-item">
+                    <div class="award-sub-body">
+                      <span class="award-sub-grade award-sub-grade--gold">최우수</span>
+                      <span class="award-sub-name">기후테크 아이디어 경진대회</span>
+                      <span class="award-sub-org">지식재산전문인력양성사업단 · 2025.11</span>
+                    </div>
+                  </div>
+                  <div class="award-sub-item">
+                    <div class="award-sub-body">
+                      <span class="award-sub-grade award-sub-grade--gold">최우수</span>
+                      <span class="award-sub-name">KNU-UP 학생창업 시제품 경진대회</span>
+                      <span class="award-sub-org">지산학연협력기술연구소 · 2025.12</span>
+                    </div>
+                  </div>
+                  <div class="award-sub-item">
+                    <div class="award-sub-body">
+                      <span class="award-sub-grade award-sub-grade--gold">최우수</span>
+                      <span class="award-sub-name">KNU-E 창업역량 강화캠프</span>
+                      <span class="award-sub-org">경북대학교 산학협력단 · 2025.09</span>
+                    </div>
+                  </div>
+                  <div class="award-sub-item">
+                    <div class="award-sub-body">
+                      <span class="award-sub-grade award-sub-grade--silver">은상</span>
+                      <span class="award-sub-name">제5회 SDGs 소셜벤처 챔피언십</span>
+                      <span class="award-sub-org">한국지속가능소셜벤처협회 · 2025.11</span>
+                    </div>
+                  </div>
+                  <div class="award-sub-item">
+                    <div class="award-sub-body">
+                      <span class="award-sub-grade award-sub-grade--silver">우수</span>
+                      <span class="award-sub-name">2025 창업 경진대회</span>
+                      <span class="award-sub-org">안동형일자리사업단 · 2025.11</span>
+                    </div>
+                  </div>
+                  <div class="award-sub-item">
+                    <div class="award-sub-body">
+                      <span class="award-sub-grade award-sub-grade--silver">우수</span>
+                      <span class="award-sub-name">미래한국 아이디어 공모전</span>
+                      <span class="award-sub-org">기획재정부 · 2025.11</span>
+                    </div>
+                  </div>
+                  <div class="award-sub-item">
+                    <div class="award-sub-body">
+                      <span class="award-sub-grade award-sub-grade--silver">우수</span>
+                      <span class="award-sub-name">ICT 지식재산 아이디어 경진대회</span>
+                      <span class="award-sub-org">한국정보시스템학회 · 2025.10</span>
+                    </div>
+                  </div>
+                  <div class="award-sub-item">
+                    <div class="award-sub-body">
+                      <span class="award-sub-grade award-sub-grade--bronze">장려</span>
+                      <span class="award-sub-name">CBC KOREA 창업경진대회</span>
+                      <span class="award-sub-org">CBC KOREA · 2025.11</span>
+                    </div>
+                  </div>
+                  <div class="award-sub-item">
+                    <div class="award-sub-body">
+                      <span class="award-sub-grade award-sub-grade--bronze">장려</span>
+                      <span class="award-sub-name">캡스톤디자인 온라인 경진대회</span>
+                      <span class="award-sub-org">한국환경기술학회 · 2025.11</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div class="resume-divider"></div>
 
-        <!-- 스킬 -->
         <div class="resume-block">
           <h2 class="resume-block-title">SKILLS</h2>
           <div class="skill-row">
@@ -201,14 +509,14 @@
           </div>
         </div>
 
-      </div><!-- /intro-right -->
-    </div><!-- /intro-grid -->
+      </div>
+    </div>
   </div>
 </section>
 
 
 <!-- ═══════════════════════════════════════════════════════════
-  03. SECTION DIVIDER — 01 관심 (Red)
+  03. DIVIDER — 01 관심 (Red / Full)
 ═══════════════════════════════════════════════════════════ -->
 <section class="section-divider section-divider--red" id="divider-1">
   <div class="divider-inner">
@@ -220,17 +528,16 @@
 
 
 <!-- ═══════════════════════════════════════════════════════════
-  04. PROJECT 01 — 빗물받이 청소 로봇 + 웹 관제 플랫폼
+  04. PROJECT 01 — 쓰리봇 · 빗물받이 청소 로봇 + 웹 관제 플랫폼
 ═══════════════════════════════════════════════════════════ -->
 <section class="section-project project-variant-a" id="project-1" data-accent="red" aria-label="프로젝트 1">
   <div class="container">
     <div class="project-grid">
 
-      <!-- Left: 설명 -->
       <div class="project-left">
-        <h2 class="project-title">하드웨어 설계부터<br>웹 플랫폼까지<br>혼자 완성</h2>
-        <p class="project-meta">딥테크 예비창업패키지 <span class="meta-sep">·</span> 2022 — 2024</p>
-        <p class="project-meta project-role">임베디드 · 백엔드 · 프론트엔드</p>
+        <h2 class="project-title">하드웨어 설계부터<br>웹 플랫폼까지<br>혼자 완성한 시스템</h2>
+        <p class="project-meta">딥테크 예비창업패키지 우수기업 선정 <span class="meta-sep">·</span> 2022 — 2025</p>
+        <p class="project-meta project-role">임베디드 펌웨어 · 백엔드 · 프론트엔드 · 기획 1인</p>
         <hr class="project-rule" />
 
         <p class="keyword-label">Keyword</p>
@@ -239,15 +546,18 @@
           <span class="badge">FastAPI</span>
           <span class="badge">Naver Maps</span>
           <span class="badge">Docker</span>
+          <span class="badge">PostgreSQL</span>
         </div>
 
         <p class="project-body">
-          도심 집중호우 시 빗물받이 막힘이 침수의 주요 원인이지만, 현행 방식은 수동 순찰·민원 접수로 사후 대응만 가능했습니다.
-          STM32 기반 FSM 펌웨어로 로봇을 제어하고, FastAPI + PostgreSQL + Docker 백엔드와 Naver Maps + GeoJSON 기반 웹 대시보드까지 전 구간을 1인 개발했습니다.
+          도심 집중호우 시 빗물받이 막힘이 침수의 주요 원인. 기존 방식은 수동 순찰·민원 접수로
+          사후 대응만 가능했습니다. <strong>STM32 기반 FSM 펌웨어</strong>로 청소 로봇을 제어하고,
+          FastAPI + PostgreSQL + Docker 백엔드와 Naver Maps + GeoJSON 기반
+          웹 대시보드까지 전 구간을 1인 개발했습니다.
         </p>
 
         <blockquote class="project-thinking">
-          <p>"모르는 분야라도 구조를 이해하면 결국 만들 수 있다"는 걸 이 프로젝트로 배웠습니다.</p>
+          <p>"모르는 분야라도 구조를 이해하면 결국 만들 수 있다"는 걸 이 프로젝트로 확인했습니다.</p>
         </blockquote>
 
         <div class="contribution-list">
@@ -268,28 +578,36 @@
             <div class="contrib-track"><div class="contrib-fill" style="--bar-width:100%"></div></div>
           </div>
         </div>
-      </div><!-- /project-left -->
 
-      <!-- Right: 실적 카드 -->
-      <div class="project-right">
-        <div class="proof-cards">
-          <div class="proof-card">
-            <p class="proof-platform">예비창업패키지</p>
-            <p class="proof-text">딥테크 트랙 선정 — 정부 사업화 검증 통과</p>
-            <p class="proof-metric">기술개발·회계·발주·공문·IR 1인 전담</p>
-          </div>
-          <div class="proof-card">
-            <p class="proof-platform">공모전 수상</p>
-            <p class="proof-text">기후테크 공모전 최우수상 포함 9개 대회 수상</p>
-            <p class="proof-metric">2022 — 2024</p>
-          </div>
-          <div class="proof-card">
-            <p class="proof-platform">기술 스택</p>
-            <p class="proof-text">STM32 · C FSM · FastAPI · PostgreSQL · Next.js · Docker · Naver Maps API</p>
-            <p class="proof-metric">풀스택 1인 개발</p>
-          </div>
+        <div class="tech-grid">
+          <span class="tech-tag">STM32 · C · FSM</span>
+          <span class="tech-tag">UART 라인버퍼링</span>
+          <span class="tech-tag">TIM3 PWM 스텝제어</span>
+          <span class="tech-tag">Python · FastAPI</span>
+          <span class="tech-tag">PostgreSQL · asyncpg</span>
+          <span class="tech-tag">Next.js · TypeScript</span>
+          <span class="tech-tag">Naver Maps API</span>
+          <span class="tech-tag">GeoJSON</span>
+          <span class="tech-tag">Docker Compose</span>
         </div>
-      </div><!-- /project-right -->
+      </div>
+
+      <div class="project-right">
+        <div class="project-photos">
+          <!-- 로봇 3D 렌더 -->
+          <img
+            src="./assets/threebot-robot.png"
+            alt="쓰리봇 — 빗물받이 청소 로봇 3D 렌더"
+            class="project-photo-hero"
+          />
+          <!-- 웹 대시보드 -->
+          <img
+            src="./assets/threebot-ui.png"
+            alt="쓰리봇 웹 관제 대시보드 — Naver Maps"
+            class="project-photo-secondary"
+          />
+        </div>
+      </div>
 
     </div>
   </div>
@@ -297,7 +615,7 @@
 
 
 <!-- ═══════════════════════════════════════════════════════════
-  05. SECTION DIVIDER — 02 경험 (Dark)
+  05. DIVIDER — 02 경험 (Dark / Full)
 ═══════════════════════════════════════════════════════════ -->
 <section class="section-divider section-divider--dark" id="divider-2">
   <div class="divider-inner">
@@ -314,73 +632,83 @@
 
 
 <!-- ═══════════════════════════════════════════════════════════
-  06. PROJECT 02 — AI 자동화 파이프라인
+  06. PROJECT 02 — AI 멀티에이전트 자동화 + 한국도로공사 공모전 대상
 ═══════════════════════════════════════════════════════════ -->
 <section class="section-project project-variant-b" id="project-2" data-accent="red" aria-label="프로젝트 2">
   <div class="container">
     <div class="project-grid">
 
-      <!-- Left: 설명 -->
       <div class="project-left">
-        <h2 class="project-title">AI 멀티에이전트로<br>개발·문서·영상<br>자동화</h2>
-        <p class="project-meta">개인 프로젝트 <span class="meta-sep">·</span> 2024 — 현재</p>
-        <p class="project-meta project-role">AI · 자동화 · 파이프라인 설계</p>
+        <h2 class="project-title">AI 도구 6개로<br>56초 영상 제작<br>— 대상 수상</h2>
+        <p class="project-meta">한국도로공사 56주년 영화공모전 <span class="meta-sep">·</span> 2025.10</p>
+        <p class="project-meta project-role">AI 영상 제작 · 멀티에이전트 파이프라인 설계</p>
         <hr class="project-rule" />
 
         <p class="keyword-label">Keyword</p>
         <div class="keyword-badges">
+          <span class="badge">Kling AI</span>
+          <span class="badge">Veo3</span>
+          <span class="badge">Midjourney</span>
           <span class="badge">Claude API</span>
-          <span class="badge">Gemini API</span>
-          <span class="badge">Playwright</span>
-          <span class="badge">멀티에이전트</span>
+          <span class="badge">DaVinci Resolve</span>
         </div>
 
         <p class="project-body">
-          Claude · Gemini · YOLOv8 등 다수의 AI 모델을 조합한 멀티에이전트 파이프라인을 구축해,
-          개발 초안 작성·코드 리뷰·문서화·영상 편집 전 과정을 자동화했습니다.
-          한국도로공사 공모전에서는 AI 도구 6개로 56초 영상을 제작해 대상을 수상했습니다.
+          고속도로와 휴게소를 배경으로 한 56초 공모전.
+          스토리보드 → 미드저니 이미지 → Kling/Veo3 동영상 → GPT-4 내레이션 → 다빈치 편집까지
+          <strong>AI 도구 6개를 파이프라인으로 연결</strong>해 대상을 수상했습니다.
+          개미가 길을 만드는 것처럼, AI 도구들을 이어 붙여 작품을 완성하는 과정이었습니다.
         </p>
 
         <blockquote class="project-thinking">
-          <p>AI를 쓰는 게 아니라 AI를 설계하는 방식으로 접근했습니다. 그 차이가 결과를 만들었습니다.</p>
+          <p>"AI를 쓰는 게 아니라 AI를 설계하는 방식으로 접근했습니다. 그 차이가 결과를 만들었습니다."</p>
         </blockquote>
 
         <div class="contribution-list">
           <div class="contrib-item">
             <span class="contrib-label">파이프라인</span>
-            <div class="contrib-track"><div class="contrib-fill" style="--bar-width:95%"></div></div>
+            <div class="contrib-track"><div class="contrib-fill" style="--bar-width:100%"></div></div>
           </div>
           <div class="contrib-item">
-            <span class="contrib-label">자동화</span>
+            <span class="contrib-label">영상 편집</span>
+            <div class="contrib-track"><div class="contrib-fill" style="--bar-width:85%"></div></div>
+          </div>
+          <div class="contrib-item">
+            <span class="contrib-label">기획·스크립트</span>
             <div class="contrib-track"><div class="contrib-fill" style="--bar-width:90%"></div></div>
           </div>
-          <div class="contrib-item">
-            <span class="contrib-label">영상 제작</span>
-            <div class="contrib-track"><div class="contrib-fill" style="--bar-width:80%"></div></div>
-          </div>
         </div>
-      </div><!-- /project-left -->
 
-      <!-- Right: 실적 카드 -->
-      <div class="project-right">
-        <div class="proof-cards">
-          <div class="proof-card">
-            <p class="proof-platform">한국도로공사 공모전</p>
-            <p class="proof-text">AI 도구 6개로 56초 영상 제작 → 대상 수상</p>
-            <p class="proof-metric">2025</p>
-          </div>
-          <div class="proof-card">
-            <p class="proof-platform">AI 자동화 구축</p>
-            <p class="proof-text">개발·문서화·영상·마케팅 파이프라인 6개 운영 중</p>
-            <p class="proof-metric">Claude · Gemini · YOLOv8 · Playwright</p>
-          </div>
-          <div class="proof-card">
-            <p class="proof-platform">적용 분야</p>
-            <p class="proof-text">코드 초안 작성 → 자동 리뷰 → 문서화 → 영상 편집</p>
-            <p class="proof-metric">전 주기 자동화</p>
-          </div>
+        <div class="tech-grid">
+          <span class="tech-tag">Kling AI</span>
+          <span class="tech-tag">Google Veo3</span>
+          <span class="tech-tag">Midjourney</span>
+          <span class="tech-tag">GPT-4</span>
+          <span class="tech-tag">ElevenLabs</span>
+          <span class="tech-tag">DaVinci Resolve</span>
+          <span class="tech-tag">Remotion</span>
         </div>
-      </div><!-- /project-right -->
+      </div>
+
+      <div class="project-right">
+        <div class="project-photos">
+          <!-- 로컬 영상 -->
+          <div class="video-embed">
+            <video
+              src="./모여서만든길.MP4"
+              controls
+              preload="metadata"
+              title="한국도로공사 56주년 공모전 대상 영상"
+            ></video>
+          </div>
+          <!-- AI 영상 프레임 샷 -->
+          <img
+            src="./assets/ai-video-frame.jpg"
+            alt="AI 영상 제작 — 개미 행진 씬"
+            class="project-photo-secondary"
+          />
+        </div>
+      </div>
 
     </div>
   </div>
@@ -388,7 +716,7 @@
 
 
 <!-- ═══════════════════════════════════════════════════════════
-  07. SECTION DIVIDER — 03 습관 (Black)
+  07. DIVIDER — 03 습관 (Black / Full)
 ═══════════════════════════════════════════════════════════ -->
 <section class="section-divider section-divider--black" id="divider-3">
   <div class="divider-inner">
@@ -400,73 +728,76 @@
 
 
 <!-- ═══════════════════════════════════════════════════════════
-  08. PROJECT 03 — 스마트 무드등 IoT 시스템
+  08. PROJECT 03 — 면접훈련 로봇 InMoov i2Head
 ═══════════════════════════════════════════════════════════ -->
 <section class="section-project project-variant-c" id="project-3" data-accent="blue" aria-label="프로젝트 3">
   <div class="container">
     <div class="project-grid">
 
-      <!-- Left: 설명 -->
       <div class="project-left">
-        <h2 class="project-title">센서 데이터로<br>환경을 읽는<br>스마트 조명 시스템</h2>
-        <p class="project-meta">개인 프로젝트 <span class="meta-sep">·</span> 2023</p>
-        <p class="project-meta project-role">임베디드 · 앱 개발 · IoT</p>
+        <h2 class="project-title">서보 17개로<br>AI 면접관<br>얼굴을 만들다</h2>
+        <p class="project-meta">개인 프로젝트 (진행 중) <span class="meta-sep">·</span> 2026</p>
+        <p class="project-meta project-role">임베디드 · AI 연동 · 로보틱스</p>
         <hr class="project-rule" />
 
         <p class="keyword-label">Keyword</p>
         <div class="keyword-badges">
-          <span class="badge">ESP32</span>
-          <span class="badge">Flutter</span>
-          <span class="badge">BLE</span>
-          <span class="badge">센서 퓨전</span>
+          <span class="badge">InMoov i2Head</span>
+          <span class="badge">Arduino</span>
+          <span class="badge">FastAPI</span>
+          <span class="badge">Claude API</span>
         </div>
 
         <p class="project-body">
-          온도·습도·조도·움직임 센서 데이터를 융합해 사용자의 활동 상태를 판별하고,
-          자동으로 최적 조명을 설정하는 IoT 시스템입니다.
-          ESP32 펌웨어와 Flutter 앱을 BLE로 연동해 실시간 제어를 구현했습니다.
+          InMoov 오픈소스 휴머노이드의 머리 부분(i2Head)만을 활용해
+          <strong>AI 면접관 인터페이스</strong>를 구현하는 프로젝트.
+          서보 17개로 눈동자·눈썹·입술을 제어해 감정 표현을 구현하고,
+          FastAPI 브릿지를 통해 Claude API로 면접 질문을 생성·응답합니다.
         </p>
 
         <blockquote class="project-thinking">
-          <p>작은 센서 하나가 사람의 행동 패턴을 읽어낸다는 사실이, 임베디드의 매력을 다시 확인하게 해줬습니다.</p>
+          <p>"'로봇 구현'이 목표가 아니라 '면접관처럼 느껴지는 인터페이스' 구현이 목표입니다."</p>
         </blockquote>
 
         <div class="contribution-list">
           <div class="contrib-item">
-            <span class="contrib-label">펌웨어</span>
-            <div class="contrib-track"><div class="contrib-fill" style="--bar-width:95%"></div></div>
+            <span class="contrib-label">서보 제어</span>
+            <div class="contrib-track"><div class="contrib-fill" style="--bar-width:90%"></div></div>
           </div>
           <div class="contrib-item">
-            <span class="contrib-label">앱 개발</span>
+            <span class="contrib-label">AI 연동</span>
             <div class="contrib-track"><div class="contrib-fill" style="--bar-width:85%"></div></div>
           </div>
           <div class="contrib-item">
-            <span class="contrib-label">회로 설계</span>
-            <div class="contrib-track"><div class="contrib-fill" style="--bar-width:90%"></div></div>
+            <span class="contrib-label">아키텍처</span>
+            <div class="contrib-track"><div class="contrib-fill" style="--bar-width:95%"></div></div>
           </div>
         </div>
-      </div><!-- /project-left -->
 
-      <!-- Right: 실적 카드 -->
-      <div class="project-right">
-        <div class="proof-cards">
-          <div class="proof-card">
-            <p class="proof-platform">기술 스택</p>
-            <p class="proof-text">ESP32 · C++ · FreeRTOS · Flutter · BLE GATT · Firebase</p>
-            <p class="proof-metric">임베디드 + 앱 풀스택</p>
-          </div>
-          <div class="proof-card">
-            <p class="proof-platform">센서 퓨전</p>
-            <p class="proof-text">DHT22 · BH1750 · PIR · 가속도 센서 복합 처리</p>
-            <p class="proof-metric">4종 센서 실시간 융합</p>
-          </div>
-          <div class="proof-card">
-            <p class="proof-platform">결과</p>
-            <p class="proof-text">수면·집중·휴식 3가지 모드 자동 전환 구현</p>
-            <p class="proof-metric">응답 지연 &lt; 200ms</p>
-          </div>
+        <div class="tech-grid">
+          <span class="tech-tag">InMoov i2Head</span>
+          <span class="tech-tag">Arduino · 서보 17개</span>
+          <span class="tech-tag">MyRobotLab</span>
+          <span class="tech-tag">Python · FastAPI</span>
+          <span class="tech-tag">Claude API</span>
+          <span class="tech-tag">멀티모달</span>
         </div>
-      </div><!-- /project-right -->
+      </div>
+
+      <div class="project-right">
+        <div class="project-photos">
+          <img
+            src="./assets/i2head-robot.png"
+            alt="면접훈련 로봇 InMoov i2Head"
+            class="project-photo-hero"
+          />
+          <img
+            src="./assets/i2head-anim.gif"
+            alt="i2Head 표정 애니메이션"
+            class="project-photo-gif"
+          />
+        </div>
+      </div>
 
     </div>
   </div>
@@ -474,13 +805,13 @@
 
 
 <!-- ═══════════════════════════════════════════════════════════
-  09. ARCHIVE / OTHER WORKS
+  09. ARCHIVE
 ═══════════════════════════════════════════════════════════ -->
 <section class="section-archive" id="archive" aria-label="기타 작업물">
   <div class="container">
     <div class="archive-header">
       <h2 class="archive-title">Other Works</h2>
-      <p class="archive-subtitle">그 밖의 프로젝트들</p>
+      <p class="archive-subtitle">그 밖의 프로젝트 목록</p>
     </div>
     <div class="archive-table">
       <div class="archive-row archive-row--head">
@@ -492,37 +823,37 @@
       </div>
       <a href="https://github.com/mnunu123" class="archive-row archive-row--item" target="_blank">
         <span class="archive-col archive-col--num">01</span>
-        <span class="archive-col archive-col--title">면접훈련 로봇 — InMoov i2Head</span>
-        <span class="archive-col archive-col--role">임베디드 / AI</span>
+        <span class="archive-col archive-col--title">산불 CCTV 협력 감지 시스템</span>
+        <span class="archive-col archive-col--role">AI · 컴퓨터비전</span>
         <span class="archive-col archive-col--period">2024</span>
         <span class="archive-col archive-col--link">→</span>
       </a>
       <a href="https://github.com/mnunu123" class="archive-row archive-row--item" target="_blank">
         <span class="archive-col archive-col--num">02</span>
-        <span class="archive-col archive-col--title">AI 유튜브 자동 생성 파이프라인</span>
-        <span class="archive-col archive-col--role">AI · 자동화</span>
+        <span class="archive-col archive-col--title">쇼츠 자동화 파이프라인 — 도우인 수집·편집·업로드</span>
+        <span class="archive-col archive-col--role">자동화 · Playwright</span>
         <span class="archive-col archive-col--period">2024</span>
         <span class="archive-col archive-col--link">→</span>
       </a>
       <a href="https://github.com/mnunu123" class="archive-row archive-row--item" target="_blank">
         <span class="archive-col archive-col--num">03</span>
-        <span class="archive-col archive-col--title">컴퓨터비전 YOLOv8 불꽃 감지 시스템</span>
-        <span class="archive-col archive-col--role">AI · 임베디드</span>
-        <span class="archive-col archive-col--period">2023</span>
+        <span class="archive-col archive-col--title">AI 에이전트 랜딩페이지 자동 생성기</span>
+        <span class="archive-col archive-col--role">Claude API · 멀티에이전트</span>
+        <span class="archive-col archive-col--period">2025</span>
         <span class="archive-col archive-col--link">→</span>
       </a>
       <a href="https://github.com/mnunu123" class="archive-row archive-row--item" target="_blank">
         <span class="archive-col archive-col--num">04</span>
-        <span class="archive-col archive-col--title">Next.js 포트폴리오 & 블로그 플랫폼</span>
-        <span class="archive-col archive-col--role">풀스택</span>
-        <span class="archive-col archive-col--period">2024</span>
+        <span class="archive-col archive-col--title">YOLOv8 불꽃·연기 감지 임베디드 시스템</span>
+        <span class="archive-col archive-col--role">YOLOv8 · 임베디드</span>
+        <span class="archive-col archive-col--period">2023</span>
         <span class="archive-col archive-col--link">→</span>
       </a>
       <a href="https://github.com/mnunu123" class="archive-row archive-row--item" target="_blank">
         <span class="archive-col archive-col--num">05</span>
-        <span class="archive-col archive-col--title">Flutter 앱 — 실시간 IoT 센서 대시보드</span>
-        <span class="archive-col archive-col--role">앱 · IoT</span>
-        <span class="archive-col archive-col--period">2023</span>
+        <span class="archive-col archive-col--title">Remotion 코드 기반 영상 자동화</span>
+        <span class="archive-col archive-col--role">TypeScript · Remotion</span>
+        <span class="archive-col archive-col--period">2025</span>
         <span class="archive-col archive-col--link">→</span>
       </a>
     </div>
@@ -531,13 +862,13 @@
 
 
 <!-- ═══════════════════════════════════════════════════════════
-  10. CONTACT / CLOSING
+  10. CLOSING
 ═══════════════════════════════════════════════════════════ -->
 <section class="section-closing" id="contact" aria-label="마무리 및 연락처">
   <div class="container">
     <div class="closing-inner">
       <p class="closing-label">THANK YOU</p>
-      <p class="closing-tagline">
+      <p class="closing-quote">
         <em>관심</em>에서 시작해 <em>경험</em>으로 증명하고<br>
         <em>습관</em>으로 만들어가겠습니다
       </p>
