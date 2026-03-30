@@ -1,0 +1,1469 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>박세준 — 채용 포트폴리오 2026</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <link rel="stylesheet" href="./styles/reset.css" />
+  <style>
+/* ═══════════════════════════════════════
+   TOSS DESIGN SYSTEM
+═══════════════════════════════════════ */
+:root {
+  --blue:      #3182f6;
+  --blue-dark: #1b64da;
+  --dark:      #191f28;
+  --dark2:     #333d4b;
+  --muted:     #4e5968;
+  --muted2:    #6b7684;
+  --muted3:    #8b95a1;
+  --line:      #b0b8c1;
+  --line-soft: #d1d6db;
+  --bg:        #f9fafb;
+  --white:     #ffffff;
+
+  --font: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
+  --max-w: 1040px;
+  --pad: clamp(24px, 5vw, 80px);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: var(--font); color: var(--dark); background: var(--white); -webkit-font-smoothing: antialiased; }
+a { text-decoration: none; color: inherit; }
+
+.p-container { max-width: var(--max-w); margin: 0 auto; padding: 0 var(--pad); }
+
+/* ───────────────────────────────────────
+   NAV
+─────────────────────────────────────── */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: saturate(180%) blur(10px);
+  border-bottom: 1px solid var(--line-soft);
+}
+
+.nav-inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 var(--pad);
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-logo {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--dark);
+  letter-spacing: -0.01em;
+}
+
+.nav-links {
+  display: flex;
+  gap: 28px;
+}
+
+.nav-links a {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--muted2);
+  transition: color 0.15s;
+}
+
+.nav-links a:hover { color: var(--dark); }
+
+/* ───────────────────────────────────────
+   01. HERO — 풀뷰포트
+─────────────────────────────────────── */
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background: var(--white);
+  overflow: hidden;
+}
+
+.hero-gradient {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 500px;
+  background: linear-gradient(180deg, var(--white) 0%, var(--white) 59px, rgba(255,255,255,0) 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 80% 60% at 70% 50%, rgba(49,130,246,0.07) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 120px 0 160px;
+}
+
+.hero-eyebrow {
+  display: inline-block;
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--blue);
+  margin-bottom: 20px;
+}
+
+.hero-title {
+  font-size: clamp(2.6rem, 6vw, 4.8rem);
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--dark);
+  margin-bottom: 28px;
+  letter-spacing: -0.02em;
+}
+
+.hero-sub {
+  font-size: clamp(1.1rem, 2vw, 1.45rem);
+  font-weight: 600;
+  line-height: 1.6;
+  color: var(--muted2);
+  max-width: 540px;
+  margin-bottom: 48px;
+}
+
+.hero-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.hero-tag {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--blue);
+  background: rgba(49,130,246,0.08);
+  border-radius: 100px;
+  padding: 8px 18px;
+  transition: background 0.15s;
+}
+
+.hero-tag:hover { background: rgba(49,130,246,0.15); }
+
+/* 우측 숫자 장식 */
+.hero-deco {
+  position: absolute;
+  right: var(--pad);
+  bottom: 80px;
+  font-size: clamp(8rem, 20vw, 18rem);
+  font-weight: 800;
+  color: rgba(49,130,246,0.04);
+  line-height: 1;
+  letter-spacing: -0.04em;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* ───────────────────────────────────────
+   공통 섹션 패턴
+─────────────────────────────────────── */
+.section {
+  padding: clamp(80px, 15vw, 200px) 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.section--bg { background: var(--bg); }
+.section--dark { background: var(--dark); }
+
+.section-eyebrow {
+  display: block;
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--blue);
+  margin-bottom: 16px;
+}
+
+.section-eyebrow--white { color: rgba(255,255,255,0.55); }
+
+.section-title {
+  font-size: clamp(2rem, 4.5vw, 3.6rem);
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--dark);
+  margin-bottom: 16px;
+  letter-spacing: -0.02em;
+}
+
+.section-title--white { color: var(--white); }
+
+.section-sub {
+  font-size: clamp(1rem, 1.8vw, 1.3rem);
+  font-weight: 600;
+  line-height: 1.6;
+  color: var(--muted2);
+}
+
+.section-sub--white { color: rgba(255,255,255,0.55); }
+
+/* ───────────────────────────────────────
+   02. RESUME — 실적 카드 그리드
+─────────────────────────────────────── */
+.resume-layout {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 28px;
+  margin-top: 70px;
+  align-items: stretch;
+}
+
+.resume-card {
+  flex: 1 1 calc(50% - 14px);
+  min-width: 280px;
+  background: var(--white);
+  border-radius: 16px;
+  padding: 40px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+  overflow: hidden;
+}
+
+.resume-card--full { flex: 1 1 100%; }
+
+.resume-card-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--blue);
+  margin-bottom: 20px;
+  display: block;
+}
+
+.resume-card-title {
+  font-size: clamp(1.1rem, 2vw, 1.5rem);
+  font-weight: 700;
+  color: var(--dark2);
+  line-height: 1.4;
+  margin-bottom: 16px;
+}
+
+.r2-list {
+  display: grid;
+  grid-template-columns: 60px 1fr;
+  gap: 8px 16px;
+}
+
+.r2-list dt {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--muted3);
+  padding-top: 2px;
+}
+
+.r2-list dd {
+  font-size: 0.9rem;
+  color: var(--dark2);
+  line-height: 1.6;
+}
+
+.exp-stack { display: flex; flex-direction: column; gap: 20px; }
+
+.exp-item {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 12px;
+  align-items: start;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--line-soft);
+}
+
+.exp-item:last-child { border-bottom: none; padding-bottom: 0; }
+
+.exp-period {
+  font-size: 0.74rem;
+  color: var(--muted3);
+  padding-top: 3px;
+  line-height: 1.5;
+}
+
+.exp-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--dark2);
+  margin-bottom: 3px;
+  display: block;
+}
+
+.exp-sub {
+  font-size: 0.8rem;
+  color: var(--muted2);
+  line-height: 1.5;
+}
+
+/* 수상 */
+.award-list { display: flex; flex-direction: column; gap: 12px; }
+.award-item {
+  display: flex;
+  gap: 14px;
+  align-items: baseline;
+  font-size: 0.9rem;
+}
+.award-year {
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: var(--blue);
+  letter-spacing: 0.05em;
+  min-width: 30px;
+  flex-shrink: 0;
+}
+.award-text { color: var(--dark2); line-height: 1.5; }
+
+/* 총무 역할 */
+.role-grid2 { display: flex; flex-direction: column; gap: 10px; }
+.role-item2 {
+  display: flex;
+  gap: 14px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line-soft);
+  align-items: start;
+  font-size: 0.88rem;
+}
+.role-item2:last-child { border-bottom: none; }
+.role-tag {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--blue);
+  background: rgba(49,130,246,0.08);
+  border-radius: 6px;
+  padding: 4px 10px;
+  white-space: nowrap;
+  letter-spacing: 0.03em;
+  flex-shrink: 0;
+}
+.role-desc { color: var(--dark2); line-height: 1.6; }
+
+/* 스킬 */
+.skill-grid2 { display: flex; flex-direction: column; gap: 12px; }
+.skill-item2 { display: flex; gap: 14px; align-items: start; font-size: 0.88rem; }
+.skill-cat2 {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--muted3);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  min-width: 52px;
+  padding-top: 2px;
+}
+.skill-val { color: var(--dark2); line-height: 1.6; }
+
+/* ───────────────────────────────────────
+   03. 섹션 구분 — 대형 타이포
+─────────────────────────────────────── */
+.chapter2 {
+  padding: clamp(60px, 10vw, 140px) 0;
+  background: var(--bg);
+  border-top: 1px solid var(--line-soft);
+  border-bottom: 1px solid var(--line-soft);
+  position: relative;
+  overflow: hidden;
+}
+
+.chapter2-num {
+  position: absolute;
+  right: var(--pad);
+  bottom: -20px;
+  font-size: clamp(6rem, 16vw, 14rem);
+  font-weight: 800;
+  color: rgba(49,130,246,0.05);
+  line-height: 1;
+  letter-spacing: -0.04em;
+  pointer-events: none;
+}
+
+/* ───────────────────────────────────────
+   04. 프로젝트 — 좌우 2열
+─────────────────────────────────────── */
+.proj2-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-top: 60px;
+  align-items: flex-start;
+}
+
+.proj2-left { flex: 1 1 400px; }
+.proj2-right { flex: 1 1 360px; display: flex; flex-direction: column; gap: 16px; }
+
+.proj2-meta {
+  font-size: 0.82rem;
+  color: var(--muted2);
+  margin-bottom: 4px;
+  line-height: 1.5;
+}
+
+.proj2-rule {
+  border: none;
+  border-top: 1px solid var(--line-soft);
+  margin: 24px 0;
+}
+
+.kw2-wrap { margin-bottom: 24px; }
+.kw2-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted3);
+  margin-bottom: 10px;
+  display: block;
+}
+.kw2-badges { display: flex; flex-wrap: wrap; gap: 8px; }
+.kw2-badge {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--blue);
+  background: rgba(49,130,246,0.08);
+  border-radius: 100px;
+  padding: 5px 14px;
+}
+
+.proj2-body {
+  font-size: 1rem;
+  color: var(--muted);
+  line-height: 1.85;
+  margin-bottom: 24px;
+}
+
+.proj2-quote {
+  border-left: 3px solid var(--blue);
+  padding-left: 18px;
+  margin-bottom: 28px;
+}
+
+.proj2-quote p {
+  font-size: 0.9rem;
+  color: var(--muted2);
+  line-height: 1.8;
+  font-style: italic;
+}
+
+/* contrib */
+.contrib2 { display: flex; flex-direction: column; gap: 10px; margin-top: 4px; }
+.contrib2-item { display: flex; align-items: center; gap: 14px; }
+.contrib2-lbl { font-size: 0.78rem; font-weight: 700; color: var(--muted3); min-width: 52px; }
+.contrib2-track { flex: 1; height: 3px; background: var(--line-soft); border-radius: 2px; overflow: hidden; }
+.contrib2-fill { height: 100%; background: var(--blue); border-radius: 2px; }
+
+/* 스택 카드 */
+.stack-card3 {
+  background: var(--bg);
+  border-radius: 12px;
+  padding: 24px 28px;
+  border: 1px solid var(--line-soft);
+}
+
+.stack-card3-title {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted3);
+  margin-bottom: 16px;
+}
+
+.stack3-rows { display: flex; flex-direction: column; gap: 10px; }
+.stack3-row { display: grid; grid-template-columns: 58px 1fr; gap: 12px; font-size: 0.88rem; line-height: 1.6; }
+.stack3-layer { font-size: 0.72rem; font-weight: 700; color: var(--blue); letter-spacing: 0.04em; padding-top: 2px; }
+
+/* 결과 카드 */
+.result3-cards { display: flex; flex-direction: column; gap: 10px; }
+.result3-card {
+  background: var(--white);
+  border-radius: 12px;
+  padding: 18px 20px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+  border: 1px solid var(--line-soft);
+}
+.result3-card--accent { border-left: 3px solid var(--blue); }
+.result3-lbl { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--blue); margin-bottom: 5px; }
+.result3-txt { font-size: 0.88rem; color: var(--dark2); line-height: 1.6; }
+
+/* ───────────────────────────────────────
+   05. 수치 강조 섹션 (토스 스타일 큰 숫자)
+─────────────────────────────────────── */
+.metrics2 {
+  margin-top: 70px;
+}
+
+.metrics2-headline {
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--dark);
+  margin-bottom: 60px;
+  letter-spacing: -0.02em;
+}
+
+.metrics2-headline span {
+  display: block;
+  color: var(--line);
+}
+
+.metrics2-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+}
+
+.metric3 {
+  flex: 1 1 calc(33.333% - 1px);
+  padding: 40px;
+  border-right: 1px solid var(--line-soft);
+  border-bottom: 1px solid var(--line-soft);
+}
+
+.metric3:nth-child(3n) { border-right: none; }
+.metric3:nth-child(4), .metric3:nth-child(5), .metric3:nth-child(6) { border-bottom: none; }
+
+.metric3-label {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--blue);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.metric3-num {
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 700;
+  color: var(--dark);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.metric3-num em { font-style: normal; color: var(--blue); }
+
+.metric3-desc {
+  font-size: 0.9rem;
+  color: var(--muted2);
+  margin-top: 8px;
+  line-height: 1.6;
+}
+
+/* ───────────────────────────────────────
+   06. AI 파이프라인 — 다크
+─────────────────────────────────────── */
+.pipe3 {
+  margin-top: 56px;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.pipe3-steps {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+.pipe3-step {
+  padding: 24px 12px;
+  text-align: center;
+  border-right: 1px solid rgba(255,255,255,0.08);
+  position: relative;
+}
+
+.pipe3-step:last-child { border-right: none; }
+
+.pipe3-step-num {
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: rgba(49,130,246,0.6);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.pipe3-step-name {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.3;
+  margin-bottom: 4px;
+}
+
+.pipe3-step-model {
+  font-size: 0.65rem;
+  color: rgba(255,255,255,0.35);
+  letter-spacing: 0.04em;
+}
+
+.pipe3-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  border-right: 1px solid rgba(255,255,255,0.08);
+  color: rgba(49,130,246,0.5);
+  font-size: 1.2rem;
+}
+
+.pipe3-result {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.pipe3-callout {
+  padding: 28px 28px;
+  border-right: 1px solid rgba(255,255,255,0.08);
+}
+
+.pipe3-callout:last-child { border-right: none; }
+
+.pipe3-callout-tag {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.35);
+  margin-bottom: 8px;
+  display: block;
+}
+
+.pipe3-callout-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 8px;
+}
+
+.pipe3-callout-text {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.65;
+}
+
+/* ───────────────────────────────────────
+   07. 대형 카피 섹션 (토스 스타일)
+─────────────────────────────────────── */
+.bigcopy {
+  padding: clamp(80px, 12vw, 180px) 0;
+  background: var(--white);
+  border-top: 1px solid var(--line-soft);
+  text-align: center;
+}
+
+.bigcopy-text {
+  font-size: clamp(2.2rem, 5.5vw, 4.6rem);
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--dark);
+  letter-spacing: -0.02em;
+  max-width: 860px;
+  margin: 0 auto 48px;
+}
+
+.bigcopy-text em { font-style: normal; color: var(--blue); }
+
+.bigcopy-num {
+  font-size: clamp(3rem, 6vw, 5rem);
+  font-weight: 700;
+  color: var(--dark2);
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
+}
+
+.bigcopy-num em { font-style: normal; color: var(--line); }
+
+.bigcopy-desc {
+  font-size: 1.1rem;
+  color: var(--muted2);
+  font-weight: 600;
+  line-height: 1.6;
+}
+
+/* ───────────────────────────────────────
+   08. 강점 카드 (bg 섹션)
+─────────────────────────────────────── */
+.strength3-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 60px;
+}
+
+.strength3-card {
+  flex: 1 1 calc(50% - 10px);
+  min-width: 260px;
+  background: var(--white);
+  border-radius: 16px;
+  padding: 40px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.05);
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.strength3-card:hover {
+  box-shadow: 0 8px 40px rgba(0,0,0,0.1);
+  transform: translateY(-2px);
+}
+
+.strength3-num {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--blue);
+  opacity: 0.12;
+  line-height: 1;
+  margin-bottom: 16px;
+  letter-spacing: -0.02em;
+}
+
+.strength3-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--dark);
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+
+.strength3-desc {
+  font-size: 0.9rem;
+  color: var(--muted2);
+  line-height: 1.8;
+}
+
+.strength3-ev {
+  display: block;
+  margin-top: 8px;
+  font-size: 0.78rem;
+  color: var(--muted3);
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+/* ───────────────────────────────────────
+   09. ALL PROJECTS 아카이브
+─────────────────────────────────────── */
+.archive3 { margin-top: 60px; }
+
+.archive3-group-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--blue);
+  margin-bottom: 12px;
+}
+
+.archive3-table {
+  border-top: 2px solid var(--dark);
+  margin-bottom: 48px;
+}
+
+.archive3-row {
+  display: grid;
+  grid-template-columns: 56px 1fr 150px 180px 28px;
+  gap: 16px;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--line-soft);
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+  transition: background 0.12s, padding 0.12s;
+}
+
+.archive3-row:hover {
+  background: var(--bg);
+  padding-left: 12px;
+  padding-right: 12px;
+  margin: 0 -12px;
+}
+
+.archive3-head .archive3-row {
+  border-bottom: 1px solid var(--line);
+}
+
+.archive3-head .archive3-col {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted3);
+}
+
+.archive3-num {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--blue);
+  letter-spacing: 0.05em;
+}
+
+.archive3-title { font-size: 0.95rem; font-weight: 700; color: var(--dark); }
+.archive3-role { font-size: 0.85rem; color: var(--muted2); }
+.archive3-period { font-size: 0.85rem; color: var(--muted2); }
+.archive3-link { font-size: 1rem; color: var(--muted3); text-align: right; }
+
+/* ───────────────────────────────────────
+   10. CLOSING — 토스 footer 스타일
+─────────────────────────────────────── */
+.closing3 {
+  padding: clamp(80px, 12vw, 160px) 0 clamp(60px, 8vw, 100px);
+  background: var(--white);
+  border-top: 1px solid var(--line-soft);
+  text-align: center;
+}
+
+.closing3-eyebrow {
+  display: block;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--blue);
+  margin-bottom: 20px;
+}
+
+.closing3-title {
+  font-size: clamp(3rem, 7vw, 6rem);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--dark);
+  letter-spacing: -0.03em;
+  margin-bottom: 40px;
+}
+
+.closing3-desc {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  font-weight: 600;
+  color: var(--muted2);
+  line-height: 1.7;
+  max-width: 520px;
+  margin: 0 auto 60px;
+}
+
+.closing3-contacts {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 24px 48px;
+  margin-bottom: 60px;
+}
+
+.closing3-contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.closing3-key {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted3);
+}
+
+.closing3-val {
+  font-size: 0.95rem;
+  color: var(--dark2);
+  font-weight: 500;
+  transition: color 0.15s;
+}
+
+a.closing3-val:hover { color: var(--blue); }
+
+.closing3-copy {
+  font-size: 0.78rem;
+  color: var(--line);
+  letter-spacing: 0.05em;
+}
+
+/* ───────────────────────────────────────
+   RESPONSIVE
+─────────────────────────────────────── */
+@media (max-width: 767px) {
+  .nav-links { display: none; }
+  .pipe3-steps { grid-template-columns: repeat(4, 1fr); }
+  .pipe3-result { grid-template-columns: 1fr; }
+  .pipe3-callout { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); }
+  .metrics2-grid { flex-direction: column; }
+  .metric3 { border-right: none; border-bottom: 1px solid var(--line-soft); }
+  .metric3:last-child { border-bottom: none; }
+  .resume-card { flex: 1 1 100%; }
+  .archive3-row { grid-template-columns: 44px 1fr 28px; }
+  .archive3-role, .archive3-period { display: none; }
+  .strength3-card { flex: 1 1 100%; }
+  .proj2-right { flex: 1 1 100%; }
+  .section-title { letter-spacing: -0.01em; }
+  .closing3-title { letter-spacing: -0.02em; }
+}
+  </style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════
+  NAV
+══════════════════════════════════ -->
+<nav class="nav">
+  <div class="nav-inner">
+    <span class="nav-logo">박세준 포트폴리오</span>
+    <div class="nav-links">
+      <a href="#resume">이력</a>
+      <a href="#projects">프로젝트</a>
+      <a href="#ai">AI 자동화</a>
+      <a href="#archive">전체 목록</a>
+      <a href="#contact">연락처</a>
+    </div>
+  </div>
+</nav>
+
+
+<!-- ══════════════════════════════════
+  01. HERO
+══════════════════════════════════ -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-gradient"></div>
+  <div class="p-container hero-content">
+    <span class="hero-eyebrow">채용 포트폴리오 · 2026</span>
+    <h1 class="hero-title">
+      모르는 분야도<br>
+      구조를 파악해<br>
+      결과물로 끝냅니다.
+    </h1>
+    <p class="hero-sub">
+      전자공학·창업·AI 자동화를 거치며<br>
+      그 실행 방식을 직접 증명해왔습니다.
+    </p>
+    <div class="hero-tags">
+      <span class="hero-tag">하드웨어 설계</span>
+      <span class="hero-tag">소프트웨어 개발</span>
+      <span class="hero-tag">AI 자동화</span>
+      <span class="hero-tag">운영·행정</span>
+      <span class="hero-tag">회계·예산</span>
+      <span class="hero-tag">IR 피칭</span>
+      <span class="hero-tag">문서화</span>
+    </div>
+  </div>
+  <div class="hero-deco">01</div>
+</section>
+
+
+<!-- ══════════════════════════════════
+  02. RESUME
+══════════════════════════════════ -->
+<section class="section section--bg" id="resume">
+  <div class="p-container">
+    <span class="section-eyebrow">About</span>
+    <h2 class="section-title">전자공학 전공 +<br>창업 현장 운영 +<br>AI 자동화까지</h2>
+    <p class="section-sub">실행 방식을 직접 증명해왔습니다.</p>
+
+    <div class="resume-layout">
+
+      <div class="resume-card">
+        <span class="resume-card-label">Profile</span>
+        <dl class="r2-list">
+          <dt>이름</dt><dd>박세준 · 만 24세 (2002.01.15)</dd>
+          <dt>학교</dt><dd>경북대학교 전자공학부 (재학 중)</dd>
+          <dt>복수전공</dt><dd>지식재산융합전공</dd>
+          <dt>Email</dt><dd><a href="mailto:mnunu1234@naver.com" style="color:var(--blue)">mnunu1234@naver.com</a></dd>
+          <dt>Phone</dt><dd>010-4566-9665</dd>
+          <dt>GitHub</dt><dd><a href="https://github.com/mnunu123" target="_blank" style="color:var(--blue)">github.com/mnunu123</a></dd>
+          <dt>Blog</dt><dd><a href="https://blog-1vld.vercel.app" target="_blank" style="color:var(--blue)">mnunu.dev</a></dd>
+        </dl>
+      </div>
+
+      <div class="resume-card">
+        <span class="resume-card-label">Experience</span>
+        <div class="exp-stack">
+          <div class="exp-item">
+            <span class="exp-period">창업 활동</span>
+            <div>
+              <span class="exp-title">예비창업패키지 선정 — 빗물받이 쓰리봇</span>
+              <span class="exp-sub">기술개발 · 운영 · 회계 · IR 전담 (1인) · 9개 대회 수상</span>
+            </div>
+          </div>
+          <div class="exp-item">
+            <span class="exp-period">2025 — 현재</span>
+            <div>
+              <span class="exp-title">AI 자동화 프로젝트 6개</span>
+              <span class="exp-sub">랜딩페이지 제작 시간 90% 단축 · Claude Code 기반 멀티에이전트</span>
+            </div>
+          </div>
+          <div class="exp-item">
+            <span class="exp-period">2021 — 현재</span>
+            <div>
+              <span class="exp-title">경북대학교 전자공학부 재학</span>
+              <span class="exp-sub">회로·시스템·신호처리 기반 구조적 사고 훈련. 지식재산 복수전공으로 기술의 사업화 관점 확보.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="resume-card">
+        <span class="resume-card-label">Awards</span>
+        <div class="award-list">
+          <div class="award-item"><span class="award-year">2025</span><span class="award-text">한국도로공사 56주년 공모전 <strong>대상</strong> — AI 도구 6개로 56초 영상 제작</span></div>
+          <div class="award-item"><span class="award-year">2024</span><span class="award-text">기후테크 공모전 최우수상 — 빗물받이 쓰리봇 (9개 대회 수상 중)</span></div>
+          <div class="award-item"><span class="award-year">2024</span><span class="award-text">예비창업패키지 선정 — 정부 사업화 검증 통과</span></div>
+        </div>
+      </div>
+
+      <div class="resume-card">
+        <span class="resume-card-label">창업 중 수행한 총무 역할</span>
+        <div class="role-grid2">
+          <div class="role-item2"><span class="role-tag">행정·문서</span><span class="role-desc">공공기관 제출 서류 작성, 사업계획서, 진행 보고서</span></div>
+          <div class="role-item2"><span class="role-tag">회계·예산</span><span class="role-desc">지출 내역 정리, 예산안 작성, 정산 처리</span></div>
+          <div class="role-item2"><span class="role-tag">발주·조달</span><span class="role-desc">부품·외주 발주, 견적 비교, 납기 관리</span></div>
+          <div class="role-item2"><span class="role-tag">일정·조율</span><span class="role-desc">팀 일정 관리, 회의 준비, 대외 기관 연락</span></div>
+          <div class="role-item2"><span class="role-tag">IR·발표</span><span class="role-desc">투자자 피칭 자료 제작, 발표 직접 수행</span></div>
+        </div>
+      </div>
+
+      <div class="resume-card resume-card--full">
+        <span class="resume-card-label">Skills</span>
+        <div class="skill-grid2">
+          <div class="skill-item2"><span class="skill-cat2">하드웨어</span><span class="skill-val">STM32 · ESP32 · 회로 설계 · FSM 펌웨어 · IoT 센서</span></div>
+          <div class="skill-item2"><span class="skill-cat2">소프트웨어</span><span class="skill-val">Python · FastAPI · React+TypeScript · Next.js · Flutter</span></div>
+          <div class="skill-item2"><span class="skill-cat2">AI·자동화</span><span class="skill-val">YOLOv8 · Claude API · Gemini API · 멀티에이전트 파이프라인 · Playwright</span></div>
+          <div class="skill-item2"><span class="skill-cat2">인프라</span><span class="skill-val">Docker Compose · PostgreSQL · 마이크로서비스 · MQTT · NCP</span></div>
+          <div class="skill-item2"><span class="skill-cat2">운영·문서</span><span class="skill-val">사업계획서 · IR 피칭 · 공공기관 보고서 · 예산 정산</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════
+  03. CHAPTER — 실전 프로젝트
+══════════════════════════════════ -->
+<div class="chapter2" id="projects">
+  <div class="p-container">
+    <span class="section-eyebrow">#실전_프로젝트</span>
+    <h2 class="section-title" style="max-width:640px;">전자공학 지식을<br>실제 현장 문제에<br>직접 적용했습니다</h2>
+    <p class="section-sub">하드웨어 설계 → 소프트웨어 구현 → 서비스 운영까지<br>실전 프로젝트 3개 · 9개 대회 수상 · 예비창업패키지 선정</p>
+  </div>
+  <div class="chapter2-num">01</div>
+</div>
+
+
+<!-- ══════════════════════════════════
+  04. PROJECT 01
+══════════════════════════════════ -->
+<section class="section" id="project-1">
+  <div class="p-container">
+    <span class="section-eyebrow">실전 프로젝트 01 · 예비창업패키지 선정 · 9개 대회 수상</span>
+    <h2 class="section-title">빗물받이 쓰리봇<br>+ 웹 관제 플랫폼</h2>
+    <div class="proj2-grid">
+      <div class="proj2-left">
+        <p class="proj2-meta">도심 집수 예방을 위한 IoT 센서 로봇 + 실시간 관제 대시보드</p>
+        <hr class="proj2-rule" />
+        <div class="kw2-wrap">
+          <span class="kw2-label">Keyword</span>
+          <div class="kw2-badges">
+            <span class="kw2-badge">STM32 FSM</span>
+            <span class="kw2-badge">FastAPI + PostgreSQL</span>
+            <span class="kw2-badge">Naver Maps + GeoJSON</span>
+          </div>
+        </div>
+        <p class="proj2-body">도심 집중호우 시 빗물받이 막힘이 침수의 주요 원인이지만, 현행 방식은 수동 순찰 + 민원 접수로 사후 대응만 가능했습니다. STM32 기반 FSM 펌웨어로 로봇을 제어하고, FastAPI + PostgreSQL + Docker 백엔드와 Naver Maps + GeoJSON 기반 웹 대시보드까지 전 구간을 혼자 구현했습니다.</p>
+        <blockquote class="proj2-quote">
+          <p>코드를 작성하면서 동시에 "이 사업을 어떻게 운영할 것인가"를 고민하며 실행했고, 그 경험 모두를 총무 직무에서 활용하겠습니다.</p>
+        </blockquote>
+        <div class="contrib2">
+          <div class="contrib2-item"><span class="contrib2-lbl">하드웨어</span><div class="contrib2-track"><div class="contrib2-fill" style="width:100%"></div></div></div>
+          <div class="contrib2-item"><span class="contrib2-lbl">백엔드</span><div class="contrib2-track"><div class="contrib2-fill" style="width:100%"></div></div></div>
+          <div class="contrib2-item"><span class="contrib2-lbl">프론트엔드</span><div class="contrib2-track"><div class="contrib2-fill" style="width:100%"></div></div></div>
+          <div class="contrib2-item"><span class="contrib2-lbl">사업 운영</span><div class="contrib2-track"><div class="contrib2-fill" style="width:100%"></div></div></div>
+        </div>
+      </div>
+      <div class="proj2-right">
+        <div class="stack-card3">
+          <p class="stack-card3-title">기술 스택</p>
+          <div class="stack3-rows">
+            <div class="stack3-row"><span class="stack3-layer">펌웨어</span><span style="color:var(--muted);font-size:.85rem">STM32 · C · FSM(IDLE/HOME/MOVE/FAULT) · TIM3 PWM · UART 라인 버퍼링</span></div>
+            <div class="stack3-row"><span class="stack3-layer">백엔드</span><span style="color:var(--muted);font-size:.85rem">Python · FastAPI · PostgreSQL(Docker) · asyncpg · NCP · BBOX API</span></div>
+            <div class="stack3-row"><span class="stack3-layer">프론트</span><span style="color:var(--muted);font-size:.85rem">Next.js · TypeScript · Naver Maps API · GeoJSON · OverlayView</span></div>
+            <div class="stack3-row"><span class="stack3-layer">인프라</span><span style="color:var(--muted);font-size:.85rem">Docker Compose · 127.0.0.1 바인딩 · NCP 방화벽 · 마이크로서비스</span></div>
+          </div>
+        </div>
+        <div class="result3-cards">
+          <div class="result3-card result3-card--accent">
+            <p class="result3-lbl">수상 실적</p>
+            <p class="result3-txt">기후테크 최우수상 포함 <strong>9개 대회 수상</strong><br>예비창업패키지 선정 — 정부 사업화 검증 통과</p>
+          </div>
+          <div class="result3-card">
+            <p class="result3-lbl">기술 성과</p>
+            <p class="result3-txt">현장 피드백 기반 기능 반복 개선<br>코드 200줄 이상 감소 (네이버 지도 전환 최적화)</p>
+          </div>
+          <div class="result3-card">
+            <p class="result3-lbl">직무 연결</p>
+            <p class="result3-txt">공공기관 서류·사업계획서·예산 집행·정산<br>전 과정 직접 수행 — 총무 직무 즉시 적용 가능</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════
+  05. PROJECT 02 — 수치 강조
+══════════════════════════════════ -->
+<section class="section section--bg" id="project-2">
+  <div class="p-container">
+    <span class="section-eyebrow">실전 프로젝트 02 · 컴퓨터비전 + 임베디드</span>
+    <h2 class="section-title">안전보호구<br>착용 감지 시스템</h2>
+    <p class="section-sub">작업장 PPE 미착용을 카메라로 실시간 감지하고 알리는 시스템</p>
+    <div class="metrics2">
+      <h3 class="metrics2-headline">
+        YOLOv8 · Raspberry Pi 엣지<br>
+        <span>카메라 입력에서 알림까지 1초 이내</span>
+      </h3>
+      <div style="border:1px solid var(--line-soft);border-radius:16px;overflow:hidden;background:var(--white);">
+        <div class="metrics2-grid">
+          <div class="metric3">
+            <span class="metric3-label">처리 속도</span>
+            <p class="metric3-num"><em>1</em>초 이내</p>
+            <p class="metric3-desc">카메라 입력 → 부저·모니터 알림</p>
+          </div>
+          <div class="metric3">
+            <span class="metric3-label">엣지 추론</span>
+            <p class="metric3-num"><em>100</em>%</p>
+            <p class="metric3-desc">Raspberry Pi 단독 처리<br>서버 없이 현장 구동</p>
+          </div>
+          <div class="metric3">
+            <span class="metric3-label">보고서</span>
+            <p class="metric3-num"><em>자동</em></p>
+            <p class="metric3-desc">감지 이력 DB →<br>주간 안전 보고서 자동 생성</p>
+          </div>
+          <div class="metric3">
+            <span class="metric3-label">현장 피드백</span>
+            <p class="metric3-num" style="font-size:1.4rem;line-height:1.4;">"순회 없이<br>실시간 파악"</p>
+            <p class="metric3-desc">지자체 현장 담당자 인터뷰</p>
+          </div>
+          <div class="metric3">
+            <span class="metric3-label">기여도</span>
+            <p class="metric3-num"><em>100</em>%</p>
+            <p class="metric3-desc">비전 AI · 하드웨어<br>보고 자동화 전담</p>
+          </div>
+          <div class="metric3">
+            <span class="metric3-label">직무 연결</span>
+            <p class="metric3-num" style="font-size:1.4rem;line-height:1.4;">총무<br>보고 자동화</p>
+            <p class="metric3-desc">동일 방식으로 정례 보고<br>자동화 즉시 적용 가능</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════
+  06. PROJECT 03
+══════════════════════════════════ -->
+<section class="section" id="project-3">
+  <div class="p-container">
+    <span class="section-eyebrow">실전 프로젝트 03 · IoT · 임베디드 + 앱 연동</span>
+    <h2 class="section-title">스마트 무드등<br>— 환경 감응형<br>조명 시스템</h2>
+    <div class="proj2-grid">
+      <div class="proj2-left">
+        <p class="proj2-meta">센서 데이터와 사용자 상태를 기반으로 조명을 자동 조절하는 IoT 시스템</p>
+        <hr class="proj2-rule" />
+        <div class="kw2-wrap">
+          <span class="kw2-label">Keyword</span>
+          <div class="kw2-badges">
+            <span class="kw2-badge">ESP32 · FreeRTOS</span>
+            <span class="kw2-badge">BLE / Wi-Fi · MQTT</span>
+            <span class="kw2-badge">Flutter 앱</span>
+          </div>
+        </div>
+        <p class="proj2-body">조도·온도·움직임 센서를 MCU에 연결해 환경 데이터를 수집하고, BLE/Wi-Fi로 스마트폰 앱과 연결하여 수동 제어 + 자동 모드 전환을 구현했습니다. 하드웨어·펌웨어·통신·앱 4개 레이어를 혼자 설계하고 통합했습니다.</p>
+        <blockquote class="proj2-quote">
+          <p>복잡한 시스템을 작은 단위로 나눠 각 영역을 조율하면서 완성까지 이끌어 낸 경험 — 이 구조가 총무 직무의 다중 업무 조율 방식과 동일합니다.</p>
+        </blockquote>
+        <div class="contrib2">
+          <div class="contrib2-item"><span class="contrib2-lbl">하드웨어</span><div class="contrib2-track"><div class="contrib2-fill" style="width:100%"></div></div></div>
+          <div class="contrib2-item"><span class="contrib2-lbl">펌웨어</span><div class="contrib2-track"><div class="contrib2-fill" style="width:100%"></div></div></div>
+          <div class="contrib2-item"><span class="contrib2-lbl">앱 개발</span><div class="contrib2-track"><div class="contrib2-fill" style="width:85%"></div></div></div>
+        </div>
+      </div>
+      <div class="proj2-right">
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;">
+          <div style="text-align:center;padding:28px 12px;background:var(--blue);color:#fff;border-radius:12px;">
+            <p style="font-size:2rem;font-weight:700;line-height:1;">100<span style="font-size:.9rem;">ms</span></p>
+            <p style="font-size:.75rem;opacity:.75;margin-top:6px;line-height:1.4;">센서→조명<br>지연</p>
+          </div>
+          <div style="text-align:center;padding:28px 12px;background:var(--blue);color:#fff;border-radius:12px;">
+            <p style="font-size:2rem;font-weight:700;line-height:1;">60<span style="font-size:.9rem;">%↓</span></p>
+            <p style="font-size:.75rem;opacity:.75;margin-top:6px;line-height:1.4;">수동 개입<br>감소</p>
+          </div>
+          <div style="text-align:center;padding:28px 12px;background:var(--blue);color:#fff;border-radius:12px;">
+            <p style="font-size:2rem;font-weight:700;line-height:1;">40<span style="font-size:.9rem;">%↓</span></p>
+            <p style="font-size:.75rem;opacity:.75;margin-top:6px;line-height:1.4;">전력<br>절감</p>
+          </div>
+        </div>
+        <div class="result3-cards">
+          <div class="result3-card result3-card--accent">
+            <p class="result3-lbl">4-레이어 통합</p>
+            <p class="result3-txt">하드웨어 · 펌웨어 · 통신 · 앱<br>전 구간 1인 설계 및 구현</p>
+          </div>
+          <div class="result3-card">
+            <p class="result3-lbl">기술 스택</p>
+            <p class="result3-txt">ESP32 · FreeRTOS · BLE/Wi-Fi · MQTT · Flutter · Dart</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════
+  07. BIGCOPY — AI 전환
+══════════════════════════════════ -->
+<div class="bigcopy" id="ai">
+  <div class="p-container">
+    <p class="bigcopy-text">
+      반복 업무를<br>
+      <em>구조화해 없애는</em><br>
+      시스템을 만듭니다.
+    </p>
+    <div style="display:flex;justify-content:center;gap:60px;flex-wrap:wrap;">
+      <div style="text-align:center;">
+        <p class="bigcopy-num">2~3일 <em>→</em> 3~5분</p>
+        <p class="bigcopy-desc">랜딩페이지 제작 시간 단축</p>
+      </div>
+      <div style="text-align:center;">
+        <p class="bigcopy-num"><em>6</em>개</p>
+        <p class="bigcopy-desc">AI 자동화 파이프라인 구축</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════
+  08. AI PROJECT — 파이프라인 다크
+══════════════════════════════════ -->
+<section class="section section--dark" id="project-ai">
+  <div class="p-container">
+    <span class="section-eyebrow section-eyebrow--white">AI 자동화 01 · 멀티에이전트 · Claude Haiku/Sonnet + Gemini API</span>
+    <h2 class="section-title section-title--white">5-에이전트 협업<br>상세페이지 자동 생성 시스템</h2>
+    <p class="section-sub section-sub--white">제품 정보 입력만으로 13섹션 완성형 상세페이지 PNG/PDF 자동 출력</p>
+    <div class="pipe3">
+      <div class="pipe3-steps">
+        <div class="pipe3-step">
+          <span class="pipe3-step-num">INPUT</span>
+          <span class="pipe3-step-name">제품 정보</span>
+          <span class="pipe3-step-model">—</span>
+        </div>
+        <div class="pipe3-step">
+          <span class="pipe3-step-num">Agent 01</span>
+          <span class="pipe3-step-name">intake</span>
+          <span class="pipe3-step-model">Haiku</span>
+        </div>
+        <div class="pipe3-step">
+          <span class="pipe3-step-num">Agent 02</span>
+          <span class="pipe3-step-name">research</span>
+          <span class="pipe3-step-model">Sonnet</span>
+        </div>
+        <div class="pipe3-step">
+          <span class="pipe3-step-num">Agent 03</span>
+          <span class="pipe3-step-name">copy</span>
+          <span class="pipe3-step-model">Sonnet</span>
+        </div>
+        <div class="pipe3-step">
+          <span class="pipe3-step-num">Agent 04</span>
+          <span class="pipe3-step-name">design</span>
+          <span class="pipe3-step-model">Haiku</span>
+        </div>
+        <div class="pipe3-step">
+          <span class="pipe3-step-num">Agent 05</span>
+          <span class="pipe3-step-name">prompt</span>
+          <span class="pipe3-step-model">Sonnet</span>
+        </div>
+        <div class="pipe3-step">
+          <span class="pipe3-step-num">OUTPUT</span>
+          <span class="pipe3-step-name">Gemini</span>
+          <span class="pipe3-step-model">이미지 합성</span>
+        </div>
+      </div>
+      <div class="pipe3-result">
+        <div class="pipe3-callout">
+          <span class="pipe3-callout-tag">핵심 결과</span>
+          <p class="pipe3-callout-title">제작 시간 90% 단축</p>
+          <p class="pipe3-callout-text">2~3일 → 3~5분<br>openclaw 등 실제 상품 페이지 다수 생성 완료</p>
+        </div>
+        <div class="pipe3-callout">
+          <span class="pipe3-callout-tag">설계 원칙</span>
+          <p class="pipe3-callout-title">품질·비용 분리 최적화</p>
+          <p class="pipe3-callout-text">분석·카피는 Sonnet (품질 우선)<br>정보 수집·디자인은 Haiku (비용 최적화)</p>
+        </div>
+        <div class="pipe3-callout">
+          <span class="pipe3-callout-tag">직무 연결</span>
+          <p class="pipe3-callout-title">반복 문서 자동화</p>
+          <p class="pipe3-callout-text">공문·보고서 양식을 동일 파이프라인으로<br>총무 업무 자동화 즉시 제안·실행 가능</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════
+  09. ARCHIVE
+══════════════════════════════════ -->
+<section class="section section--bg" id="archive">
+  <div class="p-container">
+    <span class="section-eyebrow">All Projects</span>
+    <h2 class="section-title">실전 프로젝트 3개<br>AI 자동화 6개<br>기타 프로젝트</h2>
+
+    <div class="archive3">
+      <p class="archive3-group-label">AI 자동화 프로젝트</p>
+      <div class="archive3-table">
+        <div class="archive3-head">
+          <div class="archive3-row">
+            <span class="archive3-col">#</span>
+            <span class="archive3-col">프로젝트</span>
+            <span class="archive3-col">핵심 문제</span>
+            <span class="archive3-col">결과</span>
+            <span class="archive3-col"></span>
+          </div>
+        </div>
+        <div class="archive3-row"><span class="archive3-num">AI-01</span><span class="archive3-title">5-에이전트 상세페이지 자동 생성기</span><span class="archive3-role">제작 반나절 소요</span><span class="archive3-period">제작 시간 90% 단축 (3~5분)</span><span class="archive3-link">↑</span></div>
+        <div class="archive3-row"><span class="archive3-num">AI-02</span><span class="archive3-title">상세페이지 A/B 테스트 자동화</span><span class="archive3-role">수동 A/B 운영 비효율</span><span class="archive3-period">5-에이전트 · GA4 분석 완전 자동화</span><span class="archive3-link"></span></div>
+        <div class="archive3-row"><span class="archive3-num">AI-03</span><span class="archive3-title">PPT 자동 생성 에이전트</span><span class="archive3-role">발표자료 품질 편차</span><span class="archive3-period">설득 규칙 명문화 · 자동 검수</span><span class="archive3-link"></span></div>
+        <div class="archive3-row"><span class="archive3-num">AI-04</span><span class="archive3-title">산불 CCTV 협력 감지 시스템</span><span class="archive3-role">단일 CCTV 발화 특정 불가</span><span class="archive3-period">5-MSA · 삼각측량 · Docker 1명령 구동</span><span class="archive3-link"></span></div>
+        <div class="archive3-row"><span class="archive3-num">AI-05</span><span class="archive3-title">Douyin 영상 자동 수집기</span><span class="archive3-role">수동 수집 30분~1시간/회</span><span class="archive3-period">Playwright 기반 완전 자동화</span><span class="archive3-link"></span></div>
+        <div class="archive3-row"><span class="archive3-num">AI-06</span><span class="archive3-title">DP로봇 랜딩페이지 + Remotion 영상</span><span class="archive3-role">영상+웹 복합 제작</span><span class="archive3-period">Remotion + Next.js 통합</span><span class="archive3-link"></span></div>
+      </div>
+
+      <p class="archive3-group-label">기타 프로젝트</p>
+      <div class="archive3-table">
+        <div class="archive3-head">
+          <div class="archive3-row">
+            <span class="archive3-col">#</span>
+            <span class="archive3-col">프로젝트</span>
+            <span class="archive3-col">핵심 내용</span>
+            <span class="archive3-col">태그</span>
+            <span class="archive3-col"></span>
+          </div>
+        </div>
+        <a href="https://blog-1vld.vercel.app/posts/interview-robot/inmoov-architecture-overview" class="archive3-row" target="_blank">
+          <span class="archive3-num">EX-01</span>
+          <span class="archive3-title">면접훈련 로봇 — InMoov i2Head</span>
+          <span class="archive3-role">서보 17개 · FastAPI · AI 인터페이스</span>
+          <span class="archive3-period">Python · Arduino · Robotics</span>
+          <span class="archive3-link">→</span>
+        </a>
+        <a href="https://blog-1vld.vercel.app/posts/ai-video/korean-road-56th-anniversary" class="archive3-row" target="_blank">
+          <span class="archive3-num">EX-02</span>
+          <span class="archive3-title">한국도로공사 56주년 공모전 대상</span>
+          <span class="archive3-role">AI 도구 6개 · 56초 영상 · 대상 수상</span>
+          <span class="archive3-period">Kling AI · Veo3 · 미드저니</span>
+          <span class="archive3-link">→</span>
+        </a>
+        <a href="https://blog-1vld.vercel.app/posts/shorts-pipeline/auto-rank-douyin-collection" class="archive3-row" target="_blank">
+          <span class="archive3-num">EX-03</span>
+          <span class="archive3-title">쇼츠 자동화 파이프라인 1단계</span>
+          <span class="archive3-role">한국어 키워드 → 도우인 인기 영상 자동 수집</span>
+          <span class="archive3-period">Python · Playwright · yt-dlp</span>
+          <span class="archive3-link">→</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════
+  10. STRENGTH
+══════════════════════════════════ -->
+<section class="section" id="strength">
+  <div class="p-container">
+    <span class="section-eyebrow">Core Strengths</span>
+    <h2 class="section-title">단순히 할 줄 아는 것이<br>아니라, 현장에서<br>증명한 역량</h2>
+    <div class="strength3-grid">
+      <div class="strength3-card">
+        <p class="strength3-num">01</p>
+        <h3 class="strength3-title">구조화 실행력</h3>
+        <p class="strength3-desc">모르는 분야도 단계로 쪼개 끝낸다<span class="strength3-ev">전자공학 → IoT → 컴퓨터비전 → AI 자동화, 비전문 영역 9개 이상 프로젝트 완료</span></p>
+      </div>
+      <div class="strength3-card">
+        <p class="strength3-num">02</p>
+        <h3 class="strength3-title">운영 통합 역량</h3>
+        <p class="strength3-desc">기술과 운영을 동시에 다룬다<span class="strength3-ev">예비창업패키지 — 기술개발·회계·발주·공문·IR을 1인 전담 수행</span></p>
+      </div>
+      <div class="strength3-card">
+        <p class="strength3-num">03</p>
+        <h3 class="strength3-title">반복 제거 자동화</h3>
+        <p class="strength3-desc">사람이 할 일을 가려낸다<span class="strength3-ev">AI 자동화 6개 — 랜딩페이지 90% 단축 · 데이터 수집·PPT·보고서 자동화</span></p>
+      </div>
+      <div class="strength3-card">
+        <p class="strength3-num">04</p>
+        <h3 class="strength3-title">문서화·커뮤니케이션</h3>
+        <p class="strength3-desc">기술을 언어로 번역한다<span class="strength3-ev">IR 피칭 직접 제작·발표 · 공공기관 보고서 · 블로그 12개 포스트 직접 운영</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════
+  11. CLOSING
+══════════════════════════════════ -->
+<section class="closing3" id="contact">
+  <div class="p-container">
+    <span class="closing3-eyebrow">채용 포트폴리오 · 2026</span>
+    <h2 class="closing3-title">THANK YOU</h2>
+    <p class="closing3-desc">
+      전자공학·창업·AI 자동화의 경험과 실행력을<br>
+      귀사에서 풀어내겠습니다.
+    </p>
+    <div class="closing3-contacts">
+      <div class="closing3-contact">
+        <span class="closing3-key">이름</span>
+        <span class="closing3-val">박세준</span>
+      </div>
+      <div class="closing3-contact">
+        <span class="closing3-key">Email</span>
+        <a href="mailto:mnunu1234@naver.com" class="closing3-val">mnunu1234@naver.com</a>
+      </div>
+      <div class="closing3-contact">
+        <span class="closing3-key">Phone</span>
+        <span class="closing3-val">010-4566-9665</span>
+      </div>
+      <div class="closing3-contact">
+        <span class="closing3-key">GitHub</span>
+        <a href="https://github.com/mnunu123" class="closing3-val" target="_blank">github.com/mnunu123</a>
+      </div>
+      <div class="closing3-contact">
+        <span class="closing3-key">Blog</span>
+        <a href="https://blog-1vld.vercel.app" class="closing3-val" target="_blank">mnunu.dev</a>
+      </div>
+    </div>
+    <p class="closing3-copy">박세준 — 채용 포트폴리오 2026</p>
+  </div>
+</section>
+
+<script src="./data/profile.js"></script>
+<script src="./data/projects.js"></script>
+</body>
+</html>
