@@ -334,6 +334,10 @@ em {
 .section-divider--red  { background: var(--divider-red); }
 .section-divider--dark { background: var(--divider-dark); }
 
+#divider-2 .divider-number {
+  color: rgba(255, 255, 255, 0.10);
+}
+
 .divider-inner {
   position: relative;
   max-width: var(--max-width);
@@ -354,6 +358,70 @@ em {
   color: #FFFFFF;
   line-height: var(--lh-title);
   max-width: 700px;
+}
+
+/* 오른쪽 위 두 장 */
+.divider-photo {
+  position: absolute;
+  border-radius: 10px;
+  box-shadow: 0 10px 36px rgba(0, 0, 0, 0.5);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.divider-photo--circuit {
+  width: clamp(260px, 32vw, 420px);
+  right: clamp(20px, 5vw, 100px);
+  top: 2%;
+  transform: rotate(6deg);
+  opacity: 0.88;
+}
+
+.divider-photo--labeling {
+  width: clamp(270px, 34vw, 440px);
+  right: clamp(-20px, -1vw, 0px);
+  top: 22%;
+  transform: rotate(-8deg);
+  opacity: 0.88;
+}
+
+.divider-tweet {
+  position: absolute;
+  right: clamp(80px, 14vw, 200px);
+  bottom: 100px;
+  width: clamp(200px, 24vw, 300px);
+  border-radius: 12px;
+  transform: rotate(-25deg);
+  transform-origin: bottom right;
+  opacity: 0.82;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.divider-sub-list {
+  list-style: none;
+  padding: 0;
+  margin: 1.2rem 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.divider-sub-list li {
+  font-size: clamp(0.88rem, 1.6vw, 1.05rem);
+  color: rgba(255, 255, 255, 0.72);
+  font-weight: 400;
+  line-height: 1.5;
+  padding-left: 1.1em;
+  position: relative;
+}
+
+.divider-sub-list li::before {
+  content: '–';
+  position: absolute;
+  left: 0;
+  color: rgba(255, 255, 255, 0.4);
 }
 
 .divider-number {
