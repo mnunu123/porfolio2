@@ -1,0 +1,25 @@
+{
+  "name": "portfolio2",
+  "version": "1.0.0",
+  "description": "한국식 취업 포트폴리오용 정적 HTML 템플릿입니다. 에디토리얼 감각의 레이아웃, 최소한의 JS, 데이터 파일만 교체하면 바로 나의 포트폴리오로 변환됩니다.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mnunu123/porfolio2.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/mnunu123/porfolio2/issues"
+  },
+  "homepage": "https://github.com/mnunu123/porfolio2#readme",
+  "devDependencies": {
+    "playwright": "^1.58.2",
+    "puppeteer-core": "^24.40.0"
+  }
+}

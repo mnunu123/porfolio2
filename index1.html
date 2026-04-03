@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>홍길동 — Portfolio</title>
+  <meta name="description" content="콘텐츠 기획 · 마케팅 포트폴리오" />
+
+  <!-- Pretendard -->
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="./styles/reset.css" />
+  <link rel="stylesheet" href="./styles/main.css" />
+  <link rel="stylesheet" href="./styles/components.css" />
+  <link rel="stylesheet" href="./styles/responsive.css" />
+  <link rel="stylesheet" href="./styles/print.css" media="print" />
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════════
+  01. COVER
+═══════════════════════════════════════════════════════════ -->
+<section class="section-cover" id="cover" aria-label="표지">
+  <div class="cover-inner">
+    <p class="cover-label">PORTFOLIO</p>
+    <p class="cover-tagline">
+      더 크고 <em>넓게</em> 세상을 보고 싶은 <em>홍길동</em>입니다
+    </p>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+  02. INTRO / RESUME SUMMARY
+═══════════════════════════════════════════════════════════ -->
+<section class="section-intro" id="resume" aria-label="자기소개 및 이력">
+  <div class="container">
+    <div class="intro-grid">
+
+      <!-- Left: 이름 + 헤드라인 -->
+      <div class="intro-left">
+        <div class="intro-headline-wrap">
+          <h1 class="intro-headline">
+            더 크고 <em>넓게</em><br>세상을 보고 싶은<br><em>홍길동</em>입니다
+          </h1>
+          <p class="intro-sub">
+            콘텐츠 기획과 마케팅을 중심으로 다양한 프로젝트를 경험해왔습니다.<br>
+            정보를 정리하고 생각을 표현하는 일에 강점이 있습니다.
+          </p>
+        </div>
+        <div class="intro-contact-row">
+          <a href="mailto:hello@example.com" class="contact-chip">hello@example.com</a>
+          <a href="https://github.com/username" class="contact-chip" target="_blank">GitHub</a>
+          <a href="https://blog.example.com" class="contact-chip" target="_blank">Blog</a>
+        </div>
+      </div>
+
+      <!-- Right: 이력 요약 -->
+      <div class="intro-right">
+
+        <!-- 기본 정보 -->
+        <div class="resume-block">
+          <h2 class="resume-block-title">BASIC INFO</h2>
+          <dl class="resume-list">
+            <dt>이름</dt><dd>홍길동</dd>
+            <dt>생년월일</dt><dd>1998.00.00</dd>
+            <dt>연락처</dt><dd>hello@example.com</dd>
+            <dt>인스타그램</dt><dd>@username</dd>
+          </dl>
+        </div>
+
+        <div class="resume-divider"></div>
+
+        <!-- 경력 / 활동 -->
+        <div class="resume-block">
+          <h2 class="resume-block-title">WORK EXPERIENCE</h2>
+          <dl class="resume-list resume-list--exp">
+            <div class="resume-exp-item">
+              <dt>2022.07 — 2022.12</dt>
+              <dd>
+                <strong>○○기업 콘텐츠팀</strong>
+                <span class="resume-role">콘텐츠 기획 인턴</span>
+              </dd>
+            </div>
+            <div class="resume-exp-item">
+              <dt>2021.03 — 2021.12</dt>
+              <dd>
+                <strong>○○스타트업</strong>
+                <span class="resume-role">마케팅 기획 파트타임</span>
+              </dd>
+            </div>
+            <div class="resume-exp-item">
+              <dt>2020.03 — 2021.02</dt>
+              <dd>
+                <strong>대학 창업동아리</strong>
+                <span class="resume-role">기획팀장</span>
+              </dd>
+            </div>
+          </dl>
+        </div>
+
+        <div class="resume-divider"></div>
+
+        <!-- 학력 -->
+        <div class="resume-block">
+          <h2 class="resume-block-title">EDUCATION</h2>
+          <dl class="resume-list resume-list--exp">
+            <div class="resume-exp-item">
+              <dt>2017.03 — 2023.02</dt>
+              <dd>
+                <strong>○○대학교</strong>
+                <span class="resume-role">경영학과 / 미디어커뮤니케이션학과 복수전공</span>
+              </dd>
+            </div>
+          </dl>
+        </div>
+
+        <div class="resume-divider"></div>
+
+        <!-- 수상 -->
+        <div class="resume-block">
+          <h2 class="resume-block-title">AWARDS</h2>
+          <dl class="resume-list">
+            <dt>2022</dt><dd>○○ 공모전 최우수상 — ○○기관</dd>
+            <dt>2021</dt><dd>○○ 마케팅 경진대회 우수상 — ○○대학교</dd>
+            <dt>2020</dt><dd>○○ 해커톤 장려상 — ○○기관</dd>
+          </dl>
+        </div>
+
+        <div class="resume-divider"></div>
+
+        <!-- 자격증 + 스킬 -->
+        <div class="resume-block">
+          <h2 class="resume-block-title">SKILLS &amp; CERT.</h2>
+          <div class="skill-row">
+            <div class="skill-group">
+              <p class="skill-group-name">기획</p>
+              <p class="skill-items">콘텐츠 기획 · 서비스 기획 · UX 리서치</p>
+            </div>
+            <div class="skill-group">
+              <p class="skill-group-name">마케팅</p>
+              <p class="skill-items">SNS 운영 · 퍼포먼스 마케팅 · 데이터 분석</p>
+            </div>
+            <div class="skill-group">
+              <p class="skill-group-name">툴</p>
+              <p class="skill-items">Figma · Notion · Google Analytics · Photoshop</p>
+            </div>
+            <div class="skill-group">
+              <p class="skill-group-name">자격증</p>
+              <p class="skill-items">구글 애널리틱스 GAIQ · 컴퓨터활용능력 1급 · TOEIC 875</p>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /intro-right -->
+    </div><!-- /intro-grid -->
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+  03. SECTION DIVIDER — Red
+═══════════════════════════════════════════════════════════ -->
+<section class="section-divider section-divider--red" id="divider-1" aria-hidden="true">
+  <div class="divider-inner">
+    <p class="divider-hashtag">#관심</p>
+    <h2 class="divider-copy">꿈을 크게 가지자<br>그래야 깨져도 조각이 크니</h2>
+    <span class="divider-number" aria-hidden="true">01</span>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+  04. PROJECT — Variant A (기본 좌설명 우결과물)
+═══════════════════════════════════════════════════════════ -->
+<section class="section-project project-variant-a" id="project-1" data-accent="red" aria-label="프로젝트 1">
+  <div class="container">
+    <div class="project-grid">
+
+      <!-- Left: 설명 -->
+      <div class="project-left">
+        <h2 class="project-title">상품 기획부터<br>콘텐츠 제작까지</h2>
+        <p class="project-meta">한화 Dreamplus Travel Creator <span class="meta-sep">·</span> 2019.07 — 2019.08</p>
+        <p class="project-meta project-role">기획 · 콘텐츠 제작</p>
+        <hr class="project-rule" />
+
+        <p class="keyword-label">Keyword</p>
+        <div class="keyword-badges">
+          <span class="badge">데이터 분석</span>
+          <span class="badge">탑</span>
+          <span class="badge">기획</span>
+        </div>
+
+        <p class="project-body">
+          여행 플랫폼의 콘텐츠 크리에이터로서 상품 기획부터 최종 콘텐츠 발행까지 전 과정을 직접 수행했습니다. 기존 콘텐츠 유형에 없던 여행 카테고리를 새롭게 제안하고 4개 여행지의 콘텐츠를 기획·제작했습니다.
+        </p>
+
+        <blockquote class="project-thinking">
+          <p>두 달간 기획한 콘텐츠를 대표할 한 줄의 카피를 찾는 과정에서, 결국 가장 솔직한 사실에서 최선의 문장이 나온다는 것을 배웠습니다.</p>
+        </blockquote>
+
+        <div class="contribution-list">
+          <div class="contrib-item">
+            <span class="contrib-label">기획</span>
+            <div class="contrib-track"><div class="contrib-fill" style="--bar-width:90%"></div></div>
+          </div>
+          <div class="contrib-item">
+            <span class="contrib-label">글쓰기</span>
+            <div class="contrib-track"><div class="contrib-fill" style="--bar-width:75%"></div></div>
+          </div>
+          <div class="contrib-item">
+            <span class="contrib-label">디자인</span>
+            <div class="contrib-track"><div class="contrib-fill" style="--bar-width:60%"></div></div>
+          </div>
+          <div class="contrib-item">
+            <span class="contrib-label">영상</span>
+            <div class="contrib-track"><div class="contrib-fill" style="--bar-width:50%"></div></div>
+          </div>
+        </div>
+      </div><!-- /project-left -->
+
+      <!-- Right: 비주얼 -->
+      <div class="project-right">
+        <div class="mockup-stack">
+          <div class="mockup-phone tilt-left">
+            <img src="./assets/placeholders/phone-mockup-1.svg" alt="앱 화면 1" />
+          </div>
+          <div class="mockup-phone center">
+            <img src="./assets/placeholders/phone-mockup-2.svg" alt="앱 화면 2" />
+          </div>
+          <div class="mockup-phone tilt-right">
+            <img src="./assets/placeholders/phone-mockup-3.svg" alt="앱 화면 3" />
+          </div>
+        </div>
+      </div><!-- /project-right -->
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+  05. PROJECT — Variant B (소셜 증거 강조형)
+═══════════════════════════════════════════════════════════ -->
+<section class="section-project project-variant-b" id="project-2" data-accent="red" aria-label="프로젝트 2">
+  <div class="container">
+    <div class="project-grid">
+
+      <!-- Left: 설명 -->
+      <div class="project-left">
+        <h2 class="project-title">조회수 10배 달성에 이은<br>대학교 합격 인증 댓글</h2>
+        <p class="project-meta">개인 프로젝트 <span class="meta-sep">·</span> 2018.03 — 2019.02</p>
+        <p class="project-meta project-role">기획 · 운영 · 글쓰기</p>
+        <hr class="project-rule" />
+
+        <p class="keyword-label">Keyword</p>
+        <div class="keyword-badges">
+          <span class="badge">학교</span>
+          <span class="badge">과외</span>
+          <span class="badge">PR</span>
+        </div>
+
+        <p class="project-body">
+          대학교 입시 정보를 다루는 블로그를 운영하며 6개월 만에 월 조회수를 10배 성장시켰습니다. 독자들이 실제로 합격 후 댓글로 감사 인사를 남기는 콘텐츠를 지속적으로 제작했습니다.
+        </p>
+
+        <blockquote class="project-thinking">
+          <p>단순히 정보를 전달하는 것이 아니라, 독자가 '내가 직접 쓴 것 같은' 느낌이 드는 글을 목표로 했습니다.</p>
+        </blockquote>
+
+        <div class="contribution-list">
+          <div class="contrib-item">
+            <span class="contrib-label">기획</span>
+            <div class="contrib-track"><div class="contrib-fill" style="--bar-width:85%"></div></div>
+          </div>
+          <div class="contrib-item">
+            <span class="contrib-label">글쓰기</span>
+            <div class="contrib-track"><div class="contrib-fill" style="--bar-width:95%"></div></div>
+          </div>
+          <div class="contrib-item">
+            <span class="contrib-label">디자인</span>
+            <div class="contrib-track"><div class="contrib-fill" style="--bar-width:40%"></div></div>
+          </div>
+        </div>
+      </div><!-- /project-left -->
+
+      <!-- Right: 소셜 증거 비주얼 -->
+      <div class="project-right">
+        <!-- 썸네일 그리드 -->
+        <div class="thumb-grid">
+          <div class="thumb-item visual-card">
+            <img src="./assets/placeholders/thumb-1.svg" alt="콘텐츠 썸네일 1" />
+          </div>
+          <div class="thumb-item visual-card">
+            <img src="./assets/placeholders/thumb-2.svg" alt="콘텐츠 썸네일 2" />
+          </div>
+          <div class="thumb-item visual-card">
+            <img src="./assets/placeholders/thumb-3.svg" alt="콘텐츠 썸네일 3" />
+          </div>
+        </div>
+
+        <!-- SNS 플로팅 카드들 -->
+        <div class="proof-cards">
+          <div class="proof-card">
+            <p class="proof-platform">네이버 블로그</p>
+            <p class="proof-text">"덕분에 합격했어요! 정말 도움 됐습니다 ㅜㅜ"</p>
+            <p class="proof-metric">댓글 847개</p>
+          </div>
+          <div class="proof-card">
+            <p class="proof-platform">페이스북</p>
+            <p class="proof-text">"이 글 읽고 바로 원서 썼는데 합격했어요"</p>
+            <p class="proof-metric">공유 312회</p>
+          </div>
+          <div class="proof-card">
+            <p class="proof-platform">인스타그램</p>
+            <p class="proof-text">"저장해두고 계속 읽었어요"</p>
+            <p class="proof-metric">저장 1.2K</p>
+          </div>
+        </div>
+      </div><!-- /project-right -->
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+  06. SECTION DIVIDER — Dark
+═══════════════════════════════════════════════════════════ -->
+<section class="section-divider section-divider--dark" id="divider-2" aria-hidden="true">
+  <div class="divider-inner">
+    <p class="divider-hashtag">#습관</p>
+    <h2 class="divider-copy">정보는 정리하고<br>생각은 표현하고</h2>
+    <span class="divider-number" aria-hidden="true">02</span>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+  07. PROJECT — Variant C (목업 강조형)
+═══════════════════════════════════════════════════════════ -->
+<section class="section-project project-variant-c" id="project-3" data-accent="blue" aria-label="프로젝트 3">
+  <div class="container">
+    <div class="project-grid">
+
+      <!-- Left: 설명 -->
+      <div class="project-left">
+        <h2 class="project-title">낯선 정보를<br>쉽게 전달하기</h2>
+        <p class="project-meta">서울○○공사 PR 인턴 <span class="meta-sep">·</span> 2020.03 — 2020.06</p>
+        <p class="project-meta project-role">기획 · 글쓰기 · SNS 운영</p>
+        <hr class="project-rule" />
+
+        <p class="keyword-label">Keyword</p>
+        <div class="keyword-badges">
+          <span class="badge">신문 광고</span>
+          <span class="badge">에너지 사업</span>
+          <span class="badge">SNS 콘텐츠</span>
+        </div>
+
+        <p class="project-body">
+          기존의 딱딱한 공공기관 광고 콘텐츠를 일반 시민에게 친숙한 언어로 재구성했습니다. SNS 홍보물 기획부터 실제 게재까지 직접 수행하며 광고 게재 후 2배 이상의 참여율 향상을 달성했습니다.
+        </p>
+
+        <blockquote class="project-thinking">
+          <p>공공기관 정보를 '쉽게' 전달하는 것과 '정확하게' 전달하는 것 사이의 균형이 이 프로젝트의 핵심 과제였습니다.</p>
+        </blockquote>
+
+        <div class="contribution-list">
+          <div class="contrib-item">
+            <span class="contrib-label">기획</span>
+            <div class="contrib-track"><div class="contrib-fill" style="--bar-width:80%"></div></div>
+          </div>
+          <div class="contrib-item">
+            <span class="contrib-label">글쓰기</span>
+            <div class="contrib-track"><div class="contrib-fill" style="--bar-width:88%"></div></div>
+          </div>
+          <div class="contrib-item">
+            <span class="contrib-label">디자인</span>
+            <div class="contrib-track"><div class="contrib-fill" style="--bar-width:55%"></div></div>
+          </div>
+        </div>
+      </div><!-- /project-left -->
+
+      <!-- Right: 목업 + 아티클 카드 -->
+      <div class="project-right project-right--mockup">
+        <div class="mockup-stack mockup-stack--duo">
+          <div class="mockup-phone tilt-left">
+            <img src="./assets/placeholders/phone-mockup-4.svg" alt="모바일 앱 화면 1" />
+          </div>
+          <div class="mockup-phone tilt-right">
+            <img src="./assets/placeholders/phone-mockup-5.svg" alt="모바일 앱 화면 2" />
+          </div>
+        </div>
+        <div class="article-card visual-card">
+          <img src="./assets/placeholders/article-1.svg" alt="신문 광고 이미지" />
+          <p class="article-caption">서울○○공사 태양광 모집 광고</p>
+        </div>
+      </div><!-- /project-right -->
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+  08. ARCHIVE / OTHER WORKS
+═══════════════════════════════════════════════════════════ -->
+<section class="section-archive" id="archive" aria-label="기타 작업물">
+  <div class="container">
+    <div class="archive-header">
+      <h2 class="archive-title">Other Works</h2>
+      <p class="archive-subtitle">그 밖의 작업들</p>
+    </div>
+    <div class="archive-table">
+      <div class="archive-row archive-row--head">
+        <span class="archive-col archive-col--num">#</span>
+        <span class="archive-col archive-col--title">제목</span>
+        <span class="archive-col archive-col--role">역할</span>
+        <span class="archive-col archive-col--period">기간</span>
+        <span class="archive-col archive-col--link">링크</span>
+      </div>
+      <a href="#" class="archive-row archive-row--item" target="_blank">
+        <span class="archive-col archive-col--num">01</span>
+        <span class="archive-col archive-col--title">○○ 브랜드 SNS 캠페인 기획</span>
+        <span class="archive-col archive-col--role">기획 / 글쓰기</span>
+        <span class="archive-col archive-col--period">2021.09</span>
+        <span class="archive-col archive-col--link">→</span>
+      </a>
+      <a href="#" class="archive-row archive-row--item" target="_blank">
+        <span class="archive-col archive-col--num">02</span>
+        <span class="archive-col archive-col--title">대학 창업동아리 피칭 자료</span>
+        <span class="archive-col archive-col--role">기획 / 디자인</span>
+        <span class="archive-col archive-col--period">2020.11</span>
+        <span class="archive-col archive-col--link">→</span>
+      </a>
+      <a href="#" class="archive-row archive-row--item" target="_blank">
+        <span class="archive-col archive-col--num">03</span>
+        <span class="archive-col archive-col--title">경제신문 읽기 뉴스레터 운영</span>
+        <span class="archive-col archive-col--role">기획 / 글쓰기</span>
+        <span class="archive-col archive-col--period">2020.03 — 2021.02</span>
+        <span class="archive-col archive-col--link">→</span>
+      </a>
+      <a href="#" class="archive-row archive-row--item" target="_blank">
+        <span class="archive-col archive-col--num">04</span>
+        <span class="archive-col archive-col--title">제주 여행 앱 UX 리서치 보고서</span>
+        <span class="archive-col archive-col--role">기획 / UX</span>
+        <span class="archive-col archive-col--period">2019.12</span>
+        <span class="archive-col archive-col--link">→</span>
+      </a>
+      <a href="#" class="archive-row archive-row--item" target="_blank">
+        <span class="archive-col archive-col--num">05</span>
+        <span class="archive-col archive-col--title">○○ 온라인 브랜딩 전략 제안서</span>
+        <span class="archive-col archive-col--role">기획 / 리서치</span>
+        <span class="archive-col archive-col--period">2022.04</span>
+        <span class="archive-col archive-col--link">→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+  09. CONTACT / CLOSING
+═══════════════════════════════════════════════════════════ -->
+<section class="section-closing" id="contact" aria-label="마무리 및 연락처">
+  <div class="container">
+    <div class="closing-inner">
+      <p class="closing-label">THANK YOU</p>
+      <p class="closing-tagline">
+        콘텐츠 기획의 <em>관심</em>, <em>경험</em>, <em>습관</em>을<br>
+        귀사에서 풀어내겠습니다
+      </p>
+      <div class="closing-contacts">
+        <div class="closing-contact-item">
+          <span class="closing-contact-label">Email</span>
+          <a href="mailto:hello@example.com" class="closing-contact-value">hello@example.com</a>
+        </div>
+        <div class="closing-contact-item">
+          <span class="closing-contact-label">GitHub</span>
+          <a href="https://github.com/username" class="closing-contact-value" target="_blank">github.com/username</a>
+        </div>
+        <div class="closing-contact-item">
+          <span class="closing-contact-label">Blog</span>
+          <a href="https://blog.example.com" class="closing-contact-value" target="_blank">blog.example.com</a>
+        </div>
+        <div class="closing-contact-item">
+          <span class="closing-contact-label">Instagram</span>
+          <a href="https://instagram.com/username" class="closing-contact-value" target="_blank">@username</a>
+        </div>
+      </div>
+      <p class="closing-copy">© 2024 홍길동. All rights reserved.</p>
+    </div>
+  </div>
+</section>
+
+<script src="./data/profile.js"></script>
+<script src="./data/projects.js"></script>
+<script src="./scripts/main.js"></script>
+</body>
+</html>
